@@ -6,7 +6,8 @@
 
 @layer base {
   :root {
-    --background: 222 47% 11%;
+    --background: 220 60% 8%;
+    --background-ocean: 200 70% 20%;
     --foreground: 210 40% 98%;
 
     --card: 222 47% 13%;
@@ -37,14 +38,15 @@
     --radius: 0.75rem;
 
     /* Custom colors */
-    --navy-deep: 222 47% 8%;
-    --navy-light: 222 47% 15%;
+    --navy-deep: 220 60% 6%;
+    --navy-light: 210 65% 15%;
+    --ocean-blue: 200 70% 20%;
     --electric-blue: 222 89% 55%;
     --cyan-glow: 199 89% 48%;
     --soft-white: 210 40% 98%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 15%) 50%, hsl(222 47% 11%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 8%) 0%, hsl(200 70% 20%) 50%, hsl(210 65% 12%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(222 47% 15%) 0%, hsl(222 47% 11%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(222 89% 55%) 0%, hsl(199 89% 48%) 100%);
     --gradient-text: linear-gradient(90deg, hsl(222 89% 55%) 0%, hsl(199 89% 48%) 100%);
