@@ -6,55 +6,55 @@
 
 @layer base {
   :root {
-    --background: 220 60% 8%;
-    --background-ocean: 200 70% 20%;
-    --foreground: 210 40% 98%;
+    --background: 210 40% 98%;
+    --background-ocean: 210 50% 96%;
+    --foreground: 222 47% 11%;
 
-    --card: 222 47% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 222 47% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
     --primary: 222 89% 55%;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 47% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 222 47% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 20% 45%;
 
     --accent: 199 89% 48%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 47% 22%;
-    --input: 222 47% 22%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
     --ring: 222 89% 55%;
 
     --radius: 0.75rem;
 
     /* Custom colors */
-    --navy-deep: 220 60% 6%;
-    --navy-light: 210 65% 15%;
-    --ocean-blue: 200 70% 20%;
+    --navy-deep: 222 47% 11%;
+    --navy-light: 222 47% 20%;
+    --ocean-blue: 210 50% 96%;
     --electric-blue: 222 89% 55%;
     --cyan-glow: 199 89% 48%;
-    --soft-white: 210 40% 98%;
+    --soft-white: 0 0% 100%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(220 60% 8%) 0%, hsl(200 70% 20%) 50%, hsl(210 65% 12%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(222 47% 15%) 0%, hsl(222 47% 11%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 40% 98%) 0%, hsl(210 50% 96%) 50%, hsl(220 40% 97%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(222 89% 55%) 0%, hsl(199 89% 48%) 100%);
     --gradient-text: linear-gradient(90deg, hsl(222 89% 55%) 0%, hsl(199 89% 48%) 100%);
 
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(222 89% 55% / 0.2);
-    --shadow-card: 0 10px 40px hsl(222 47% 5% / 0.5);
-    --shadow-button: 0 4px 20px hsl(222 89% 55% / 0.4);
+    --shadow-glow: 0 0 40px hsl(222 89% 55% / 0.15);
+    --shadow-card: 0 10px 40px hsl(222 47% 11% / 0.08);
+    --shadow-button: 0 4px 20px hsl(222 89% 55% / 0.3);
 
     /* Fonts */
     --font-heading: 'Outfit', sans-serif;
@@ -96,14 +96,14 @@
   body {
     @apply text-foreground font-body antialiased;
     background: linear-gradient(135deg, 
-      hsl(220 60% 8%) 0%, 
-      hsl(200 70% 15%) 25%, 
-      hsl(210 65% 12%) 50%, 
-      hsl(200 70% 18%) 75%, 
-      hsl(220 60% 8%) 100%
+      hsl(210 40% 98%) 0%, 
+      hsl(210 50% 96%) 25%, 
+      hsl(220 40% 97%) 50%, 
+      hsl(210 50% 95%) 75%, 
+      hsl(210 40% 98%) 100%
     );
     background-size: 400% 400%;
-    animation: ocean-gradient 15s ease infinite;
+    animation: ocean-gradient 20s ease infinite;
     min-height: 100vh;
   }
 
