@@ -10,7 +10,6 @@ import {
   Rocket, 
   Building2,
   ArrowRight,
-  CheckCircle,
   Clock,
   TrendingUp,
   Shield,
@@ -18,7 +17,10 @@ import {
   MessageSquare,
   Award,
   DollarSign,
-  ChevronRight
+  ChevronRight,
+  Sparkles,
+  Zap,
+  Star
 } from "lucide-react";
 import officeHero from "@/assets/office-hero.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
@@ -90,60 +92,114 @@ const missionCards = [
   }
 ];
 
+const stats = [
+  { number: "500+", label: "Placements", icon: Users },
+  { number: "98%", label: "Success Rate", icon: Target },
+  { number: "50+", label: "Industries", icon: Globe },
+  { number: "24/7", label: "Support", icon: Zap }
+];
+
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-20">
+      <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-champagne/30 to-champagne-light/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-emerald/20 to-emerald-light/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-br from-champagne/20 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+        </div>
+
         <div className="absolute inset-0">
           <img 
             src={officeHero} 
             alt="Modern corporate office space" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/80 via-emerald/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/90 via-emerald/70 to-emerald/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/50 via-transparent to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-3xl">
-            <p className="text-champagne font-medium mb-4 animate-fade-up opacity-0" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
-              Welcome to YASH TECH
-            </p>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 text-primary-foreground leading-tight animate-fade-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
-              Your Partner in Finding{" "}
-              <span className="text-champagne">Top Talent</span>
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-champagne/20 border border-champagne/30 mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
+              <Sparkles className="w-4 h-4 text-champagne" />
+              <span className="text-champagne text-sm font-medium">Next-Gen Talent Partner</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground leading-[1.1] opacity-0 animate-fade-up" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+              Find Your{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-champagne">Perfect</span>
+                <span className="absolute -bottom-2 left-0 w-full h-3 bg-champagne/30 -skew-x-12" />
+              </span>
+              <br />
+              <span className="text-primary-foreground/90">Talent Match</span>
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 leading-relaxed animate-fade-up opacity-0" style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
-              We connect exceptional talent with exceptional opportunities. Experience recruitment reimagined with AI-powered precision and human expertise.
+            
+            <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+              AI-powered precision meets human expertise. We connect exceptional talent with exceptional opportunities.
             </p>
-            <div className="flex flex-wrap gap-4 animate-fade-up opacity-0" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+            
+            <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up" style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
               <Link to="/contact">
-                <Button size="lg" className="bg-champagne text-emerald hover:bg-champagne-light text-base px-8 font-semibold">
+                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-champagne/25 transition-all duration-500 hover:scale-105">
                   Get Started
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <a href="https://www.thelasallenetwork.com/submit/" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" variant="outline" className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8">
+              <Link to="/contact">
+                <Button size="lg" variant="outline" className="border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-10 py-7 backdrop-blur-sm transition-all duration-500 hover:border-champagne">
                   Submit Resume
                 </Button>
-              </a>
+              </Link>
             </div>
+
+            {/* Stats Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-0 animate-fade-up" style={{ animationDelay: '800ms', animationFillMode: 'forwards' }}>
+              {stats.map((stat, index) => (
+                <div 
+                  key={stat.label} 
+                  className="text-center p-4 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-500"
+                >
+                  <stat.icon className="w-6 h-6 text-champagne mx-auto mb-2" />
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-1">{stat.number}</div>
+                  <div className="text-sm text-primary-foreground/60">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up" style={{ animationDelay: '1000ms', animationFillMode: 'forwards' }}>
+          <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-1.5">
+            <div className="w-1.5 h-3 bg-champagne rounded-full animate-bounce-subtle" />
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-champagne font-semibold mb-4 tracking-wide uppercase text-sm">Our Services</p>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
-              Comprehensive Recruitment Solutions
+      <section id="services" className="py-32 bg-background relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/50 to-transparent pointer-events-none" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
+              <Star className="w-4 h-4" />
+              Our Services
+            </span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
+              Comprehensive{" "}
+              <span className="gradient-text-animated">Recruitment</span>
+              <br />Solutions
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               From temporary staffing to executive search, we provide end-to-end talent solutions that drive your business forward.
             </p>
           </div>
@@ -152,13 +208,23 @@ const Index = () => {
             {services.map((service, index) => (
               <div 
                 key={service.title}
-                className="group p-8 rounded-xl bg-card border border-border hover:border-champagne/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-8 rounded-2xl bg-card border border-border hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="w-14 h-14 bg-emerald rounded-xl flex items-center justify-center mb-6 group-hover:bg-champagne group-hover:scale-110 transition-all duration-300">
-                  <service.icon className="w-7 h-7 text-primary-foreground group-hover:text-emerald" />
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/5 via-transparent to-emerald/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald/20 transition-all duration-500">
+                    <service.icon className="w-8 h-8 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  
+                  <div className="mt-6 flex items-center text-champagne font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                    Learn more <ChevronRight className="w-4 h-4 ml-1" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-foreground mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -166,54 +232,66 @@ const Index = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are" className="py-24 bg-ivory">
+      <section id="who-we-are" className="py-32 bg-gradient-to-b from-ivory to-background relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-champagne/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-40 right-20 w-32 h-32 border-2 border-emerald/20 rounded-full animate-float" style={{ animationDelay: '3s' }} />
+        
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-champagne font-semibold mb-4 tracking-wide uppercase text-sm">Who We Are</p>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-8">
-              Your Partner for Talent
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-champagne/10 text-champagne font-semibold text-sm mb-6">
+              <Users className="w-4 h-4" />
+              Who We Are
+            </span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-8">
+              Your Strategic{" "}
+              <span className="relative inline-block">
+                <span className="relative z-10 text-emerald">Partner</span>
+                <span className="absolute -bottom-2 left-0 w-full h-3 bg-emerald/20 -skew-x-12" />
+              </span>
+              {" "}for Talent
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We are your partner for talent in finding the right work and helping you secure meaningful roles and develop relevant skills. Yash Tech team has hands-on multi-year expertise in the staffing and recruitment industry, especially serving the USA market. We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              We are your partner for talent in finding the right work and helping you secure meaningful roles. Our team has multi-year expertise in the staffing industry, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8">
             {/* For Clients */}
-            <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
-              <h3 className="text-2xl font-heading font-semibold text-foreground mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 bg-emerald rounded-lg flex items-center justify-center">
-                  <Building2 className="w-5 h-5 text-primary-foreground" />
+            <div className="group p-10 rounded-3xl bg-card border border-border shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-1">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center shadow-lg">
+                  <Building2 className="w-7 h-7 text-primary-foreground" />
                 </div>
-                For Our Clients
-              </h3>
-              <ul className="space-y-4">
-                {clientBenefits.map((benefit) => (
-                  <li key={benefit.text} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-champagne/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <benefit.icon className="w-4 h-4 text-champagne" />
+                <h3 className="text-2xl font-heading font-bold text-foreground">For Our Clients</h3>
+              </div>
+              <ul className="space-y-5">
+                {clientBenefits.map((benefit, index) => (
+                  <li key={benefit.text} className="flex items-start gap-4 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne/20 to-champagne/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                      <benefit.icon className="w-5 h-5 text-champagne" />
                     </div>
-                    <span className="text-muted-foreground">{benefit.text}</span>
+                    <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* For Candidates */}
-            <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
-              <h3 className="text-2xl font-heading font-semibold text-foreground mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 bg-emerald rounded-lg flex items-center justify-center">
-                  <Users className="w-5 h-5 text-primary-foreground" />
+            <div className="group p-10 rounded-3xl bg-card border border-border shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-1">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center shadow-lg">
+                  <Users className="w-7 h-7 text-emerald-dark" />
                 </div>
-                For Our Candidates
-              </h3>
-              <ul className="space-y-4">
-                {candidateBenefits.map((benefit) => (
-                  <li key={benefit.text} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-champagne/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <benefit.icon className="w-4 h-4 text-champagne" />
+                <h3 className="text-2xl font-heading font-bold text-foreground">For Our Candidates</h3>
+              </div>
+              <ul className="space-y-5">
+                {candidateBenefits.map((benefit, index) => (
+                  <li key={benefit.text} className="flex items-start gap-4 group/item">
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald/20 to-emerald/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                      <benefit.icon className="w-5 h-5 text-emerald" />
                     </div>
-                    <span className="text-muted-foreground">{benefit.text}</span>
+                    <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
                   </li>
                 ))}
               </ul>
@@ -223,14 +301,21 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-24 bg-background">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-champagne font-semibold mb-4 tracking-wide uppercase text-sm">Our Mission</p>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
-              Making Meaningful Connections
+      <section id="mission" className="py-32 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald/5 via-transparent to-transparent" />
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center mb-20">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
+              <Target className="w-4 h-4" />
+              Our Mission
+            </span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
+              Making{" "}
+              <span className="gradient-text-animated">Meaningful</span>
+              <br />Connections
             </h2>
-            <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
+            <p className="text-muted-foreground max-w-3xl mx-auto text-xl">
               At Yash Tech, we believe great talent and great companies deserve each other. Our mission is to make those connections happen – faster, smarter, and with lasting impact.
             </p>
           </div>
@@ -239,22 +324,32 @@ const Index = () => {
             {missionCards.map((card, index) => (
               <div 
                 key={card.title}
-                className="group relative h-80 rounded-2xl overflow-hidden"
+                className="group relative h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700"
               >
                 <img 
                   src={card.image} 
                   alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald via-emerald/60 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-heading font-semibold text-primary-foreground mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-primary-foreground/80 text-sm">
-                    {card.description}
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
+                
+                {/* Content */}
+                <div className="absolute inset-0 flex flex-col justify-end p-8">
+                  <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <div className="w-12 h-12 bg-champagne/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-champagne/30">
+                      <Sparkles className="w-6 h-6 text-champagne" />
+                    </div>
+                    <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-3">
+                      {card.title}
+                    </h3>
+                    <p className="text-primary-foreground/80 leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
                 </div>
+
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-champagne/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
             ))}
           </div>
@@ -262,26 +357,46 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-emerald">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">
-              Ready to Find Your Perfect Match?
+      <section className="py-32 relative overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald-light to-emerald animate-gradient" />
+        
+        {/* Decorative shapes */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-champagne/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary-foreground/10 rounded-full animate-rotate-slow" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary-foreground/5 rounded-full animate-rotate-slow" style={{ animationDirection: 'reverse' }} />
+        </div>
+        
+        <div className="container mx-auto px-4 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8">
+              <Zap className="w-4 h-4 text-champagne" />
+              <span className="text-primary-foreground text-sm font-medium">Ready to Get Started?</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-8 leading-tight">
+              Find Your{" "}
+              <span className="text-champagne">Perfect</span>
+              <br />Match Today
             </h2>
-            <p className="text-primary-foreground/80 text-lg mb-10">
-              Whether you're looking to hire top talent or find your next career opportunity, we're here to help.
+            
+            <p className="text-primary-foreground/80 text-xl mb-12 max-w-2xl mx-auto">
+              Whether you're looking to hire top talent or find your next career opportunity, we're here to help make it happen.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            
+            <div className="flex flex-wrap justify-center gap-6">
               <Link to="/contact">
-                <Button size="lg" className="bg-champagne text-emerald hover:bg-champagne-light text-base px-8 font-semibold">
+                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-12 py-8 font-bold shadow-2xl hover:shadow-champagne/30 transition-all duration-500 hover:scale-105">
                   I'm an Employer
-                  <ChevronRight className="ml-2 w-5 h-5" />
+                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8">
+                <Button size="lg" variant="outline" className="group border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-12 py-8 font-bold backdrop-blur-sm transition-all duration-500 hover:border-champagne">
                   I'm a Job Seeker
-                  <ChevronRight className="ml-2 w-5 h-5" />
+                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>

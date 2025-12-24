@@ -55,10 +55,15 @@ export default {
         emerald: {
           DEFAULT: "hsl(var(--emerald))",
           light: "hsl(var(--emerald-light))",
+          dark: "hsl(160 50% 15%)",
         },
         champagne: {
           DEFAULT: "hsl(var(--champagne))",
           light: "hsl(var(--champagne-light))",
+        },
+        gold: {
+          DEFAULT: "hsl(42 85% 55%)",
+          light: "hsl(42 70% 70%)",
         },
         cream: "hsl(var(--cream))",
         ivory: "hsl(var(--ivory))",
