@@ -182,8 +182,10 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-emerald rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-xl">Y</span>
+            <div className="w-10 h-10 relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald to-emerald-dark rounded-lg transform rotate-45"></div>
+              <div className="absolute inset-1 bg-gradient-to-br from-gold to-gold-light rounded-md transform rotate-45"></div>
+              <span className="absolute inset-0 flex items-center justify-center text-emerald-dark font-heading font-black text-lg tracking-tighter">YT</span>
             </div>
             <div className="hidden sm:block">
               <span className="font-heading font-bold text-xl text-foreground">YASH TECH</span>
