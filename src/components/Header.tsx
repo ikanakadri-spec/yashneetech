@@ -182,7 +182,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
+            <div className="w-10 h-10 bg-emerald rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-heading font-bold text-xl">Y</span>
             </div>
             <div className="hidden sm:block">
@@ -234,7 +234,7 @@ export const Header = () => {
 
             {/* CTA Button */}
             <Link to="/contact">
-              <Button className="hidden sm:inline-flex gradient-primary text-primary-foreground hover:opacity-90">
+              <Button className="hidden sm:inline-flex bg-emerald text-primary-foreground hover:bg-emerald-light">
                 Get Started
               </Button>
             </Link>
@@ -266,7 +266,7 @@ export const Header = () => {
             </Link>
             <Dropdown label="Contact Us" items={contactItems} onItemClick={closeMobileMenu} />
             <Link to="/contact" onClick={closeMobileMenu}>
-              <Button className="w-full gradient-primary text-primary-foreground">
+              <Button className="w-full bg-emerald text-primary-foreground hover:bg-emerald-light">
                 Get Started
               </Button>
             </Link>

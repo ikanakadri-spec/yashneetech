@@ -123,7 +123,7 @@ const Contact = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 gradient-hero">
+      <section className="pt-32 pb-16 bg-emerald">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">
@@ -141,31 +141,31 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6">
             <div className="p-6 rounded-xl bg-card border border-border shadow-md flex items-start gap-4">
-              <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-emerald rounded-xl flex items-center justify-center flex-shrink-0">
                 <Mail className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-foreground mb-1">Email Us</h3>
-                <a href="mailto:info@yashtech.com" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="mailto:info@yashtech.com" className="text-muted-foreground hover:text-champagne transition-colors">
                   info@yashtech.com
                 </a>
               </div>
             </div>
             
             <div className="p-6 rounded-xl bg-card border border-border shadow-md flex items-start gap-4">
-              <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-emerald rounded-xl flex items-center justify-center flex-shrink-0">
                 <Phone className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
                 <h3 className="font-heading font-semibold text-foreground mb-1">Call Us</h3>
-                <a href="tel:+914049964796" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+914049964796" className="text-muted-foreground hover:text-champagne transition-colors">
                   +91 40 4996 4796
                 </a>
               </div>
             </div>
             
             <div className="p-6 rounded-xl bg-card border border-border shadow-md flex items-start gap-4">
-              <div className="w-12 h-12 gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 bg-emerald rounded-xl flex items-center justify-center flex-shrink-0">
                 <MapPin className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
@@ -308,7 +308,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full gradient-primary text-primary-foreground text-base"
+                className="w-full bg-emerald hover:bg-emerald-light text-primary-foreground text-base"
                 disabled={!isFormValid() || isSubmitting}
               >
                 {isSubmitting ? (
@@ -329,7 +329,7 @@ const Contact = () => {
       </section>
 
       {/* Join Our Team */}
-      <section className="py-16 bg-secondary/50">
+      <section className="py-16 bg-ivory">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-heading font-bold text-foreground mb-4">
@@ -340,7 +340,7 @@ const Contact = () => {
             </p>
             <a
               href="mailto:info@yashtech.com"
-              className="inline-flex items-center gap-2 text-lg font-medium text-primary hover:text-accent transition-colors"
+              className="inline-flex items-center gap-2 text-lg font-medium text-emerald hover:text-champagne transition-colors"
             >
               <Mail className="w-5 h-5" />
               info@yashtech.com
