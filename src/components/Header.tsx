@@ -62,7 +62,7 @@ const Dropdown = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
   return <div className="relative" ref={dropdownRef}>
-      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
         {label}
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
@@ -104,7 +104,7 @@ const ExpertiseDropdown = ({
     navigate("/contact#contact-form");
   };
   return <div className="relative" ref={dropdownRef}>
-      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
         Areas of Expertise
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
@@ -140,7 +140,7 @@ export const Header = () => {
       setSearchOpen(false);
     }
   };
-  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-emerald-dark border-b border-emerald/20">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
@@ -154,7 +154,7 @@ export const Header = () => {
             <div className="hidden sm:block">
               <span className="font-heading font-bold text-xl bg-gradient-to-r from-emerald via-teal-600 to-emerald-dark bg-clip-text text-transparent">YASH</span>
               <span className="font-heading font-bold text-xl bg-gradient-to-r from-gold via-amber-500 to-gold-light bg-clip-text text-transparent ml-1">TECH</span>
-              <p className="text-[10px] -mt-1 text-emerald-700">Next-Gen Talent Partner</p>
+              <p className="text-[10px] -mt-1 text-emerald-200">Next-Gen Talent Partner</p>
             </div>
           </Link>
 
@@ -163,7 +163,7 @@ export const Header = () => {
             <Dropdown label="Hire Talent" items={hireTalentItems} />
             <Dropdown label="For Job Seekers" items={jobSeekerItems} />
             <ExpertiseDropdown />
-            <Link to="/#who-we-are" className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <Link to="/#who-we-are" className="px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
               Who We Are
             </Link>
             <Dropdown label="Contact Us" items={contactItems} />
@@ -173,7 +173,7 @@ export const Header = () => {
           <div className="flex items-center gap-2">
             {/* Search */}
             <div className="relative">
-              <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 text-muted-foreground hover:text-primary transition-colors">
+              <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 text-white/70 hover:text-gold transition-colors">
                 <Search className="w-5 h-5" />
               </button>
               {searchOpen && <form onSubmit={handleSearch} className="absolute top-full right-0 mt-2 w-72 bg-card rounded-lg shadow-lg border border-border p-3 z-50 animate-slide-down">
@@ -189,7 +189,7 @@ export const Header = () => {
             </Link>
 
             {/* Mobile Menu Toggle */}
-            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 text-foreground">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-2 text-white">
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -197,7 +197,7 @@ export const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && <div className="lg:hidden bg-background border-t border-border animate-slide-down">
+      {mobileMenuOpen && <div className="lg:hidden bg-emerald-dark border-t border-emerald/20 animate-slide-down">
           <div className="container mx-auto px-4 py-4 space-y-4">
             <Dropdown label="Hire Talent" items={hireTalentItems} onItemClick={closeMobileMenu} />
             <Dropdown label="For Job Seekers" items={jobSeekerItems} onItemClick={closeMobileMenu} />
