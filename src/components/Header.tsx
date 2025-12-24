@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X, Search, Zap } from "lucide-react";
+import { ChevronDown, Menu, X, Search, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const hireTalentItems = [{
   label: "Staffing Solutions",
@@ -155,7 +155,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 relative flex items-center justify-center bg-gradient-to-br from-gold via-amber-400 to-gold-light rounded-lg shadow-lg group-hover:shadow-gold/30 transition-all duration-300 group-hover:scale-105">
-              <Zap className="w-6 h-6 text-emerald-dark fill-emerald-dark" />
+              <Target className="w-5 h-5 text-emerald-dark" />
             </div>
             <div className="hidden sm:flex flex-col">
               <div className="flex items-baseline">
