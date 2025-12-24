@@ -155,7 +155,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 relative flex items-center justify-center bg-gradient-to-br from-gold via-amber-400 to-gold-light rounded-lg shadow-lg group-hover:shadow-gold/30 transition-all duration-300 group-hover:scale-105">
-              <Target className="w-5 h-5 text-emerald-dark" />
+              <Target className="w-5 h-5 text-emerald-dark transition-transform duration-500 group-hover:rotate-180" />
             </div>
             <div className="hidden sm:flex flex-col">
               <div className="flex items-baseline">
