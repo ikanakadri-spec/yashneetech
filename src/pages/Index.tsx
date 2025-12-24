@@ -2,106 +2,94 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { 
-  Users, 
-  Brain, 
-  Globe, 
-  Briefcase, 
-  Rocket, 
-  Building2,
-  ArrowRight,
-  Clock,
-  TrendingUp,
-  Shield,
-  Target,
-  MessageSquare,
-  Award,
-  DollarSign,
-  ChevronRight,
-  Sparkles,
-  Zap,
-  Star
-} from "lucide-react";
+import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Clock, TrendingUp, Shield, Target, MessageSquare, Award, DollarSign, ChevronRight, Sparkles, Zap, Star } from "lucide-react";
 import officeHero from "@/assets/office-hero.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
 import officeWorkspace from "@/assets/office-workspace.jpg";
 import officeExecutive from "@/assets/office-executive.jpg";
-
-const services = [
-  {
-    icon: Users,
-    title: "Staffing Solutions",
-    description: "Flexible workforce solutions tailored to your unique business needs and timelines."
-  },
-  {
-    icon: Brain,
-    title: "AI Talent Sourcing",
-    description: "Leverage cutting-edge AI technology to identify and attract the best candidates."
-  },
-  {
-    icon: Globe,
-    title: "Global Recruitment",
-    description: "Access talent from around the world with our extensive international network."
-  },
-  {
-    icon: Briefcase,
-    title: "Executive Recruiting",
-    description: "Find C-suite and senior leadership talent to drive your organization forward."
-  },
-  {
-    icon: Rocket,
-    title: "Start-up Staffing",
-    description: "End-to-end recruitment solutions designed for fast-growing startups."
-  },
-  {
-    icon: Building2,
-    title: "RPO Services",
-    description: "Outsource your entire recruitment process for maximum efficiency and cost savings."
-  }
-];
-
-const clientBenefits = [
-  { icon: Clock, text: "Faster Hiring: Cut time-to-fill by 50% with pre-screened, qualified candidates" },
-  { icon: Target, text: "Quality Matches: Higher retention through skill and culture alignment" },
-  { icon: TrendingUp, text: "Scalable Solutions: Single hires to entire team builds" },
-  { icon: Shield, text: "Market Intelligence: Real-time insights on compensation, availability, trends" }
-];
-
-const candidateBenefits = [
-  { icon: Award, text: "Career Advancement: Exclusive opportunities with leading companies" },
-  { icon: MessageSquare, text: "Transparent Process: Clear communication & honest feedback" },
-  { icon: Users, text: "Long-term Partnership: Ongoing career guidance beyond placement" },
-  { icon: DollarSign, text: "Better Compensation: Competitive packages with market knowledge" }
-];
-
-const missionCards = [
-  {
-    title: "Impacting Businesses",
-    image: officeMeeting,
-    description: "Helping organizations build winning teams that drive growth and innovation."
-  },
-  {
-    title: "Changing Lives",
-    image: officeWorkspace,
-    description: "Connecting talented professionals with opportunities that transform their careers."
-  },
-  {
-    title: "Transforming Careers",
-    image: officeExecutive,
-    description: "Empowering individuals to reach their full potential through meaningful work."
-  }
-];
-
-const stats = [
-  { number: "500+", label: "Placements", icon: Users },
-  { number: "98%", label: "Success Rate", icon: Target },
-  { number: "50+", label: "Industries", icon: Globe },
-  { number: "24/7", label: "Support", icon: Zap }
-];
-
+const services = [{
+  icon: Users,
+  title: "Staffing Solutions",
+  description: "Flexible workforce solutions tailored to your unique business needs and timelines."
+}, {
+  icon: Brain,
+  title: "AI Talent Sourcing",
+  description: "Leverage cutting-edge AI technology to identify and attract the best candidates."
+}, {
+  icon: Globe,
+  title: "Global Recruitment",
+  description: "Access talent from around the world with our extensive international network."
+}, {
+  icon: Briefcase,
+  title: "Executive Recruiting",
+  description: "Find C-suite and senior leadership talent to drive your organization forward."
+}, {
+  icon: Rocket,
+  title: "Start-up Staffing",
+  description: "End-to-end recruitment solutions designed for fast-growing startups."
+}, {
+  icon: Building2,
+  title: "RPO Services",
+  description: "Outsource your entire recruitment process for maximum efficiency and cost savings."
+}];
+const clientBenefits = [{
+  icon: Clock,
+  text: "Faster Hiring: Cut time-to-fill by 50% with pre-screened, qualified candidates"
+}, {
+  icon: Target,
+  text: "Quality Matches: Higher retention through skill and culture alignment"
+}, {
+  icon: TrendingUp,
+  text: "Scalable Solutions: Single hires to entire team builds"
+}, {
+  icon: Shield,
+  text: "Market Intelligence: Real-time insights on compensation, availability, trends"
+}];
+const candidateBenefits = [{
+  icon: Award,
+  text: "Career Advancement: Exclusive opportunities with leading companies"
+}, {
+  icon: MessageSquare,
+  text: "Transparent Process: Clear communication & honest feedback"
+}, {
+  icon: Users,
+  text: "Long-term Partnership: Ongoing career guidance beyond placement"
+}, {
+  icon: DollarSign,
+  text: "Better Compensation: Competitive packages with market knowledge"
+}];
+const missionCards = [{
+  title: "Impacting Businesses",
+  image: officeMeeting,
+  description: "Helping organizations build winning teams that drive growth and innovation."
+}, {
+  title: "Changing Lives",
+  image: officeWorkspace,
+  description: "Connecting talented professionals with opportunities that transform their careers."
+}, {
+  title: "Transforming Careers",
+  image: officeExecutive,
+  description: "Empowering individuals to reach their full potential through meaningful work."
+}];
+const stats = [{
+  number: "500+",
+  label: "Placements",
+  icon: Users
+}, {
+  number: "98%",
+  label: "Success Rate",
+  icon: Target
+}, {
+  number: "50+",
+  label: "Industries",
+  icon: Globe
+}, {
+  number: "24/7",
+  label: "Support",
+  icon: Zap
+}];
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+  return <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
 
       {/* Hero Section */}
@@ -109,28 +97,28 @@ const Index = () => {
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-champagne/30 to-champagne-light/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-emerald/20 to-emerald-light/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-br from-champagne/20 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+          <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-emerald/20 to-emerald-light/10 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '2s'
+        }} />
+          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-br from-champagne/20 to-transparent rounded-full blur-3xl animate-float" style={{
+          animationDelay: '4s'
+        }} />
         </div>
 
         <div className="absolute inset-0">
-          <img 
-            src={officeHero} 
-            alt="Modern corporate office space" 
-            className="w-full h-full object-cover"
-          />
+          <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/90 via-emerald/70 to-emerald/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/50 via-transparent to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-champagne/20 border border-champagne/30 mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
-              <Sparkles className="w-4 h-4 text-champagne" />
-              <span className="text-champagne text-sm font-medium">Next-Gen Talent Partner</span>
-            </div>
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground leading-[1.1] opacity-0 animate-fade-up" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 text-primary-foreground leading-[1.1] opacity-0 animate-fade-up" style={{
+            animationDelay: '200ms',
+            animationFillMode: 'forwards'
+          }}>
               Find Your{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 text-champagne">Perfect</span>
@@ -140,11 +128,17 @@ const Index = () => {
               <span className="text-primary-foreground/90">Talent Match</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+            <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up" style={{
+            animationDelay: '400ms',
+            animationFillMode: 'forwards'
+          }}>
               AI-powered precision meets human expertise. We connect exceptional talent with exceptional opportunities.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up" style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>
+            <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up" style={{
+            animationDelay: '600ms',
+            animationFillMode: 'forwards'
+          }}>
               <Link to="/contact">
                 <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-champagne/25 transition-all duration-500 hover:scale-105">
                   Get Started
@@ -159,23 +153,24 @@ const Index = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-0 animate-fade-up" style={{ animationDelay: '800ms', animationFillMode: 'forwards' }}>
-              {stats.map((stat, index) => (
-                <div 
-                  key={stat.label} 
-                  className="text-center p-4 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-500"
-                >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-0 animate-fade-up" style={{
+            animationDelay: '800ms',
+            animationFillMode: 'forwards'
+          }}>
+              {stats.map((stat, index) => <div key={stat.label} className="text-center p-4 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-500">
                   <stat.icon className="w-6 h-6 text-champagne mx-auto mb-2" />
                   <div className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-1">{stat.number}</div>
                   <div className="text-sm text-primary-foreground/60">{stat.label}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up" style={{ animationDelay: '1000ms', animationFillMode: 'forwards' }}>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up" style={{
+        animationDelay: '1000ms',
+        animationFillMode: 'forwards'
+      }}>
           <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-1.5">
             <div className="w-1.5 h-3 bg-champagne rounded-full animate-bounce-subtle" />
           </div>
@@ -205,12 +200,9 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <div 
-                key={service.title}
-                className="group relative p-8 rounded-2xl bg-card border border-border hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card border border-border hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/5 via-transparent to-emerald/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
@@ -225,8 +217,7 @@ const Index = () => {
                     Learn more <ChevronRight className="w-4 h-4 ml-1" />
                   </div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -234,8 +225,12 @@ const Index = () => {
       {/* Who We Are Section */}
       <section id="who-we-are" className="py-32 bg-gradient-to-b from-ivory to-background relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-champagne/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-40 right-20 w-32 h-32 border-2 border-emerald/20 rounded-full animate-float" style={{ animationDelay: '3s' }} />
+        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-champagne/20 rounded-full animate-float" style={{
+        animationDelay: '1s'
+      }} />
+        <div className="absolute bottom-40 right-20 w-32 h-32 border-2 border-emerald/20 rounded-full animate-float" style={{
+        animationDelay: '3s'
+      }} />
         
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-20">
@@ -266,14 +261,12 @@ const Index = () => {
                 <h3 className="text-2xl font-heading font-bold text-foreground">For Our Clients</h3>
               </div>
               <ul className="space-y-5">
-                {clientBenefits.map((benefit, index) => (
-                  <li key={benefit.text} className="flex items-start gap-4 group/item">
+                {clientBenefits.map((benefit, index) => <li key={benefit.text} className="flex items-start gap-4 group/item">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne/20 to-champagne/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
                       <benefit.icon className="w-5 h-5 text-champagne" />
                     </div>
                     <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
 
@@ -286,14 +279,12 @@ const Index = () => {
                 <h3 className="text-2xl font-heading font-bold text-foreground">For Our Candidates</h3>
               </div>
               <ul className="space-y-5">
-                {candidateBenefits.map((benefit, index) => (
-                  <li key={benefit.text} className="flex items-start gap-4 group/item">
+                {candidateBenefits.map((benefit, index) => <li key={benefit.text} className="flex items-start gap-4 group/item">
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald/20 to-emerald/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
                       <benefit.icon className="w-5 h-5 text-emerald" />
                     </div>
                     <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
-                  </li>
-                ))}
+                  </li>)}
               </ul>
             </div>
           </div>
@@ -321,16 +312,8 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {missionCards.map((card, index) => (
-              <div 
-                key={card.title}
-                className="group relative h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700"
-              >
-                <img 
-                  src={card.image} 
-                  alt={card.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
+            {missionCards.map((card, index) => <div key={card.title} className="group relative h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700">
+                <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
                 
                 {/* Content */}
@@ -350,8 +333,7 @@ const Index = () => {
 
                 {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-champagne/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -364,9 +346,13 @@ const Index = () => {
         {/* Decorative shapes */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -right-20 w-80 h-80 bg-champagne/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '3s'
+        }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary-foreground/10 rounded-full animate-rotate-slow" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary-foreground/5 rounded-full animate-rotate-slow" style={{ animationDirection: 'reverse' }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary-foreground/5 rounded-full animate-rotate-slow" style={{
+          animationDirection: 'reverse'
+        }} />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -405,8 +391,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
