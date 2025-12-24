@@ -107,8 +107,8 @@ const Index = () => {
 
         <div className="absolute inset-0">
           <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/90 via-emerald/70 to-emerald/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/70 via-emerald/50 to-emerald/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/40 via-transparent to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -157,7 +157,7 @@ const Index = () => {
             animationDelay: '800ms',
             animationFillMode: 'forwards'
           }}>
-              {stats.map((stat, index) => <div key={stat.label} className="text-center p-4 rounded-xl bg-primary-foreground/5 backdrop-blur-sm border border-primary-foreground/10 hover:bg-primary-foreground/10 transition-all duration-500">
+              {stats.map((stat, index) => <div key={stat.label} className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-500">
                   <stat.icon className="w-6 h-6 text-champagne mx-auto mb-2" />
                   <div className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-1">{stat.number}</div>
                   <div className="text-sm text-primary-foreground/60">{stat.label}</div>
@@ -178,9 +178,9 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 bg-background relative overflow-hidden">
+      <section id="services" className="py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/50 to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/30 to-transparent pointer-events-none" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -200,7 +200,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card border border-border hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card/70 backdrop-blur-sm border border-border/50 hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 {/* Gradient overlay on hover */}
@@ -253,7 +253,7 @@ const Index = () => {
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* For Clients */}
-            <div className="group p-10 rounded-3xl bg-card border border-border shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center shadow-lg">
                   <Building2 className="w-7 h-7 text-primary-foreground" />
@@ -271,7 +271,7 @@ const Index = () => {
             </div>
 
             {/* For Candidates */}
-            <div className="group p-10 rounded-3xl bg-card border border-border shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center shadow-lg">
                   <Users className="w-7 h-7 text-emerald-dark" />
@@ -292,8 +292,8 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-32 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald/5 via-transparent to-transparent" />
+      <section id="mission" className="py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald/5 via-transparent to-transparent opacity-70" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-20">
