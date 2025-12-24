@@ -363,9 +363,9 @@ const Index = () => {
             </div>
             
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-8 leading-tight">
-              Find Your{" "}
-              <span className="text-champagne">Perfect</span>
-              <br />Match Today
+              Build Your{" "}
+              <span className="text-champagne">Dream Team</span>
+              <br />With Us
             </h2>
             
             <p className="text-primary-foreground/80 text-xl mb-12 max-w-2xl mx-auto">
