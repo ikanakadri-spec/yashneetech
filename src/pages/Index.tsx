@@ -103,7 +103,7 @@ const Index = () => {
             alt="Modern corporate office space" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald via-emerald/95 to-emerald/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/80 via-emerald/60 to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
