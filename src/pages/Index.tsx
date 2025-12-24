@@ -103,24 +103,24 @@ const Index = () => {
             alt="Modern corporate office space" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald via-emerald/95 to-emerald/70" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <p className="text-primary font-medium mb-4 animate-fade-up opacity-0" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
+            <p className="text-champagne font-medium mb-4 animate-fade-up opacity-0" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
               Welcome to YASH TECH
             </p>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 text-primary-foreground leading-tight animate-fade-up opacity-0" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
               Your Partner in Finding{" "}
-              <span className="gradient-text">Top Talent</span>
+              <span className="text-champagne">Top Talent</span>
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 leading-relaxed animate-fade-up opacity-0" style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}>
               We connect exceptional talent with exceptional opportunities. Experience recruitment reimagined with AI-powered precision and human expertise.
             </p>
             <div className="flex flex-wrap gap-4 animate-fade-up opacity-0" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
               <Link to="/contact">
-                <Button size="lg" className="gradient-primary text-primary-foreground text-base px-8">
+                <Button size="lg" className="bg-champagne text-emerald hover:bg-champagne-light text-base px-8 font-semibold">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
@@ -139,7 +139,7 @@ const Index = () => {
       <section id="services" className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-primary font-medium mb-4">Our Services</p>
+            <p className="text-champagne font-semibold mb-4 tracking-wide uppercase text-sm">Our Services</p>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
               Comprehensive Recruitment Solutions
             </h2>
@@ -152,10 +152,10 @@ const Index = () => {
             {services.map((service, index) => (
               <div 
                 key={service.title}
-                className="group p-8 rounded-xl bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group p-8 rounded-xl bg-card border border-border hover:border-champagne/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-14 h-14 gradient-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-7 h-7 text-primary-foreground" />
+                <div className="w-14 h-14 bg-emerald rounded-xl flex items-center justify-center mb-6 group-hover:bg-champagne group-hover:scale-110 transition-all duration-300">
+                  <service.icon className="w-7 h-7 text-primary-foreground group-hover:text-emerald" />
                 </div>
                 <h3 className="text-xl font-heading font-semibold text-foreground mb-3">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
@@ -166,10 +166,10 @@ const Index = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are" className="py-24 bg-secondary/50">
+      <section id="who-we-are" className="py-24 bg-ivory">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <p className="text-primary font-medium mb-4">Who We Are</p>
+            <p className="text-champagne font-semibold mb-4 tracking-wide uppercase text-sm">Who We Are</p>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-8">
               Your Partner for Talent
             </h2>
@@ -180,9 +180,9 @@ const Index = () => {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* For Clients */}
-            <div className="p-8 rounded-2xl bg-card border border-border">
+            <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
               <h3 className="text-2xl font-heading font-semibold text-foreground mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-emerald rounded-lg flex items-center justify-center">
                   <Building2 className="w-5 h-5 text-primary-foreground" />
                 </div>
                 For Our Clients
@@ -190,8 +190,8 @@ const Index = () => {
               <ul className="space-y-4">
                 {clientBenefits.map((benefit) => (
                   <li key={benefit.text} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <benefit.icon className="w-4 h-4 text-primary" />
+                    <div className="w-6 h-6 rounded-full bg-champagne/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <benefit.icon className="w-4 h-4 text-champagne" />
                     </div>
                     <span className="text-muted-foreground">{benefit.text}</span>
                   </li>
@@ -200,9 +200,9 @@ const Index = () => {
             </div>
 
             {/* For Candidates */}
-            <div className="p-8 rounded-2xl bg-card border border-border">
+            <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
               <h3 className="text-2xl font-heading font-semibold text-foreground mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 gradient-primary rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-emerald rounded-lg flex items-center justify-center">
                   <Users className="w-5 h-5 text-primary-foreground" />
                 </div>
                 For Our Candidates
@@ -210,8 +210,8 @@ const Index = () => {
               <ul className="space-y-4">
                 {candidateBenefits.map((benefit) => (
                   <li key={benefit.text} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <benefit.icon className="w-4 h-4 text-primary" />
+                    <div className="w-6 h-6 rounded-full bg-champagne/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <benefit.icon className="w-4 h-4 text-champagne" />
                     </div>
                     <span className="text-muted-foreground">{benefit.text}</span>
                   </li>
@@ -226,7 +226,7 @@ const Index = () => {
       <section id="mission" className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-primary font-medium mb-4">Our Mission</p>
+            <p className="text-champagne font-semibold mb-4 tracking-wide uppercase text-sm">Our Mission</p>
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
               Making Meaningful Connections
             </h2>
@@ -246,7 +246,7 @@ const Index = () => {
                   alt={card.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-emerald via-emerald/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-xl font-heading font-semibold text-primary-foreground mb-2">
                     {card.title}
@@ -262,7 +262,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 gradient-hero">
+      <section className="py-24 bg-emerald">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">
@@ -273,7 +273,7 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/contact">
-                <Button size="lg" className="bg-primary-foreground text-navy hover:bg-primary-foreground/90 text-base px-8">
+                <Button size="lg" className="bg-champagne text-emerald hover:bg-champagne-light text-base px-8 font-semibold">
                   I'm an Employer
                   <ChevronRight className="ml-2 w-5 h-5" />
                 </Button>
