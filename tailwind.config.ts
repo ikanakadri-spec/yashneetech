@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Outfit', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -22,6 +22,7 @@ export default {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        "background-secondary": "hsl(var(--background-secondary))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -52,11 +53,13 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         navy: {
-          deep: "hsl(var(--navy-deep))",
+          DEFAULT: "hsl(var(--navy))",
           light: "hsl(var(--navy-light))",
         },
-        electric: "hsl(var(--electric-blue))",
-        cyan: "hsl(var(--cyan-glow))",
+        royal: "hsl(var(--royal-blue))",
+        sky: "hsl(var(--sky-blue))",
+        ice: "hsl(var(--ice-blue))",
+        gold: "hsl(var(--gold))",
       },
       borderRadius: {
         lg: "var(--radius)",
