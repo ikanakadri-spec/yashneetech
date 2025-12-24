@@ -13,8 +13,8 @@ const hireTalentItems = [
 ];
 
 const jobSeekerItems = [
-  { label: "Find a Job", href: "https://www.thelasallenetwork.com/submit/", external: true },
-  { label: "Submit Your Resume", href: "https://www.thelasallenetwork.com/submit/", external: true },
+  { label: "Find a Job", href: "/contact#contact-form" },
+  { label: "Submit Your Resume", href: "/contact#contact-form" },
 ];
 
 const expertiseItems = [
