@@ -61,23 +61,38 @@ const Dropdown = ({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const itemClasses = "relative block px-4 py-3 text-sm text-foreground transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/20 before:to-emerald/5 before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
+
   return <div className="relative" ref={dropdownRef}>
       <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
         {label}
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      {isOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-card rounded-lg shadow-lg border border-border py-2 z-50 animate-slide-down">
-          {items.map(item => item.external ? <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors" onClick={() => {
-        setIsOpen(false);
-        onItemClick?.();
-      }}>
-                {item.label}
-              </a> : <Link key={item.label} to={item.href} className="block px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors" onClick={() => {
-        setIsOpen(false);
-        onItemClick?.();
-      }}>
-                {item.label}
-              </Link>)}
+      {isOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-emerald-dark/95 backdrop-blur-md rounded-lg shadow-xl border border-emerald/30 py-1 z-50 animate-slide-down">
+          {items.map((item, index) => item.external ? <a 
+            key={item.label} 
+            href={item.href} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className={itemClasses}
+            style={{ animationDelay: `${index * 50}ms` }}
+            onClick={() => {
+              setIsOpen(false);
+              onItemClick?.();
+            }}>
+              <span className="relative z-10">{item.label}</span>
+            </a> : <Link 
+            key={item.label} 
+            to={item.href} 
+            className={itemClasses}
+            style={{ animationDelay: `${index * 50}ms` }}
+            onClick={() => {
+              setIsOpen(false);
+              onItemClick?.();
+            }}>
+              <span className="relative z-10">{item.label}</span>
+            </Link>)}
         </div>}
     </div>;
 };
@@ -103,14 +118,21 @@ const ExpertiseDropdown = ({
     onItemClick?.();
     navigate("/contact#contact-form");
   };
+
+  const itemClasses = "relative block w-full text-left px-4 py-3 text-sm text-foreground transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/20 before:to-emerald/5 before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
+
   return <div className="relative" ref={dropdownRef}>
       <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
         Areas of Expertise
-        <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      {isOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-card rounded-lg shadow-lg border border-border py-2 z-50 animate-slide-down">
-          {expertiseItems.map(item => <button key={item} onClick={() => handleExpertiseClick(item)} className="block w-full text-left px-4 py-2.5 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors">
-              {item}
+      {isOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-emerald-dark/95 backdrop-blur-md rounded-lg shadow-xl border border-emerald/30 py-1 z-50 animate-slide-down">
+          {expertiseItems.map((item, index) => <button 
+            key={item} 
+            onClick={() => handleExpertiseClick(item)} 
+            className={itemClasses}
+            style={{ animationDelay: `${index * 50}ms` }}>
+              <span className="relative z-10">{item}</span>
             </button>)}
         </div>}
     </div>;
