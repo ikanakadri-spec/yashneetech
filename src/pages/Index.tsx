@@ -107,8 +107,8 @@ const Index = () => {
 
         <div className="absolute inset-0">
           <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/70 via-emerald/50 to-emerald/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/40 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/50 via-emerald/30 to-emerald/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/30 via-transparent to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
