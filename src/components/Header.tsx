@@ -62,14 +62,14 @@ const Dropdown = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const itemClasses = "relative block px-4 py-3 text-sm text-foreground transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/20 before:to-emerald/5 before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
+  const itemClasses = "relative block px-4 py-3 text-sm text-emerald-dark transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/15 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
 
   return <div className="relative" ref={dropdownRef}>
       <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
         {label}
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      {isOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-emerald-dark/95 backdrop-blur-md rounded-lg shadow-xl border border-emerald/30 py-1 z-50 animate-slide-down">
+      {isOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border py-1 z-50 animate-slide-down">
           {items.map((item, index) => item.external ? <a 
             key={item.label} 
             href={item.href} 
@@ -119,14 +119,14 @@ const ExpertiseDropdown = ({
     navigate("/contact#contact-form");
   };
 
-  const itemClasses = "relative block w-full text-left px-4 py-3 text-sm text-foreground transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/20 before:to-emerald/5 before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
+  const itemClasses = "relative block w-full text-left px-4 py-3 text-sm text-emerald-dark transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/15 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
 
   return <div className="relative" ref={dropdownRef}>
       <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-white/90 hover:text-gold transition-colors">
         Areas of Expertise
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      {isOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-emerald-dark/95 backdrop-blur-md rounded-lg shadow-xl border border-emerald/30 py-1 z-50 animate-slide-down">
+      {isOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-border py-1 z-50 animate-slide-down">
           {expertiseItems.map((item, index) => <button 
             key={item} 
             onClick={() => handleExpertiseClick(item)} 
