@@ -115,19 +115,16 @@ const Index = () => {
           <div className="max-w-4xl">
             
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-[1.1] opacity-0 animate-fade-up" style={{
-            animationDelay: '200ms',
-            animationFillMode: 'forwards'
-          }}>
-              <span className="bg-gradient-to-r from-primary-foreground via-champagne to-primary-foreground bg-[length:200%_auto] animate-text-shimmer bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-[1.1]">
+              <span className="inline-block text-primary-foreground opacity-0 animate-fade-up" style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}>
                 Find Your{" "}
               </span>
-              <span className="relative inline-block">
-                <span className="relative z-10 bg-gradient-to-r from-champagne via-champagne-light to-champagne bg-[length:200%_auto] animate-text-shimmer bg-clip-text text-transparent">Perfect</span>
-                <span className="absolute -bottom-2 left-0 w-full h-3 bg-champagne/30 -skew-x-12" />
+              <span className="relative inline-block opacity-0 animate-fade-up" style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}>
+                <span className="relative z-10 text-champagne">Perfect</span>
+                <span className="absolute -bottom-2 left-0 w-full h-3 bg-champagne/30 -skew-x-12 origin-left animate-[scaleX_0.6s_ease-out_0.6s_forwards] scale-x-0" />
               </span>
               <br />
-              <span className="bg-gradient-to-r from-primary-foreground/90 via-champagne/80 to-primary-foreground/90 bg-[length:200%_auto] animate-text-shimmer bg-clip-text text-transparent">Talent Match</span>
+              <span className="inline-block text-primary-foreground/90 opacity-0 animate-fade-up" style={{ animationDelay: '600ms', animationFillMode: 'forwards' }}>Talent Match</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up" style={{
