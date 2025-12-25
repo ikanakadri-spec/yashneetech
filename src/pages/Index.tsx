@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { FloatingParticles } from "@/components/FloatingParticles";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Clock, TrendingUp, Shield, Target, MessageSquare, Award, DollarSign, ChevronRight, Sparkles, Zap, Star } from "lucide-react";
 import officeHero from "@/assets/office-hero.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
@@ -95,9 +94,6 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        {/* Floating particles */}
-        <FloatingParticles />
-        
         {/* Animated background shapes */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-champagne/30 to-champagne-light/20 rounded-full blur-3xl animate-float-slow" />
