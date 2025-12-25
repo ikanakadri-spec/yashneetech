@@ -252,7 +252,7 @@ const Index = () => {
             <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-8">
               Your Strategic{" "}
               <span className="relative inline-block">
-                <span className="relative z-10 text-emerald">Partner</span>
+                <span className="relative z-10 gradient-text-animated">Partner</span>
                 <span className="absolute -bottom-2 left-0 w-full h-3 bg-emerald/20 -skew-x-12" />
               </span>
               {" "}for Talent
