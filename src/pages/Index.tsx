@@ -127,7 +127,7 @@ const Index = () => {
               </span>
               <span className="relative inline-block overflow-hidden">
                 <span className="inline-block opacity-0 animate-reveal-text" style={{ animationDelay: '500ms' }}>
-                  <span className="relative z-10 text-champagne animate-glow-pulse">Perfect</span>
+                  <span className="relative z-10 gradient-text-animated">Perfect</span>
                 </span>
                 <span className="absolute -bottom-2 left-0 w-full h-3 bg-champagne/30 -skew-x-12 origin-left animate-[scaleX_0.5s_ease-out_0.9s_forwards] scale-x-0" />
               </span>
