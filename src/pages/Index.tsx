@@ -153,14 +153,14 @@ const Index = () => {
             </div>
 
             {/* Stats Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-0 animate-fade-up" style={{
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 opacity-0 animate-fade-up perspective-container" style={{
             animationDelay: '800ms',
             animationFillMode: 'forwards'
           }}>
-              {stats.map((stat, index) => <div key={stat.label} className="text-center p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 transition-all duration-500">
-                  <stat.icon className="w-6 h-6 text-champagne mx-auto mb-2" />
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-1">{stat.number}</div>
-                  <div className="text-sm text-primary-foreground/60">{stat.label}</div>
+              {stats.map((stat, index) => <div key={stat.label} className="group text-center p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all duration-500 transform-3d hover:scale-110 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/20 cursor-pointer" style={{ animationDelay: `${index * 100}ms` }}>
+                  <stat.icon className="w-6 h-6 text-champagne mx-auto mb-2 group-hover:scale-125 group-hover:rotate-12 transition-transform duration-500" />
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-1 group-hover:scale-105 transition-transform duration-300">{stat.number}</div>
+                  <div className="text-sm text-primary-foreground/60 group-hover:text-champagne transition-colors duration-300">{stat.label}</div>
                 </div>)}
             </div>
           </div>
@@ -199,22 +199,27 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card/70 backdrop-blur-sm border border-border/50 hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-container">
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card/70 backdrop-blur-sm border border-border/50 hover:border-champagne/50 transition-all duration-700 transform-3d hover:-translate-y-4 hover:rotate-1 hover:scale-[1.02] hover:shadow-2xl hover:shadow-champagne/20 cursor-pointer" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/5 via-transparent to-emerald/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/10 via-transparent to-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                {/* Shimmer effect on hover */}
+                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                </div>
                 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald/20 transition-all duration-500">
-                    <service.icon className="w-8 h-8 text-primary-foreground" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 group-hover:shadow-lg group-hover:shadow-emerald/30 transition-all duration-500">
+                    <service.icon className="w-8 h-8 text-primary-foreground group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald group-hover:translate-x-1 transition-all duration-300">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed group-hover:text-foreground/80 transition-colors duration-300">{service.description}</p>
                   
-                  <div className="mt-6 flex items-center text-champagne font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                    Learn more <ChevronRight className="w-4 h-4 ml-1" />
+                  <div className="mt-6 flex items-center text-champagne font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
+                    Learn more <ChevronRight className="w-4 h-4 ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                   </div>
                 </div>
               </div>)}
@@ -251,39 +256,39 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="grid lg:grid-cols-2 gap-8 perspective-container">
             {/* For Clients */}
-            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-emerald/20 transition-all duration-700 transform-3d hover:-translate-y-3 hover:rotate-1 hover:scale-[1.02] cursor-pointer">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                   <Building2 className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-foreground">For Our Clients</h3>
+                <h3 className="text-2xl font-heading font-bold text-foreground group-hover:text-emerald transition-colors duration-300">For Our Clients</h3>
               </div>
               <ul className="space-y-5">
-                {clientBenefits.map((benefit, index) => <li key={benefit.text} className="flex items-start gap-4 group/item">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne/20 to-champagne/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                {clientBenefits.map((benefit, index) => <li key={benefit.text} className="flex items-start gap-4 group/item hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${index * 50}ms` }}>
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne/20 to-champagne/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-125 group-hover/item:rotate-12 group-hover/item:shadow-lg group-hover/item:shadow-champagne/30 transition-all duration-300">
                       <benefit.icon className="w-5 h-5 text-champagne" />
                     </div>
-                    <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
+                    <span className="text-muted-foreground leading-relaxed pt-2 group-hover/item:text-foreground transition-colors duration-300">{benefit.text}</span>
                   </li>)}
               </ul>
             </div>
 
             {/* For Candidates */}
-            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-champagne/20 transition-all duration-700 transform-3d hover:-translate-y-3 hover:-rotate-1 hover:scale-[1.02] cursor-pointer">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500">
                   <Users className="w-7 h-7 text-emerald-dark" />
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-foreground">For Our Candidates</h3>
+                <h3 className="text-2xl font-heading font-bold text-foreground group-hover:text-champagne transition-colors duration-300">For Our Candidates</h3>
               </div>
               <ul className="space-y-5">
-                {candidateBenefits.map((benefit, index) => <li key={benefit.text} className="flex items-start gap-4 group/item">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald/20 to-emerald/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                {candidateBenefits.map((benefit, index) => <li key={benefit.text} className="flex items-start gap-4 group/item hover:translate-x-2 transition-transform duration-300" style={{ transitionDelay: `${index * 50}ms` }}>
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald/20 to-emerald/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-125 group-hover/item:-rotate-12 group-hover/item:shadow-lg group-hover/item:shadow-emerald/30 transition-all duration-300">
                       <benefit.icon className="w-5 h-5 text-emerald" />
                     </div>
-                    <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
+                    <span className="text-muted-foreground leading-relaxed pt-2 group-hover/item:text-foreground transition-colors duration-300">{benefit.text}</span>
                   </li>)}
               </ul>
             </div>
@@ -311,28 +316,33 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {missionCards.map((card, index) => <div key={card.title} className="group relative h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700">
-                <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+          <div className="grid md:grid-cols-3 gap-8 perspective-container">
+            {missionCards.map((card, index) => <div key={card.title} className="group relative h-[450px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform-3d hover:scale-105 hover:-rotate-1 cursor-pointer" style={{ transformOrigin: index === 0 ? 'right center' : index === 2 ? 'left center' : 'center' }}>
+                <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-all duration-700 group-hover:scale-125 group-hover:rotate-3" />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
+                
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 overflow-hidden">
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 delay-200 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                </div>
                 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                    <div className="w-12 h-12 bg-champagne/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-champagne/30">
-                      <Sparkles className="w-6 h-6 text-champagne" />
+                  <div className="transform transition-all duration-500 group-hover:-translate-y-4">
+                    <div className="w-12 h-12 bg-champagne/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-champagne/30 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-champagne/40 transition-all duration-500">
+                      <Sparkles className="w-6 h-6 text-champagne group-hover:animate-pulse" />
                     </div>
-                    <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-3">
+                    <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-3 group-hover:translate-x-2 transition-transform duration-300">
                       {card.title}
                     </h3>
-                    <p className="text-primary-foreground/80 leading-relaxed">
+                    <p className="text-primary-foreground/80 leading-relaxed group-hover:text-primary-foreground transition-colors duration-300">
                       {card.description}
                     </p>
                   </div>
                 </div>
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-champagne/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                {/* Hover overlay with gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-champagne/30 via-champagne/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>)}
           </div>
         </div>
@@ -372,17 +382,17 @@ const Index = () => {
               Whether you're looking to hire top talent or find your next career opportunity, we're here to help make it happen.
             </p>
             
-            <div className="flex flex-wrap justify-center gap-6">
-              <Link to="/contact">
-                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-12 py-8 font-bold shadow-2xl hover:shadow-champagne/30 transition-all duration-500 hover:scale-105">
+            <div className="flex flex-wrap justify-center gap-6 perspective-container">
+              <Link to="/contact" className="transform-3d hover:-rotate-2 hover:scale-105 transition-all duration-500">
+                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-12 py-8 font-bold shadow-2xl hover:shadow-champagne/50 transition-all duration-500 hover:translate-y-[-4px]">
                   I'm an Employer
-                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                 </Button>
               </Link>
-              <Link to="/contact">
-                <Button size="lg" variant="outline" className="group border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-12 py-8 font-bold backdrop-blur-sm transition-all duration-500 hover:border-champagne">
+              <Link to="/contact" className="transform-3d hover:rotate-2 hover:scale-105 transition-all duration-500">
+                <Button size="lg" variant="outline" className="group border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-12 py-8 font-bold backdrop-blur-sm transition-all duration-500 hover:border-champagne hover:translate-y-[-4px]">
                   I'm a Job Seeker
-                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300" />
                 </Button>
               </Link>
             </div>
