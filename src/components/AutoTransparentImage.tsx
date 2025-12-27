@@ -148,10 +148,14 @@ export function AutoTransparentImage({
   maxDimension?: number;
   tolerance?: number;
 }) {
-  const [processedSrc, setProcessedSrc] = useState<string>(src);
+  const [processedSrc, setProcessedSrc] = useState<string | null>(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   const key = useMemo(() => `${src}|${maxDimension}|${tolerance}`, [src, maxDimension, tolerance]);
+  
   useEffect(() => {
     let cancelled = false;
+    setIsLoaded(false);
+    
     const run = async () => {
       try {
         const img = new Image();
@@ -174,17 +178,37 @@ export function AutoTransparentImage({
         cleaned = cleanEdges(cleaned, 180);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
-        if (!cancelled) setProcessedSrc(url);
+        if (!cancelled) {
+          setProcessedSrc(url);
+          // Small delay to ensure the image is ready before fading in
+          requestAnimationFrame(() => {
+            if (!cancelled) setIsLoaded(true);
+          });
+        }
       } catch {
         // If anything fails, fall back to the original src
-        if (!cancelled) setProcessedSrc(src);
+        if (!cancelled) {
+          setProcessedSrc(src);
+          setIsLoaded(true);
+        }
       }
     };
-    setProcessedSrc(src);
     run();
     return () => {
       cancelled = true;
     };
   }, [key, src, maxDimension, tolerance]);
-  return <img src={processedSrc} alt={alt} loading="eager" className={cn(className)} />;
+  
+  return (
+    <img 
+      src={processedSrc || src} 
+      alt={alt} 
+      loading="eager" 
+      className={cn(
+        className,
+        "transition-opacity duration-500 ease-out",
+        isLoaded ? "opacity-100" : "opacity-0"
+      )} 
+    />
+  );
 }

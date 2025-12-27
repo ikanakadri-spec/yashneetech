@@ -163,7 +163,7 @@ export const Header = () => {
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage src={yashneeLogo} alt="Yashnee Logo" className="h-14 md:h-16 lg:h-20 w-auto object-contain" tolerance={80} />
-            <div className="flex flex-col -ml-3 -space-y-1">
+            <div className="flex flex-col -ml-3 -space-y-1 animate-fade-in" style={{ animationDelay: '100ms', animationFillMode: 'forwards' }}>
               <span className="text-xl md:text-2xl lg:text-3xl font-heading tracking-tighter uppercase leading-tight my-0 px-0 py-0 font-bold bg-gradient-to-r from-emerald via-gold to-emerald bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(76,175,80,0.6)]">
                 YASHNEE TECH
               </span>
