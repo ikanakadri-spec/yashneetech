@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoNew from "@/assets/logo-new.png";
+import logoYT from "@/assets/logo-yt.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
@@ -169,7 +169,7 @@ export const Header = () => {
                 style={{
                   filter: 'drop-shadow(0 0 12px rgba(16, 185, 129, 0.5)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3))',
                 }} 
-                src={logoNew} 
+                src={logoYT} 
               />
             </div>
           </Link>
