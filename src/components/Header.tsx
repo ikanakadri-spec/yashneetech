@@ -163,18 +163,20 @@ export const Header = () => {
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
               {/* Logo with blended transparent background */}
-              <div className="relative px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-dark/90 via-emerald-dark to-emerald-dark/90 border border-emerald/30 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-gold/50 group-hover:shadow-gold/20 group-hover:shadow-xl group-hover:scale-105">
+              <div className="relative px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-dark via-emerald-dark/95 to-emerald-dark border border-emerald/40 shadow-xl backdrop-blur-sm transition-all duration-300 group-hover:border-gold/60 group-hover:shadow-gold/30 group-hover:shadow-2xl group-hover:scale-105">
                 <img 
                   src={yashneeLogoFinal} 
                   alt="Yashnee - Next Gen Talent Partner" 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
                   style={{ 
                     mixBlendMode: 'screen',
-                    filter: 'brightness(1.2) saturate(1.3)'
+                    filter: 'brightness(1.4) saturate(1.5) contrast(1.1)'
                   }}
                 />
-                {/* Subtle inner glow */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gold/5 via-transparent to-emerald/5 pointer-events-none" />
+                {/* Accent glow */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gold/10 via-transparent to-emerald-light/10 pointer-events-none" />
+                {/* Bottom highlight */}
+                <div className="absolute bottom-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
               </div>
             </div>
           </Link>
