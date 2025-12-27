@@ -162,19 +162,15 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
-              {/* Logo Container with transparent background blend */}
-              <div className="relative">
+              {/* Logo Container with styled background */}
+              <div className="relative bg-white/95 rounded-lg px-3 py-1.5 shadow-lg border border-gold/30 transition-all duration-300 group-hover:shadow-gold/30 group-hover:shadow-xl group-hover:scale-105">
                 <img 
                   src={yashneeLogoFinal} 
                   alt="Yashnee Tech Logo" 
-                  className="h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-                  style={{ 
-                    mixBlendMode: 'multiply',
-                    filter: 'brightness(1.1) contrast(1.1)'
-                  }}
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain"
                 />
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gold/30 rounded-full blur-2xl -z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Gold accent border glow */}
+                <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-gold/20 via-emerald/20 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
               </div>
             </div>
           </Link>
