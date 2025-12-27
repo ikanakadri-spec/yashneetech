@@ -162,15 +162,16 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
-              {/* Logo Container with styled background */}
-              <div className="relative bg-white/95 rounded-lg px-3 py-1.5 shadow-lg border border-gold/30 transition-all duration-300 group-hover:shadow-gold/30 group-hover:shadow-xl group-hover:scale-105">
+              {/* Logo Container with emerald background */}
+              <div className="relative bg-emerald-dark rounded-lg px-3 py-1.5 shadow-lg border border-emerald/40 transition-all duration-300 group-hover:shadow-gold/30 group-hover:shadow-xl group-hover:scale-105 group-hover:border-gold/50">
                 <img 
                   src={yashneeLogoFinal} 
                   alt="Yashnee Tech Logo" 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain"
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain brightness-110 contrast-110"
+                  style={{ 
+                    filter: 'invert(1) hue-rotate(180deg) brightness(1.5) contrast(1.2)'
+                  }}
                 />
-                {/* Gold accent border glow */}
-                <div className="absolute inset-0 rounded-lg border-2 border-transparent bg-gradient-to-r from-gold/20 via-emerald/20 to-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm" />
               </div>
             </div>
           </Link>
