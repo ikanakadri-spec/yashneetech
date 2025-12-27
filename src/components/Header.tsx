@@ -167,7 +167,7 @@ export const Header = () => {
               <span className="text-xl md:text-2xl lg:text-3xl font-heading tracking-tighter uppercase leading-tight my-0 px-0 py-0 font-bold bg-gradient-to-r from-emerald via-gold to-emerald bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(76,175,80,0.6)]">
                 YASHNEE TECH
               </span>
-              <span className="text-[9px] text-orange-500 tracking-wide italic font-medium md:text-xs font-serif leading-tight px-0 mx-[10px] drop-shadow-[0_0_6px_rgba(255,165,0,0.5)]">
+              <span className="text-xs text-orange-500 tracking-wide italic font-medium md:text-sm font-serif leading-tight px-0 mx-[10px] drop-shadow-[0_0_6px_rgba(255,165,0,0.5)]">
                 Next-Gen Talent Partner
               </span>
             </div>
