@@ -164,7 +164,7 @@ export const Header = () => {
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage
               src={yashneeLogo}
-              alt="Yashnee - Next Gen Talent Partner"
+              alt="Yashnee Logo"
               className="h-14 md:h-16 lg:h-20 w-auto object-contain"
               tolerance={80}
             />
