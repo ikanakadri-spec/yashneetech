@@ -188,6 +188,20 @@ export default {
             transform: "scale(1.1)",
           },
         },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "float-up": {
+          "0%": { 
+            transform: "translateY(0) scale(1)",
+            opacity: "0.8"
+          },
+          "100%": { 
+            transform: "translateY(-20px) scale(0)",
+            opacity: "0"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -202,6 +216,8 @@ export default {
         "float-slow": "float-slow 8s ease-in-out infinite",
         "float-slow-reverse": "float-slow-reverse 10s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "spin-slow": "spin-slow 3s linear infinite",
+        "float-up": "float-up 0.6s ease-out forwards",
       },
     },
   },
