@@ -247,7 +247,7 @@ export const Header = () => {
             <Dropdown label="For Job Seekers" items={jobSeekerItems} />
             <ExpertiseDropdown />
             <Link
-              to="/#who-we-are"
+              to="/who-we-are"
               className="relative px-4 py-2 text-sm font-bold text-white hover:text-emerald-light transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-light after:transition-all after:duration-300 hover:after:w-full"
             >
               Who We Are
@@ -305,7 +305,7 @@ export const Header = () => {
             <Dropdown label="For Job Seekers" items={jobSeekerItems} onItemClick={closeMobileMenu} />
             <ExpertiseDropdown onItemClick={closeMobileMenu} />
             <Link
-              to="/#who-we-are"
+              to="/who-we-are"
               className="block px-4 py-2 text-sm font-medium text-foreground"
               onClick={closeMobileMenu}
             >
