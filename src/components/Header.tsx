@@ -167,7 +167,7 @@ export const Header = () => {
               <span className="text-xl md:text-2xl lg:text-3xl font-heading text-emerald tracking-tighter uppercase font-extrabold">
                 YASHNEE TECH
               </span>
-              <span className="text-[9px] md:text-[10px] text-orange-500 tracking-wide italic font-medium mx-0 my-0 px-[2px]">
+              <span className="text-[9px] text-orange-500 tracking-wide italic font-medium mx-0 my-0 px-[2px] md:text-xs font-serif">
                                 Next-Gen Talent Partner
               </span>
             </div>
