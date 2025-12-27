@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/#services"
@@ -176,17 +177,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald via-teal-500 to-cyan-500 rounded-xl shadow-lg group-hover:shadow-emerald/40 transition-shadow"></div>
-              <div className="absolute inset-[3px] bg-gradient-to-br from-gold via-amber-400 to-orange-400 rounded-lg"></div>
-              <div className="absolute inset-[6px] bg-gradient-to-br from-emerald-dark via-emerald to-teal-600 rounded-md"></div>
-              <span className="absolute inset-0 flex items-center justify-center text-transparent bg-clip-text bg-gradient-to-br from-gold-light via-gold to-amber-300 font-heading font-black text-lg drop-shadow-sm">YT</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-heading font-bold text-xl bg-gradient-to-r from-emerald via-teal-600 to-emerald-dark bg-clip-text text-transparent">YASH</span>
-              <span className="font-heading font-bold text-xl bg-gradient-to-r from-gold via-amber-500 to-gold-light bg-clip-text text-transparent ml-1">TECH</span>
-              <p className="text-[10px] -mt-1 text-emerald-200">Next-Gen Talent Partner</p>
-            </div>
+            <img src={logo} alt="Yashnee Logo" className="h-10 sm:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
