@@ -90,8 +90,6 @@ const Contact = () => {
       emailRegex.test(formData.email) &&
       phoneRegex.test(formData.contactNumber) &&
       formData.enquiryType &&
-      formData.industry &&
-      formData.timeline &&
       captchaChecked
     );
   };
@@ -357,95 +355,29 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  {/* Divider */}
-                  <div className="relative py-2">
-                    <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t border-border/50"></div>
-                    </div>
-                  </div>
-
-                  {/* Enquiry Details Section */}
+                  {/* Additional Fields */}
                   <div className="relative space-y-5">
-                    <div className="flex items-center gap-3 mb-5">
-                      <div className="w-8 h-8 rounded-lg bg-champagne flex items-center justify-center">
-                        <span className="text-foreground font-semibold text-sm">2</span>
-                      </div>
-                      <h3 className="font-heading font-semibold text-foreground">Enquiry Details</h3>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-5">
-                      {/* Type of Enquiry */}
-                      <div className="relative group">
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Type of Enquiry <span className="text-destructive">*</span>
-                        </label>
-                        <select
-                          name="enquiryType"
-                          value={formData.enquiryType}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField('enquiryType')}
-                          onBlur={() => setFocusedField(null)}
-                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
-                            focusedField === 'enquiryType' 
-                              ? 'border-emerald shadow-lg shadow-emerald/10' 
-                              : 'border-border hover:border-emerald/40'
-                          }`}
-                          required
-                        >
-                          <option value="">Select enquiry type</option>
-                          {enquiryTypes.map(type => (
-                            <option key={type} value={type}>{type}</option>
-                          ))}
-                        </select>
-                      </div>
-
-                      {/* Industry */}
-                      <div className="relative group">
-                        <label className="block text-sm font-medium text-foreground mb-2">
-                          Industry <span className="text-destructive">*</span>
-                        </label>
-                        <select
-                          name="industry"
-                          value={formData.industry}
-                          onChange={handleChange}
-                          onFocus={() => setFocusedField('industry')}
-                          onBlur={() => setFocusedField(null)}
-                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
-                            focusedField === 'industry' 
-                              ? 'border-emerald shadow-lg shadow-emerald/10' 
-                              : 'border-border hover:border-emerald/40'
-                          }`}
-                          required
-                        >
-                          <option value="">Select industry</option>
-                          {industries.map(ind => (
-                            <option key={ind} value={ind}>{ind}</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-
-                    {/* Timeline */}
+                    {/* Type of Enquiry */}
                     <div className="relative group">
                       <label className="block text-sm font-medium text-foreground mb-2">
-                        What is your timeline? <span className="text-destructive">*</span>
+                        Type of Enquiry <span className="text-destructive">*</span>
                       </label>
                       <select
-                        name="timeline"
-                        value={formData.timeline}
+                        name="enquiryType"
+                        value={formData.enquiryType}
                         onChange={handleChange}
-                        onFocus={() => setFocusedField('timeline')}
+                        onFocus={() => setFocusedField('enquiryType')}
                         onBlur={() => setFocusedField(null)}
                         className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
-                          focusedField === 'timeline' 
+                          focusedField === 'enquiryType' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
                             : 'border-border hover:border-emerald/40'
                         }`}
                         required
                       >
-                        <option value="">Select timeline</option>
-                        {timelines.map(time => (
-                          <option key={time} value={time}>{time}</option>
+                        <option value="">Select enquiry type</option>
+                        {enquiryTypes.map(type => (
+                          <option key={type} value={type}>{type}</option>
                         ))}
                       </select>
                     </div>
@@ -461,13 +393,13 @@ const Contact = () => {
                         onChange={handleChange}
                         onFocus={() => setFocusedField('requirements')}
                         onBlur={() => setFocusedField(null)}
-                        rows={4}
+                        rows={3}
                         className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none ${
                           focusedField === 'requirements' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
                             : 'border-border hover:border-emerald/40'
                         }`}
-                        placeholder="Tell us about your staffing needs, job requirements, or any specific details..."
+                        placeholder="Tell us about your needs..."
                       />
                     </div>
                   </div>
