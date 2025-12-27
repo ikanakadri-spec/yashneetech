@@ -221,20 +221,22 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-2 group">
             <img 
               src="/assets/logo.png" 
-              alt="Yash Tech Logo" 
-              className="w-11 h-11 object-contain"
+              alt="Yashnee Tech Logo" 
+              className="h-12 w-auto object-contain"
             />
-            <div className="hidden sm:block">
-              <span className="font-heading font-bold text-xl bg-gradient-to-r from-emerald via-teal-600 to-emerald-dark bg-clip-text text-transparent">
-                YASH
-              </span>
-              <span className="font-heading font-bold text-xl bg-gradient-to-r from-gold via-amber-500 to-gold-light bg-clip-text text-transparent ml-1">
-                TECH
-              </span>
-              <p className="text-[10px] -mt-1 text-emerald-200">Next-Gen Talent Partner</p>
+            <div className="hidden sm:flex flex-col">
+              <div className="flex items-baseline">
+                <span className="font-heading font-bold text-xl text-emerald">
+                  Yashnee
+                </span>
+                <span className="font-heading font-bold text-xl text-emerald ml-1">
+                  Tech
+                </span>
+              </div>
+              <p className="text-xs text-gold font-medium -mt-0.5">Next-Gen Talent Partner</p>
             </div>
           </Link>
 
