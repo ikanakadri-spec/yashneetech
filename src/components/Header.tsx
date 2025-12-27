@@ -176,11 +176,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <img src={logo} alt="Yashnee Logo" className="h-10 sm:h-12 w-auto drop-shadow-lg" />
-            <div className="hidden sm:flex flex-col">
-              <span className="text-[10px] text-gold font-bold tracking-wider leading-tight drop-shadow-md">Next-Gen</span>
-              <span className="text-[10px] text-gold font-bold tracking-wider leading-tight drop-shadow-md">Hiring Partner</span>
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="flex items-center gap-2 bg-cream rounded-lg px-2 py-1">
+              <img src={logo} alt="Yashnee Logo" className="h-8 sm:h-10 w-auto" />
+              <div className="hidden sm:block pr-1">
+                <p className="text-[9px] text-emerald-dark font-semibold tracking-wide leading-tight">Next-Gen</p>
+                <p className="text-[9px] text-emerald-dark font-semibold tracking-wide leading-tight">Hiring Partner</p>
+              </div>
             </div>
           </Link>
 
