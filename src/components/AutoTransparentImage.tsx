@@ -130,5 +130,5 @@ export function AutoTransparentImage({
       cancelled = true;
     };
   }, [key, src, maxDimension, tolerance]);
-  return <img src={processedSrc} alt={alt} loading="eager" className="" />;
+  return <img src={processedSrc} alt={alt} loading="eager" className={cn(className)} />;
 }
