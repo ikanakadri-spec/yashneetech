@@ -166,7 +166,7 @@ export const Header = () => {
               <AutoTransparentImage
                 src={yashneeLogo}
                 alt="Yashnee Tech logo – Next Gen Talent Partner"
-                className="h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_10px_30px_hsl(var(--emerald)/0.25))]"
+                className="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_10px_30px_hsl(var(--emerald)/0.25))]"
               />
             </div>
           </Link>
