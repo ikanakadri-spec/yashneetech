@@ -164,11 +164,11 @@ export const Header = () => {
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage src={yashneeLogo} alt="Yashnee Logo" className="h-14 md:h-16 lg:h-20 w-auto object-contain" tolerance={80} />
             <div className="flex flex-col -ml-3 leading-none">
-              <span className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-emerald tracking-tighter uppercase">
+              <span className="text-xl md:text-2xl lg:text-3xl font-heading text-emerald tracking-tighter uppercase font-extrabold">
                 YASHNEE TECH
               </span>
-              <span className="text-[9px] md:text-[10px] text-orange-500 tracking-wide italic font-medium">
-                Next Gen Talent Partner
+              <span className="text-[9px] md:text-[10px] text-orange-500 tracking-wide italic font-medium mx-0 my-0 px-[2px]">
+                                Next Gen Talent Partner
               </span>
             </div>
           </Link>
