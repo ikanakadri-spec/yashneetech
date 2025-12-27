@@ -6,37 +6,37 @@ import { AutoTransparentImage } from "@/components/AutoTransparentImage";
 import yashneeLogo from "@/assets/yashnee-logo-header.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "AI Talent Sourcing",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "Global Recruitment",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "Executive Recruiting",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "For Start-up's",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "Recruitment Process Outsourcing (RPO)",
-  href: "/contact#contact-form"
+  href: "/contact"
 }];
 const jobSeekerItems = [{
   label: "Find a Job",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "Submit Your Resume",
-  href: "/contact#contact-form"
+  href: "/contact"
 }];
 const expertiseItems = ["Accounting & Finance", "Administrative & Customer Support", "Engineering", "IT & Non-IT", "Healthcare & Life Sciences", "Human Resources", "Sales & Marketing", "Supply Chain & Logistics", "Manufacturing", "Life Sciences"];
 const contactItems = [{
   label: "I am an Employer",
-  href: "/contact#contact-form"
+  href: "/contact"
 }, {
   label: "I am Job Seeker",
-  href: "/contact#contact-form"
+  href: "/contact"
 }];
 interface DropdownProps {
   label: string;
@@ -108,7 +108,7 @@ const ExpertiseDropdown = ({
   const handleExpertiseClick = (item: string) => {
     setIsOpen(false);
     onItemClick?.();
-    navigate("/contact#contact-form");
+    navigate("/contact");
   };
   const itemClasses = "relative block w-full text-left px-4 py-3 text-sm text-emerald-dark transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/15 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
   return <div className="relative" ref={dropdownRef}>
