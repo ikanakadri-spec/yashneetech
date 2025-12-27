@@ -148,17 +148,10 @@ const Contact = () => {
         
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-primary-foreground/90 text-sm font-medium mb-6 animate-fade-up">
-              <Globe className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-primary-foreground text-lg font-medium animate-fade-up">
+              <Globe className="w-5 h-5" />
               <span>Connect With Our Global Team</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6 animate-fade-up delay-100">
-              Let's Build Your
-              <span className="block mt-2 text-champagne">Dream Team Together</span>
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed animate-fade-up delay-200">
-              Partner with us for exceptional talent solutions. Our dedicated team is ready to understand your needs and deliver results.
-            </p>
           </div>
         </div>
         
