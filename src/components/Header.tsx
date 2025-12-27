@@ -5,27 +5,27 @@ import { Button } from "@/components/ui/button";
 const hireTalentItems = [
   {
     label: "Staffing Solutions",
-    href: "/#services",
+    href: "/contact#contact-form",
   },
   {
     label: "AI Talent Sourcing",
-    href: "/#services",
+    href: "/contact#contact-form",
   },
   {
     label: "Global Recruitment",
-    href: "/#services",
+    href: "/contact#contact-form",
   },
   {
     label: "Executive Recruiting",
-    href: "/#services",
+    href: "/contact#contact-form",
   },
   {
     label: "For Start-up's",
-    href: "/#services",
+    href: "/contact#contact-form",
   },
   {
     label: "Recruitment Process Outsourcing (RPO)",
-    href: "/#services",
+    href: "/contact#contact-form",
   },
 ];
 const jobSeekerItems = [
