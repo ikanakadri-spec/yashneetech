@@ -161,14 +161,13 @@ export const Header = () => {
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          <Link to="/" className="flex items-center gap-2 group transition-transform duration-300 hover:scale-105">
+          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage
               src={yashneeLogo}
               alt="Yashnee Logo"
               className="h-14 md:h-16 lg:h-20 w-auto object-contain"
               tolerance={80}
             />
-            <span className="text-white font-bold text-xl md:text-2xl tracking-wide">YASHNEE</span>
           </Link>
 
           {/* Desktop Navigation */}
