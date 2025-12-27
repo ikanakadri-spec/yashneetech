@@ -162,9 +162,16 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center gap-3">
-              {/* Yellow Y Box */}
-              <div className="w-10 h-10 md:w-12 md:h-12 bg-gold rounded-md flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                <span className="text-emerald-dark font-bold text-xl md:text-2xl">Y</span>
+              {/* Rotating YT Logo Box */}
+              <div className="relative w-12 h-12 md:w-14 md:h-14 perspective-500">
+                <div className="w-full h-full bg-gold rounded-lg flex items-center justify-center shadow-lg animate-spin-slow group-hover:animate-none group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex items-center justify-center">
+                    <span className="text-emerald-dark font-black text-lg md:text-xl">Y</span>
+                    <span className="text-emerald-dark font-black text-lg md:text-xl -ml-0.5">T</span>
+                  </div>
+                </div>
+                {/* Glow effect */}
+                <div className="absolute inset-0 bg-gold/30 rounded-lg blur-md -z-10 animate-pulse" />
               </div>
               {/* Text */}
               <div className="flex flex-col">
