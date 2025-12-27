@@ -162,16 +162,19 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
-              {/* Logo Container with emerald background */}
-              <div className="relative bg-emerald-dark rounded-lg px-3 py-1.5 shadow-lg border border-emerald/40 transition-all duration-300 group-hover:shadow-gold/30 group-hover:shadow-xl group-hover:scale-105 group-hover:border-gold/50">
+              {/* Logo with blended transparent background */}
+              <div className="relative px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-dark/90 via-emerald-dark to-emerald-dark/90 border border-emerald/30 shadow-lg backdrop-blur-sm transition-all duration-300 group-hover:border-gold/50 group-hover:shadow-gold/20 group-hover:shadow-xl group-hover:scale-105">
                 <img 
                   src={yashneeLogoFinal} 
-                  alt="Yashnee Tech Logo" 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain brightness-110 contrast-110"
+                  alt="Yashnee - Next Gen Talent Partner" 
+                  className="h-10 md:h-12 lg:h-14 w-auto object-contain"
                   style={{ 
-                    filter: 'invert(1) hue-rotate(180deg) brightness(1.5) contrast(1.2)'
+                    mixBlendMode: 'screen',
+                    filter: 'brightness(1.2) saturate(1.3)'
                   }}
                 />
+                {/* Subtle inner glow */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gold/5 via-transparent to-emerald/5 pointer-events-none" />
               </div>
             </div>
           </Link>
