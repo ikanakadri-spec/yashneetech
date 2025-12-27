@@ -382,6 +382,56 @@ const Contact = () => {
                       </select>
                     </div>
 
+                    <div className="grid md:grid-cols-2 gap-5">
+                      {/* Industry - Optional */}
+                      <div className="relative group">
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Industry <span className="text-muted-foreground text-sm font-normal">(Optional)</span>
+                        </label>
+                        <select
+                          name="industry"
+                          value={formData.industry}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField('industry')}
+                          onBlur={() => setFocusedField(null)}
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
+                            focusedField === 'industry' 
+                              ? 'border-emerald shadow-lg shadow-emerald/10' 
+                              : 'border-border hover:border-emerald/40'
+                          }`}
+                        >
+                          <option value="">Select industry</option>
+                          {industries.map(ind => (
+                            <option key={ind} value={ind}>{ind}</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      {/* Timeline - Optional */}
+                      <div className="relative group">
+                        <label className="block text-sm font-medium text-foreground mb-2">
+                          Timeline <span className="text-muted-foreground text-sm font-normal">(Optional)</span>
+                        </label>
+                        <select
+                          name="timeline"
+                          value={formData.timeline}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField('timeline')}
+                          onBlur={() => setFocusedField(null)}
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
+                            focusedField === 'timeline' 
+                              ? 'border-emerald shadow-lg shadow-emerald/10' 
+                              : 'border-border hover:border-emerald/40'
+                          }`}
+                        >
+                          <option value="">Select timeline</option>
+                          {timelines.map(time => (
+                            <option key={time} value={time}>{time}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
                     {/* Requirements - Optional */}
                     <div className="relative group">
                       <label className="block text-sm font-medium text-foreground mb-2">
