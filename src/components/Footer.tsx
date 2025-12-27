@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-import { AutoTransparentImage } from "./AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-header.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,15 +10,13 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center">
-              <AutoTransparentImage src={yashneeLogo} alt="Yashnee Logo" className="h-12 w-auto object-contain" tolerance={80} />
-              <div className="flex flex-col -ml-2 -space-y-1">
-                <span className="text-lg font-heading tracking-tighter uppercase leading-none font-bold text-champagne drop-shadow-[0_0_8px_rgba(245,222,179,0.4)]">
-                  YASHNEE TECH
-                </span>
-                <span className="text-[10px] text-orange-400 tracking-wide italic font-medium font-serif leading-none ml-1 drop-shadow-[0_0_6px_rgba(255,165,0,0.5)]">
-                  Next-Gen Talent Partner
-                </span>
+            <Link to="/" className="flex items-center gap-3">
+              <div className="w-12 h-12 bg-champagne rounded-lg flex items-center justify-center">
+                <span className="text-emerald font-heading font-bold text-2xl">Y</span>
+              </div>
+              <div>
+                <span className="font-heading font-bold text-2xl text-primary-foreground">YASH TECH</span>
+                <p className="text-xs text-champagne-light">Next-Gen Talent Partner</p>
               </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
