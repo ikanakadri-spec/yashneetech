@@ -177,11 +177,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="flex items-center gap-2 bg-cream rounded-lg px-2 py-1">
+            <div className="flex items-center gap-2 bg-emerald-dark border border-gold/30 rounded-lg px-3 py-1.5">
               <img src={logo} alt="Yashnee Logo" className="h-8 sm:h-10 w-auto" />
               <div className="hidden sm:block pr-1">
-                <p className="text-[9px] text-emerald-dark font-semibold tracking-wide leading-tight">Next-Gen</p>
-                <p className="text-[9px] text-emerald-dark font-semibold tracking-wide leading-tight">Hiring Partner</p>
+                <p className="text-sm sm:text-base text-gold font-bold tracking-wide leading-tight">YASHNEE</p>
+                <p className="text-[9px] text-cream font-medium tracking-wider leading-tight">Next-Gen Hiring Partner</p>
               </div>
             </div>
           </Link>
