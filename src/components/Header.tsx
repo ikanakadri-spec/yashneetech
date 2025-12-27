@@ -169,7 +169,7 @@ export const Header = () => {
               tolerance={80}
             />
             <div className="flex flex-col -ml-2 leading-tight">
-              <span className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-orange-400 tracking-wide">
+              <span className="text-xl md:text-2xl lg:text-3xl font-heading font-bold gradient-text-animated tracking-wide">
                 YASHNEE TECH
               </span>
               <span className="text-[10px] md:text-xs text-emerald-light tracking-widest uppercase font-medium">
