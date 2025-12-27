@@ -164,7 +164,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Info Cards - Floating Style */}
-      <section className="relative -mt-16 pb-12 z-10">
+      <section className="relative -mt-16 pb-6 z-10">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Email Card */}
@@ -210,17 +210,20 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact-form" className="py-20 bg-background">
+      <section id="contact-form" className="py-10 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-5 gap-12 items-start">
-              
-              {/* Form Section - Full Width */}
-              <div className="lg:col-span-5">
-                <p className="text-center text-muted-foreground mb-8 text-lg">
-                  Fill out the form and our team will reach out within 24 hours to discuss your requirements.
-                </p>
-                <form onSubmit={handleSubmit} className="relative p-8 md:p-10 rounded-3xl bg-card border-2 border-emerald shadow-xl space-y-6 overflow-hidden">
+          <div className="max-w-3xl mx-auto">
+            {/* Highlighted Form Header */}
+            <div className="text-center mb-6">
+              <h2 className="inline-block text-2xl md:text-3xl font-heading font-bold text-foreground bg-gradient-to-r from-champagne/30 to-emerald/20 px-6 py-3 rounded-xl border border-emerald/30">
+                Fill Out the Form
+              </h2>
+              <p className="text-muted-foreground mt-4 text-base">
+                Our team will reach out within 24 hours to discuss your requirements.
+              </p>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald shadow-xl space-y-5 overflow-hidden">
                   {/* Decorative corner accent */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald/5 to-transparent rounded-bl-full" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-champagne/5 to-transparent rounded-tr-full" />
@@ -462,8 +465,6 @@ const Contact = () => {
                     )}
                   </Button>
                 </form>
-              </div>
-            </div>
           </div>
         </div>
       </section>
