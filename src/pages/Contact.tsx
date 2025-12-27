@@ -301,7 +301,7 @@ const Contact = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('name')}
                           onBlur={() => setFocusedField(null)}
-                          className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground focus:outline-none ${
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none ${
                             focusedField === 'name' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
                               : 'border-border hover:border-emerald/40'
@@ -323,7 +323,7 @@ const Contact = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('contactNumber')}
                           onBlur={() => setFocusedField(null)}
-                          className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground focus:outline-none ${
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none ${
                             focusedField === 'contactNumber' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
                               : 'border-border hover:border-emerald/40'
@@ -339,14 +339,14 @@ const Contact = () => {
                       <label className="block text-sm font-medium text-foreground mb-2">
                         Email Address <span className="text-destructive">*</span>
                       </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        onFocus={() => setFocusedField('email')}
-                        onBlur={() => setFocusedField(null)}
-                        className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground focus:outline-none ${
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          onFocus={() => setFocusedField('email')}
+                          onBlur={() => setFocusedField(null)}
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none ${
                           focusedField === 'email' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
                             : 'border-border hover:border-emerald/40'
@@ -385,7 +385,7 @@ const Contact = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('enquiryType')}
                           onBlur={() => setFocusedField(null)}
-                          className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer focus:outline-none ${
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
                             focusedField === 'enquiryType' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
                               : 'border-border hover:border-emerald/40'
@@ -410,7 +410,7 @@ const Contact = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('industry')}
                           onBlur={() => setFocusedField(null)}
-                          className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer focus:outline-none ${
+                          className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
                             focusedField === 'industry' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
                               : 'border-border hover:border-emerald/40'
@@ -436,7 +436,7 @@ const Contact = () => {
                         onChange={handleChange}
                         onFocus={() => setFocusedField('timeline')}
                         onBlur={() => setFocusedField(null)}
-                        className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer focus:outline-none ${
+                        className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
                           focusedField === 'timeline' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
                             : 'border-border hover:border-emerald/40'
@@ -462,7 +462,7 @@ const Contact = () => {
                         onFocus={() => setFocusedField('requirements')}
                         onBlur={() => setFocusedField(null)}
                         rows={4}
-                        className={`w-full px-4 py-3 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground resize-none focus:outline-none ${
+                        className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none ${
                           focusedField === 'requirements' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
                             : 'border-border hover:border-emerald/40'

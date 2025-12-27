@@ -104,7 +104,7 @@ const Index = () => {
             animationDelay: '600ms',
             animationFillMode: 'forwards'
           }}>
-              <Link to="/contact">
+              <Link to="/get-started">
                 <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-champagne/25 transition-all duration-500 hover:scale-105">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

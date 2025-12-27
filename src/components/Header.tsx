@@ -283,7 +283,7 @@ export const Header = () => {
             </div>
 
             {/* CTA Button */}
-            <Link to="/contact">
+            <Link to="/get-started">
               <Button className="hidden sm:inline-flex bg-emerald text-primary-foreground hover:bg-emerald-light">
                 Get Started
               </Button>
@@ -312,7 +312,7 @@ export const Header = () => {
               Who We Are
             </Link>
             <Dropdown label="Contact Us" items={contactItems} onItemClick={closeMobileMenu} />
-            <Link to="/contact" onClick={closeMobileMenu}>
+            <Link to="/get-started" onClick={closeMobileMenu}>
               <Button className="w-full bg-emerald text-primary-foreground hover:bg-emerald-light">Get Started</Button>
             </Link>
           </div>
