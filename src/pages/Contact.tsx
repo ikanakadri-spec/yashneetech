@@ -251,7 +251,7 @@ const Contact = () => {
                           className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none ${
                             focusedField === 'name' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
-                              : 'border-white hover:border-emerald/40'
+                              : 'border-gray-300 hover:border-emerald/40'
                           }`}
                           placeholder="John Doe"
                           required
@@ -273,7 +273,7 @@ const Contact = () => {
                           className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none ${
                             focusedField === 'contactNumber' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
-                              : 'border-white hover:border-emerald/40'
+                              : 'border-gray-300 hover:border-emerald/40'
                           }`}
                           placeholder="+91 XXXXX XXXXX"
                           required
@@ -296,7 +296,7 @@ const Contact = () => {
                           className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none ${
                           focusedField === 'email' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
-                            : 'border-white hover:border-emerald/40'
+                            : 'border-gray-300 hover:border-emerald/40'
                         }`}
                         placeholder="john@company.com"
                         required
@@ -320,7 +320,7 @@ const Contact = () => {
                         className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
                           focusedField === 'enquiryType' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
-                            : 'border-white hover:border-emerald/40'
+                            : 'border-gray-300 hover:border-emerald/40'
                         }`}
                         required
                       >
@@ -346,7 +346,7 @@ const Contact = () => {
                           className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
                             focusedField === 'industry' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
-                              : 'border-white hover:border-emerald/40'
+                              : 'border-gray-300 hover:border-emerald/40'
                           }`}
                         >
                           <option value="">Select industry</option>
@@ -370,7 +370,7 @@ const Contact = () => {
                           className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground cursor-pointer focus:outline-none ${
                             focusedField === 'timeline' 
                               ? 'border-emerald shadow-lg shadow-emerald/10' 
-                              : 'border-white hover:border-emerald/40'
+                              : 'border-gray-300 hover:border-emerald/40'
                           }`}
                         >
                           <option value="">Select timeline</option>
@@ -396,7 +396,7 @@ const Contact = () => {
                         className={`w-full px-3 py-2.5 rounded-xl bg-background border-2 transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground resize-none focus:outline-none ${
                           focusedField === 'requirements' 
                             ? 'border-emerald shadow-lg shadow-emerald/10' 
-                            : 'border-white hover:border-emerald/40'
+                            : 'border-gray-300 hover:border-emerald/40'
                         }`}
                         placeholder="Tell us about your needs..."
                       />
@@ -418,7 +418,7 @@ const Contact = () => {
                       />
                       <label
                         htmlFor="file-upload"
-                        className="flex items-center justify-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-dashed border-white bg-background hover:border-emerald/50 hover:bg-emerald/5 cursor-pointer transition-all duration-300 group/upload"
+                        className="flex items-center justify-center gap-3 w-full px-4 py-4 rounded-xl border-2 border-dashed border-gray-300 bg-background hover:border-emerald/50 hover:bg-emerald/5 cursor-pointer transition-all duration-300 group/upload"
                       >
                         <div className="w-10 h-10 rounded-xl bg-emerald/10 flex items-center justify-center group-hover/upload:scale-110 transition-transform">
                           <Upload className="w-5 h-5 text-emerald" />
@@ -431,14 +431,14 @@ const Contact = () => {
                   </div>
 
                   {/* CAPTCHA */}
-                  <div className="p-4 rounded-xl bg-background border-2 border-white hover:border-emerald/30 transition-colors">
+                  <div className="p-4 rounded-xl bg-background border-2 border-gray-300 hover:border-emerald/30 transition-colors">
                     <label className="flex items-center gap-4 cursor-pointer group">
                       <div className="relative">
                         <input
                           type="checkbox"
                           checked={captchaChecked}
                           onChange={(e) => setCaptchaChecked(e.target.checked)}
-                          className="peer w-6 h-6 rounded-lg border-2 border-white text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
+                          className="peer w-6 h-6 rounded-lg border-2 border-gray-300 text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
                         />
                         {captchaChecked && (
                           <CheckCircle className="absolute inset-0 w-6 h-6 text-primary-foreground pointer-events-none" />
