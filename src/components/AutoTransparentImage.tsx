@@ -40,40 +40,46 @@ function buildCornerPalette(imageData: ImageData) {
 }
 
 // Clean up semi-transparent edge pixels (anti-aliasing artifacts)
-function cleanEdges(imageData: ImageData, threshold: number = 180) {
+function cleanEdges(imageData: ImageData, threshold: number = 200) {
   const { width: w, height: h, data } = imageData;
   
-  for (let y = 0; y < h; y++) {
-    for (let x = 0; x < w; x++) {
-      const i = (y * w + x) * 4;
-      const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
-      
-      // If pixel is semi-transparent and light colored, make it fully transparent
-      if (a > 0 && a < 255) {
+  // Multiple passes to ensure thorough edge cleaning
+  for (let pass = 0; pass < 3; pass++) {
+    for (let y = 0; y < h; y++) {
+      for (let x = 0; x < w; x++) {
+        const i = (y * w + x) * 4;
+        const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+        
+        // Skip already transparent pixels
+        if (a === 0) continue;
+        
+        // If pixel is light colored and near a transparent pixel, make it transparent
         const brightness = (r + g + b) / 3;
         if (brightness > threshold) {
-          data[i + 3] = 0;
-        }
-      }
-      
-      // If pixel is opaque but very light (near white), check neighbors
-      if (a === 255 && r > threshold && g > threshold && b > threshold) {
-        // Check if any neighbor is transparent
-        let hasTransparentNeighbor = false;
-        const neighbors = [
-          [x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]
-        ];
-        for (const [nx, ny] of neighbors) {
-          if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
-            const ni = (ny * w + nx) * 4;
-            if (data[ni + 3] === 0) {
-              hasTransparentNeighbor = true;
-              break;
+          // Check if any neighbor is transparent (8-neighborhood)
+          let hasTransparentNeighbor = false;
+          for (let dy = -1; dy <= 1; dy++) {
+            for (let dx = -1; dx <= 1; dx++) {
+              if (dx === 0 && dy === 0) continue;
+              const nx = x + dx, ny = y + dy;
+              if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+                const ni = (ny * w + nx) * 4;
+                if (data[ni + 3] === 0) {
+                  hasTransparentNeighbor = true;
+                  break;
+                }
+              }
             }
+            if (hasTransparentNeighbor) break;
+          }
+          if (hasTransparentNeighbor) {
+            data[i + 3] = 0;
           }
         }
-        if (hasTransparentNeighbor) {
-          data[i + 3] = 0; // Make edge pixel transparent
+        
+        // Also make semi-transparent light pixels fully transparent
+        if (a > 0 && a < 255 && brightness > 150) {
+          data[i + 3] = 0;
         }
       }
     }
