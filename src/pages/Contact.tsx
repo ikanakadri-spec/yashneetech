@@ -215,8 +215,8 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto">
             {/* Highlighted Form Header */}
             <div className="text-center mb-6">
-              <h2 className="inline-block text-2xl md:text-3xl font-heading font-bold text-foreground bg-gradient-to-r from-champagne/30 to-emerald/20 px-6 py-3 rounded-xl border border-emerald/30">
-                Fill Out the Form
+              <h2 className="inline-block text-lg md:text-xl font-heading font-bold text-foreground bg-gradient-to-r from-champagne/30 to-emerald/20 px-6 py-3 rounded-xl border border-emerald/30">
+                Tell Us About Your Requirements
               </h2>
               <p className="text-muted-foreground mt-4 text-base">
                 Our team will reach out within 24 hours to discuss your requirements.
