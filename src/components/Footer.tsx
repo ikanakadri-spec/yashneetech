@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import yashneeLogo from "@/assets/yashnee-logo-header.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,11 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-champagne rounded-lg flex items-center justify-center">
-                <span className="text-emerald font-heading font-bold text-2xl">Y</span>
-              </div>
+              <img 
+                src={yashneeLogo} 
+                alt="Yashnee Tech Logo" 
+                className="h-12 w-auto object-contain"
+              />
               <div className="-space-y-1">
                 <span className="font-heading font-bold text-2xl tracking-tighter leading-tight bg-gradient-to-r from-champagne via-gold to-champagne bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(212,175,55,0.6)]">
                   YASHNEE TECH
