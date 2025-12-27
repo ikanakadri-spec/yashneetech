@@ -222,12 +222,17 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <img 
-              src="/assets/logo.png" 
-              alt="Yashnee Tech - Next-Gen Talent Partner" 
-              className="h-14 md:h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen brightness-110"
-              style={{ filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.3))' }}
-            />
+            <div className="relative h-14 md:h-16 w-auto">
+              <img 
+                src="/assets/logo.png" 
+                alt="Yashnee Tech - Next-Gen Talent Partner" 
+                className="h-full w-auto object-contain"
+                style={{ 
+                  filter: 'brightness(1.1) contrast(1.1)',
+                  mixBlendMode: 'screen'
+                }}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
