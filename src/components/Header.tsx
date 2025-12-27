@@ -222,13 +222,13 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <div className="relative h-14 md:h-16 w-auto">
+            <div className="relative h-20 md:h-24 w-auto">
               <img 
                 src="/assets/logo.png" 
                 alt="Yashnee Tech - Next-Gen Talent Partner" 
-                className="h-full w-auto object-contain"
+                className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 style={{ 
-                  filter: 'brightness(1.1) contrast(1.1)',
+                  filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)) drop-shadow(0 0 20px rgba(16, 185, 129, 0.2))',
                   mixBlendMode: 'screen'
                 }}
               />
