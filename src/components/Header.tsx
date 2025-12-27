@@ -161,13 +161,11 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24">
           <Link to="/" className="flex items-center group">
-            <div className="h-14 md:h-16 lg:h-20 w-auto flex items-center justify-center rounded-lg bg-emerald-dark/80 backdrop-blur-sm px-3 transition-transform duration-300 group-hover:scale-105">
-              <img
-                src={yashneeLogo}
-                alt="Yashnee - Next Gen Talent Partner"
-                className="h-10 md:h-12 lg:h-14 w-auto object-contain"
-              />
-            </div>
+            <img
+              src={yashneeLogo}
+              alt="Yashnee - Next Gen Talent Partner"
+              className="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation */}
