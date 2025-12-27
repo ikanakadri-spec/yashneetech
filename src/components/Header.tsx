@@ -165,6 +165,7 @@ export const Header = () => {
               src={yashneeLogo}
               alt="Yashnee - Next Gen Talent Partner"
               className="h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              style={{ mixBlendMode: 'multiply' }}
             />
           </Link>
 
