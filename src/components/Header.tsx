@@ -2,8 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AutoTransparentImage } from "@/components/AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-transparent.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
@@ -160,14 +158,14 @@ export const Header = () => {
   };
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-28 lg:h-36">
-          <Link to="/" className="flex items-center group">
-            <div className="relative flex items-center">
-              <AutoTransparentImage
-                src={yashneeLogo}
-                alt="Yashnee Tech logo – Next Gen Talent Partner"
-                className="h-24 md:h-28 lg:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_10px_30px_hsl(var(--emerald)/0.25))]"
-              />
+        <div className="flex items-center justify-between h-20 lg:h-24">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-12 h-12 md:w-14 md:h-14 bg-champagne rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+              <span className="text-emerald font-heading font-bold text-2xl md:text-3xl">Y</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading font-bold text-xl md:text-2xl text-white">YASH TECH</span>
+              <span className="text-xs text-champagne-light">Next-Gen Talent Partner</span>
             </div>
           </Link>
 
