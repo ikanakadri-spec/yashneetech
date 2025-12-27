@@ -202,6 +202,17 @@ export default {
             opacity: "0"
           },
         },
+        "flip-3d": {
+          "0%": { 
+            transform: "perspective(400px) rotateY(0deg)",
+          },
+          "50%": { 
+            transform: "perspective(400px) rotateY(180deg)",
+          },
+          "100%": { 
+            transform: "perspective(400px) rotateY(360deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -218,6 +229,7 @@ export default {
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         "spin-slow": "spin-slow 3s linear infinite",
         "float-up": "float-up 0.6s ease-out forwards",
+        "flip-3d": "flip-3d 4s ease-in-out infinite",
       },
     },
   },

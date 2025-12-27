@@ -162,9 +162,12 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center gap-3">
-              {/* Rotating YT Logo Box */}
-              <div className="relative w-12 h-12 md:w-14 md:h-14 perspective-500">
-                <div className="w-full h-full bg-gold rounded-lg flex items-center justify-center shadow-lg animate-spin-slow group-hover:animate-none group-hover:scale-110 transition-transform duration-300">
+              {/* 3D Flip YT Logo Box */}
+              <div className="relative w-12 h-12 md:w-14 md:h-14" style={{ perspective: '400px' }}>
+                <div 
+                  className="w-full h-full bg-gold rounded-lg flex items-center justify-center shadow-lg animate-flip-3d group-hover:animate-none group-hover:scale-110 transition-transform duration-300"
+                  style={{ transformStyle: 'preserve-3d' }}
+                >
                   <div className="flex items-center justify-center">
                     <span className="text-emerald-dark font-black text-lg md:text-xl">Y</span>
                     <span className="text-emerald-dark font-black text-lg md:text-xl -ml-0.5">T</span>
