@@ -65,7 +65,7 @@ const Dropdown = ({
   const itemClasses = "relative block px-4 py-3 text-sm text-emerald-dark transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/15 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
 
   return <div className="relative" ref={dropdownRef}>
-      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-bold text-white hover:text-gold hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all duration-300">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-bold text-white hover:text-emerald-light hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] transition-all duration-300">
         {label}
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
@@ -122,7 +122,7 @@ const ExpertiseDropdown = ({
   const itemClasses = "relative block w-full text-left px-4 py-3 text-sm text-emerald-dark transition-all duration-300 ease-out overflow-hidden group hover:text-gold hover:pl-6 before:absolute before:inset-0 before:bg-gradient-to-r before:from-emerald/15 before:to-transparent before:translate-x-[-100%] before:transition-transform before:duration-300 hover:before:translate-x-0 after:absolute after:left-0 after:top-0 after:bottom-0 after:w-1 after:bg-gold after:scale-y-0 after:transition-transform after:duration-300 hover:after:scale-y-100";
 
   return <div className="relative" ref={dropdownRef}>
-      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-bold text-white hover:text-gold hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all duration-300">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-1 px-4 py-2 text-sm font-bold text-white hover:text-emerald-light hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] transition-all duration-300">
         Areas of Expertise
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
@@ -194,7 +194,7 @@ export const Header = () => {
             <Dropdown label="Hire Talent" items={hireTalentItems} />
             <Dropdown label="For Job Seekers" items={jobSeekerItems} />
             <ExpertiseDropdown />
-            <Link to="/#who-we-are" className="px-4 py-2 text-sm font-bold text-white hover:text-gold hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.5)] transition-all duration-300">
+            <Link to="/#who-we-are" className="px-4 py-2 text-sm font-bold text-white hover:text-emerald-light hover:drop-shadow-[0_0_8px_rgba(16,185,129,0.5)] transition-all duration-300">
               Who We Are
             </Link>
             <Dropdown label="Contact Us" items={contactItems} />
