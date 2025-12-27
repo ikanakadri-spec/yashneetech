@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoNew from "@/assets/logo-new.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
@@ -161,11 +162,15 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <div className="relative h-20 md:h-24 w-auto">
-              <img alt="Yashnee Tech - Next-Gen Talent Partner" className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-105" style={{
-              filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)) drop-shadow(0 0 20px rgba(16, 185, 129, 0.2))',
-              mixBlendMode: 'screen'
-            }} src="/lovable-uploads/839b337c-28d8-4c67-a2e3-6bfa8ee1a106.png" />
+            <div className="relative h-16 md:h-20 w-auto">
+              <img 
+                alt="Yashnee Tech - Next-Gen Talent Partner" 
+                className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-110" 
+                style={{
+                  filter: 'drop-shadow(0 0 12px rgba(16, 185, 129, 0.5)) drop-shadow(0 0 30px rgba(212, 175, 55, 0.3))',
+                }} 
+                src={logoNew} 
+              />
             </div>
           </Link>
 
