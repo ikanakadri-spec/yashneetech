@@ -14,9 +14,11 @@ export const Footer = () => {
               <div className="w-12 h-12 bg-champagne rounded-lg flex items-center justify-center">
                 <span className="text-emerald font-heading font-bold text-2xl">Y</span>
               </div>
-              <div>
-                <span className="font-heading font-bold text-2xl text-primary-foreground">YASH TECH</span>
-                <p className="text-xs text-champagne-light">Next-Gen Talent Partner</p>
+              <div className="-space-y-1">
+                <span className="font-heading font-bold text-2xl tracking-tighter leading-tight bg-gradient-to-r from-champagne via-gold to-champagne bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(212,175,55,0.6)]">
+                  YASHNEE TECH
+                </span>
+                <p className="text-xs text-champagne-light leading-tight drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">Next-Gen Talent Partner</p>
               </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
