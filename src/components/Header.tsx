@@ -162,15 +162,19 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
-              {/* Logo Container */}
+              {/* Logo Container with transparent background blend */}
               <div className="relative">
                 <img 
                   src={yashneeLogoFinal} 
                   alt="Yashnee Tech Logo" 
-                  className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                  className="h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  style={{ 
+                    mixBlendMode: 'multiply',
+                    filter: 'brightness(1.1) contrast(1.1)'
+                  }}
                 />
                 {/* Glow effect */}
-                <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gold/30 rounded-full blur-2xl -z-10 opacity-60 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
           </Link>
