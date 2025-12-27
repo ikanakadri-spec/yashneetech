@@ -222,14 +222,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-emerald via-teal-500 to-cyan-500 rounded-xl shadow-lg group-hover:shadow-emerald/40 transition-shadow"></div>
-              <div className="absolute inset-[3px] bg-gradient-to-br from-gold via-amber-400 to-orange-400 rounded-lg"></div>
-              <div className="absolute inset-[6px] bg-gradient-to-br from-emerald-dark via-emerald to-teal-600 rounded-md"></div>
-              <span className="absolute inset-0 flex items-center justify-center text-transparent bg-clip-text bg-gradient-to-br from-gold-light via-gold to-amber-300 font-heading font-black text-lg drop-shadow-sm">
-                YT
-              </span>
-            </div>
+            <img 
+              src="/assets/logo.png" 
+              alt="Yash Tech Logo" 
+              className="w-11 h-11 object-contain"
+            />
             <div className="hidden sm:block">
               <span className="font-heading font-bold text-xl bg-gradient-to-r from-emerald via-teal-600 to-emerald-dark bg-clip-text text-transparent">
                 YASH
