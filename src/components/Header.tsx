@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import yashneeLogoFinal from "@/assets/yashnee-logo-final.jpg";
+import { AutoTransparentImage } from "@/components/AutoTransparentImage";
+import yashneeLogo from "@/assets/yashnee-logo-transparent.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
@@ -162,17 +163,11 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
-              {/* Logo Container with emerald background */}
-              <div className="relative bg-emerald-dark rounded-lg px-3 py-1.5 shadow-lg border border-emerald/40 transition-all duration-300 group-hover:shadow-gold/30 group-hover:shadow-xl group-hover:scale-105 group-hover:border-gold/50">
-                <img 
-                  src={yashneeLogoFinal} 
-                  alt="Yashnee Tech Logo" 
-                  className="h-10 md:h-12 lg:h-14 w-auto object-contain brightness-110 contrast-110"
-                  style={{ 
-                    filter: 'invert(1) hue-rotate(180deg) brightness(1.5) contrast(1.2)'
-                  }}
-                />
-              </div>
+              <AutoTransparentImage
+                src={yashneeLogo}
+                alt="Yashnee Tech logo – Next Gen Talent Partner"
+                className="h-10 md:h-12 lg:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_10px_30px_hsl(var(--emerald)/0.25))]"
+              />
             </div>
           </Link>
 
