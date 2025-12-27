@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import yashneeLogo from "@/assets/yashnee-logo-v2.png";
+import yashneeLogo from "@/assets/yashnee-logo-v3.png";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
