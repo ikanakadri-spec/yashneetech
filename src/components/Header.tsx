@@ -160,12 +160,25 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <div className="relative h-20 md:h-24 w-auto">
-              <img alt="Yashnee Tech - Next-Gen Talent Partner" className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-105" style={{
-              filter: 'brightness(1.1) contrast(1.1) drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)) drop-shadow(0 0 20px rgba(16, 185, 129, 0.2))',
-              mixBlendMode: 'screen'
-            }} src="/lovable-uploads/839b337c-28d8-4c67-a2e3-6bfa8ee1a106.png" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative h-12 md:h-14 w-auto">
+              <img 
+                alt="Yashnee Tech Logo" 
+                className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-105" 
+                style={{
+                  filter: 'drop-shadow(0 0 10px rgba(16, 185, 129, 0.5)) drop-shadow(0 0 20px rgba(16, 185, 129, 0.3))',
+                  mixBlendMode: 'multiply'
+                }} 
+                src="/lovable-uploads/yashnee-logo-new.png" 
+              />
+            </div>
+            <div className="hidden sm:flex flex-col">
+              <span className="text-xl md:text-2xl font-bold text-white tracking-tight" style={{ textShadow: '0 0 10px rgba(16, 185, 129, 0.4)' }}>
+                Yashnee Tech
+              </span>
+              <span className="text-xs text-gold font-medium tracking-wider">
+                Next-Gen Talent Partner
+              </span>
             </div>
           </Link>
 
