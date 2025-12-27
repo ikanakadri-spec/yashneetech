@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const AnimatedLogo = ({ className = "", size = 48 }: { className?: string; size?: number }) => {
+const AnimatedLogo = ({ className = "", size = 80 }: { className?: string; size?: number }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

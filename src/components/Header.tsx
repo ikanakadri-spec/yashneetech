@@ -161,8 +161,8 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
-            <div className="relative h-16 md:h-20 w-auto flex items-center">
-              <AnimatedLogo size={64} className="md:w-20 md:h-20" />
+            <div className="relative h-20 md:h-24 w-auto flex items-center">
+              <AnimatedLogo size={80} className="md:w-24 md:h-24" />
               <span className="ml-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
                 <span className="text-emerald-light">Yashnee</span>
                 <span className="text-gold ml-1">Tech</span>
