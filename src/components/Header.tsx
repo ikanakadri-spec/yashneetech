@@ -162,20 +162,15 @@ export const Header = () => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
-              {/* Animated Logo Container */}
-              <div className="relative" style={{ perspective: '400px' }}>
-                <div 
-                  className="animate-flip-3d group-hover:animate-none group-hover:scale-105 transition-transform duration-300"
-                  style={{ transformStyle: 'preserve-3d' }}
-                >
-                  <img 
-                    src={yashneeLogoFinal} 
-                    alt="Yashnee Tech Logo" 
-                    className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl"
-                  />
-                </div>
+              {/* Logo Container */}
+              <div className="relative">
+                <img 
+                  src={yashneeLogoFinal} 
+                  alt="Yashnee Tech Logo" 
+                  className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
+                />
                 {/* Glow effect */}
-                <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl -z-10 animate-pulse" />
+                <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
           </Link>
