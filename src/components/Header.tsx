@@ -221,23 +221,13 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center group">
             <img 
               src="/assets/logo.png" 
-              alt="Yashnee Tech Logo" 
-              className="h-12 w-auto object-contain"
+              alt="Yashnee Tech - Next-Gen Talent Partner" 
+              className="h-14 md:h-16 w-auto object-contain mix-blend-multiply dark:mix-blend-screen brightness-110"
+              style={{ filter: 'drop-shadow(0 0 1px rgba(255,255,255,0.3))' }}
             />
-            <div className="hidden sm:flex flex-col">
-              <div className="flex items-baseline">
-                <span className="font-heading font-bold text-xl text-emerald">
-                  Yashnee
-                </span>
-                <span className="font-heading font-bold text-xl text-emerald ml-1">
-                  Tech
-                </span>
-              </div>
-              <p className="text-xs text-gold font-medium -mt-0.5">Next-Gen Talent Partner</p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
