@@ -168,7 +168,7 @@ export const Header = () => {
                 YASHNEE TECH
               </span>
               <span className="text-[9px] md:text-[10px] text-orange-500 tracking-wide italic font-medium mx-0 my-0 px-[2px]">
-                                Next Gen Talent Partner
+                                Next-Gen Talent Partner
               </span>
             </div>
           </Link>
