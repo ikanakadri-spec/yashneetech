@@ -27,10 +27,58 @@ function buildCornerPalette(imageData: ImageData) {
     palette.set(rgbKey(q), q);
   }
 
-  // Fallback: add a near-white and light-gray option (common checkerboard)
-  palette.set("248,248,248", [248, 248, 248]);
-  palette.set("232,232,232", [232, 232, 232]);
+  // Add comprehensive light color palette for thorough background removal
+  palette.set("255,255,255", [255, 255, 255]); // Pure white
+  palette.set("248,248,248", [248, 248, 248]); // Near white
+  palette.set("240,240,240", [240, 240, 240]); // Light gray
+  palette.set("232,232,232", [232, 232, 232]); // Checkerboard gray
+  palette.set("224,224,224", [224, 224, 224]); // Medium light gray
+  palette.set("216,216,216", [216, 216, 216]); // Gray
+  palette.set("208,208,208", [208, 208, 208]); // Slightly darker
+  palette.set("200,200,200", [200, 200, 200]); // Edge gray
   return Array.from(palette.values());
+}
+
+// Clean up semi-transparent edge pixels (anti-aliasing artifacts)
+function cleanEdges(imageData: ImageData, threshold: number = 180) {
+  const { width: w, height: h, data } = imageData;
+  
+  for (let y = 0; y < h; y++) {
+    for (let x = 0; x < w; x++) {
+      const i = (y * w + x) * 4;
+      const r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+      
+      // If pixel is semi-transparent and light colored, make it fully transparent
+      if (a > 0 && a < 255) {
+        const brightness = (r + g + b) / 3;
+        if (brightness > threshold) {
+          data[i + 3] = 0;
+        }
+      }
+      
+      // If pixel is opaque but very light (near white), check neighbors
+      if (a === 255 && r > threshold && g > threshold && b > threshold) {
+        // Check if any neighbor is transparent
+        let hasTransparentNeighbor = false;
+        const neighbors = [
+          [x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]
+        ];
+        for (const [nx, ny] of neighbors) {
+          if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+            const ni = (ny * w + nx) * 4;
+            if (data[ni + 3] === 0) {
+              hasTransparentNeighbor = true;
+              break;
+            }
+          }
+        }
+        if (hasTransparentNeighbor) {
+          data[i + 3] = 0; // Make edge pixel transparent
+        }
+      }
+    }
+  }
+  return imageData;
 }
 function floodFillTransparent(imageData: ImageData, palette: RGB[], tolerance: number) {
   const {
@@ -115,7 +163,9 @@ export function AutoTransparentImage({
         ctx.drawImage(img, 0, 0, w, h);
         const imageData = ctx.getImageData(0, 0, w, h);
         const palette = buildCornerPalette(imageData);
-        const cleaned = floodFillTransparent(imageData, palette, tolerance);
+        let cleaned = floodFillTransparent(imageData, palette, tolerance);
+        // Second pass: clean up edge artifacts
+        cleaned = cleanEdges(cleaned, 180);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
         if (!cancelled) setProcessedSrc(url);
