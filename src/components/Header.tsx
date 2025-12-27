@@ -178,9 +178,6 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img src={logo} alt="Yashnee Logo" className="h-10 sm:h-12 w-auto" />
-            <div className="hidden sm:block">
-              <p className="text-[10px] text-gold font-medium tracking-wide">Next-Gen Hiring Partner</p>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
