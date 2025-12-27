@@ -189,6 +189,14 @@ export default {
             transform: "scale(1.1)",
           },
         },
+        "text-shimmer": {
+          "0%": { 
+            backgroundPosition: "200% center",
+          },
+          "100%": { 
+            backgroundPosition: "-200% center",
+          },
+        },
         "spin-slow": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
@@ -228,6 +236,7 @@ export default {
         "float-slow": "float-slow 8s ease-in-out infinite",
         "float-slow-reverse": "float-slow-reverse 10s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "text-shimmer": "text-shimmer 4s ease-in-out infinite",
         "spin-slow": "spin-slow 3s linear infinite",
         "float-up": "float-up 0.6s ease-out forwards",
         "flip-3d": "flip-3d 4s ease-in-out infinite",
