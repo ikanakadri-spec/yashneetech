@@ -160,13 +160,13 @@ export const Header = () => {
   };
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-24 lg:h-32">
+        <div className="flex items-center justify-between h-28 lg:h-36">
           <Link to="/" className="flex items-center group">
             <div className="relative flex items-center">
               <AutoTransparentImage
                 src={yashneeLogo}
                 alt="Yashnee Tech logo – Next Gen Talent Partner"
-                className="h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_10px_30px_hsl(var(--emerald)/0.25))]"
+                className="h-24 md:h-28 lg:h-32 w-auto object-contain transition-transform duration-300 group-hover:scale-105 [filter:drop-shadow(0_10px_30px_hsl(var(--emerald)/0.25))]"
               />
             </div>
           </Link>
