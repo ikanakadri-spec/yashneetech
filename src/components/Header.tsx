@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import yashneeLogo from "@/assets/yashnee-logo-v3.png";
+import AnimatedLogo from "@/components/AnimatedLogo";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
@@ -160,17 +160,9 @@ export const Header = () => {
   return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center group">
             <div className="relative h-16 md:h-20 w-auto flex items-center">
-              <img 
-                alt="Yashnee Tech - Next-Gen Talent Partner" 
-                className="h-full w-auto object-contain transition-all duration-300 group-hover:scale-105" 
-                style={{
-                  filter: 'drop-shadow(0 0 12px rgba(16, 185, 129, 0.5)) drop-shadow(0 0 24px rgba(16, 185, 129, 0.3))',
-                }}
-                src={yashneeLogo} 
-              />
+              <AnimatedLogo size={64} className="md:w-20 md:h-20" />
               <span className="ml-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
                 <span className="text-emerald-light">Yashnee</span>
                 <span className="text-gold ml-1">Tech</span>
