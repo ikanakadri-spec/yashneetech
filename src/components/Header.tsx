@@ -171,7 +171,7 @@ export const Header = () => {
                   <img 
                     src={yashneeLogoFinal} 
                     alt="Yashnee Tech Logo" 
-                    className="h-12 md:h-16 w-auto object-contain drop-shadow-lg"
+                    className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-2xl"
                   />
                 </div>
                 {/* Glow effect */}
