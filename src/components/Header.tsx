@@ -168,12 +168,12 @@ export const Header = () => {
               className="h-14 md:h-16 lg:h-20 w-auto object-contain"
               tolerance={80}
             />
-            <div className="flex flex-col -ml-4 leading-none">
-              <span className="text-xl md:text-2xl lg:text-3xl font-heading font-bold gradient-text-animated tracking-wide">
-                YASHNEE TECH
+            <div className="flex flex-col -ml-3 leading-none">
+              <span className="text-xl md:text-2xl lg:text-3xl font-heading font-bold text-emerald tracking-wide lowercase">
+                yashnee
               </span>
-              <span className="text-[8px] md:text-[9px] text-emerald-light tracking-widest uppercase font-medium">
-                Next-Gen Talent Partner
+              <span className="text-[9px] md:text-[10px] text-orange-500 tracking-wide italic font-medium">
+                Next Gen Talent Partner
               </span>
             </div>
           </Link>
