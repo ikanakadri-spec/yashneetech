@@ -161,12 +161,21 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
-            <div className="relative h-20 md:h-24 w-auto flex items-center">
-              <AnimatedLogo size={80} className="md:w-24 md:h-24" />
-              <span className="ml-3 text-2xl md:text-3xl font-bold text-white tracking-tight">
-                <span className="text-emerald-light">Yashnee</span>
-                <span className="text-gold ml-1">Tech</span>
-              </span>
+            <div className="relative flex items-center gap-3">
+              {/* Yellow Y Box */}
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gold rounded-md flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <span className="text-emerald-dark font-bold text-xl md:text-2xl">Y</span>
+              </div>
+              {/* Text */}
+              <div className="flex flex-col">
+                <span className="text-xl md:text-2xl font-bold tracking-tight leading-none">
+                  <span className="text-gold">YASH</span>
+                  <span className="text-white ml-1">TECH</span>
+                </span>
+                <span className="text-[10px] md:text-xs text-white/80 tracking-wider">
+                  Next-Gen Talent Partner
+                </span>
+              </div>
             </div>
           </Link>
 
