@@ -217,7 +217,7 @@ export const Header = () => {
             <Dropdown label="Hire Talent" items={hireTalentItems} onItemClick={closeMobileMenu} />
             <Dropdown label="For Job Seekers" items={jobSeekerItems} onItemClick={closeMobileMenu} />
             <ExpertiseDropdown onItemClick={closeMobileMenu} />
-            <Link to="/who-we-are" className="block px-4 py-2 text-sm font-medium text-foreground" onClick={closeMobileMenu}>
+            <Link to="/who-we-are" className="block px-4 py-2 text-sm font-bold text-white bg-emerald/20 rounded-md hover:bg-emerald hover:text-primary-foreground transition-all duration-300" onClick={closeMobileMenu}>
               Who We Are
             </Link>
             <Dropdown label="Contact Us" items={contactItems} onItemClick={closeMobileMenu} />
