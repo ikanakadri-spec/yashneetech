@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AnimatedLogo from "@/components/AnimatedLogo";
+import yashneeLogoFinal from "@/assets/yashnee-logo-final.jpg";
 const hireTalentItems = [{
   label: "Staffing Solutions",
   href: "/contact#contact-form"
@@ -161,30 +161,21 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center group">
-            <div className="relative flex items-center gap-3">
-              {/* 3D Flip YT Logo Box */}
-              <div className="relative w-12 h-12 md:w-14 md:h-14" style={{ perspective: '400px' }}>
+            <div className="relative flex items-center">
+              {/* Animated Logo Container */}
+              <div className="relative" style={{ perspective: '400px' }}>
                 <div 
-                  className="w-full h-full bg-gold rounded-lg flex items-center justify-center shadow-lg animate-flip-3d group-hover:animate-none group-hover:scale-110 transition-transform duration-300"
+                  className="animate-flip-3d group-hover:animate-none group-hover:scale-105 transition-transform duration-300"
                   style={{ transformStyle: 'preserve-3d' }}
                 >
-                  <div className="flex items-center justify-center">
-                    <span className="text-emerald-dark font-black text-lg md:text-xl">Y</span>
-                    <span className="text-emerald-dark font-black text-lg md:text-xl -ml-0.5">T</span>
-                  </div>
+                  <img 
+                    src={yashneeLogoFinal} 
+                    alt="Yashnee Tech Logo" 
+                    className="h-12 md:h-16 w-auto object-contain drop-shadow-lg"
+                  />
                 </div>
                 {/* Glow effect */}
-                <div className="absolute inset-0 bg-gold/30 rounded-lg blur-md -z-10 animate-pulse" />
-              </div>
-              {/* Text */}
-              <div className="flex flex-col">
-                <span className="text-xl md:text-2xl font-bold tracking-tight leading-none">
-                  <span className="text-gold">YASH</span>
-                  <span className="text-white ml-1">TECH</span>
-                </span>
-                <span className="text-[10px] md:text-xs text-white/80 tracking-wider">
-                  Next-Gen Talent Partner
-                </span>
+                <div className="absolute inset-0 bg-gold/20 rounded-full blur-xl -z-10 animate-pulse" />
               </div>
             </div>
           </Link>
