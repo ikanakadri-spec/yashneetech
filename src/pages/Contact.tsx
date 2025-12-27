@@ -89,7 +89,6 @@ const Contact = () => {
       formData.enquiryType &&
       formData.industry &&
       formData.timeline &&
-      formData.requirements.trim() &&
       captchaChecked
     );
   };
@@ -211,18 +210,18 @@ const Contact = () => {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-champagne/5 rounded-full blur-3xl" />
               
               {/* Personal Information Section */}
-              <div className="relative space-y-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center">
-                    <span className="text-emerald font-semibold text-sm">1</span>
+              <div className="relative space-y-4">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-6 h-6 rounded-md bg-emerald/10 flex items-center justify-center">
+                    <span className="text-emerald font-semibold text-xs">1</span>
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground">Personal Information</h3>
+                  <h3 className="font-heading font-medium text-sm text-foreground">Personal Information</h3>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   {/* Full Name */}
                   <div className="relative group">
-                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
                       Full Name <span className="text-destructive">*</span>
                     </label>
                     <input
@@ -232,9 +231,9 @@ const Contact = () => {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('name')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground ${
+                      className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground ${
                         focusedField === 'name' 
-                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          ? 'border-emerald shadow-md shadow-emerald/10' 
                           : 'border-border hover:border-emerald/50'
                       }`}
                       placeholder="Enter your full name"
@@ -244,7 +243,7 @@ const Contact = () => {
 
                   {/* Contact Number */}
                   <div className="relative group">
-                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
                       Contact Number <span className="text-destructive">*</span>
                     </label>
                     <input
@@ -254,9 +253,9 @@ const Contact = () => {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('contactNumber')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground ${
+                      className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground ${
                         focusedField === 'contactNumber' 
-                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          ? 'border-emerald shadow-md shadow-emerald/10' 
                           : 'border-border hover:border-emerald/50'
                       }`}
                       placeholder="+91 XXXXX XXXXX"
@@ -267,7 +266,7 @@ const Contact = () => {
 
                 {/* Email - Full width */}
                 <div className="relative group">
-                  <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                  <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
                     Email Address <span className="text-destructive">*</span>
                   </label>
                   <input
@@ -277,9 +276,9 @@ const Contact = () => {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('email')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground ${
+                    className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground ${
                       focusedField === 'email' 
-                        ? 'border-emerald shadow-lg shadow-emerald/10' 
+                        ? 'border-emerald shadow-md shadow-emerald/10' 
                         : 'border-border hover:border-emerald/50'
                     }`}
                     placeholder="your.email@example.com"
@@ -296,18 +295,18 @@ const Contact = () => {
               </div>
 
               {/* Enquiry Details Section */}
-              <div className="relative space-y-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-8 h-8 rounded-lg bg-champagne/20 flex items-center justify-center">
-                    <span className="text-champagne font-semibold text-sm">2</span>
+              <div className="relative space-y-4">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-6 h-6 rounded-md bg-champagne/20 flex items-center justify-center">
+                    <span className="text-champagne font-semibold text-xs">2</span>
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground">Enquiry Details</h3>
+                  <h3 className="font-heading font-medium text-sm text-foreground">Enquiry Details</h3>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   {/* Type of Enquiry */}
                   <div className="relative group">
-                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
                       Type of Enquiry <span className="text-destructive">*</span>
                     </label>
                     <select
@@ -316,9 +315,9 @@ const Contact = () => {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('enquiryType')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer ${
+                      className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground cursor-pointer ${
                         focusedField === 'enquiryType' 
-                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          ? 'border-emerald shadow-md shadow-emerald/10' 
                           : 'border-border hover:border-emerald/50'
                       }`}
                       required
@@ -332,7 +331,7 @@ const Contact = () => {
 
                   {/* Industry */}
                   <div className="relative group">
-                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
                       Industry <span className="text-destructive">*</span>
                     </label>
                     <select
@@ -341,9 +340,9 @@ const Contact = () => {
                       onChange={handleChange}
                       onFocus={() => setFocusedField('industry')}
                       onBlur={() => setFocusedField(null)}
-                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer ${
+                      className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground cursor-pointer ${
                         focusedField === 'industry' 
-                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          ? 'border-emerald shadow-md shadow-emerald/10' 
                           : 'border-border hover:border-emerald/50'
                       }`}
                       required
@@ -358,7 +357,7 @@ const Contact = () => {
 
                 {/* Timeline */}
                 <div className="relative group">
-                  <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                  <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
                     What is your timeline? <span className="text-destructive">*</span>
                   </label>
                   <select
@@ -367,9 +366,9 @@ const Contact = () => {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('timeline')}
                     onBlur={() => setFocusedField(null)}
-                    className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer ${
+                    className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground cursor-pointer ${
                       focusedField === 'timeline' 
-                        ? 'border-emerald shadow-lg shadow-emerald/10' 
+                        ? 'border-emerald shadow-md shadow-emerald/10' 
                         : 'border-border hover:border-emerald/50'
                     }`}
                     required
@@ -381,10 +380,10 @@ const Contact = () => {
                   </select>
                 </div>
 
-                {/* Requirements */}
+                {/* Requirements - Optional */}
                 <div className="relative group">
-                  <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
-                    Tell us about your requirements <span className="text-destructive">*</span>
+                  <label className="block text-xs font-medium text-foreground mb-1.5 transition-colors group-focus-within:text-emerald">
+                    Tell us about your requirements <span className="text-muted-foreground text-xs">(Optional)</span>
                   </label>
                   <textarea
                     name="requirements"
@@ -392,22 +391,21 @@ const Contact = () => {
                     onChange={handleChange}
                     onFocus={() => setFocusedField('requirements')}
                     onBlur={() => setFocusedField(null)}
-                    rows={5}
-                    className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground resize-none ${
+                    rows={3}
+                    className={`w-full px-3 py-2.5 rounded-lg bg-background border transition-all duration-300 text-sm text-foreground placeholder:text-muted-foreground resize-none ${
                       focusedField === 'requirements' 
-                        ? 'border-emerald shadow-lg shadow-emerald/10' 
+                        ? 'border-emerald shadow-md shadow-emerald/10' 
                         : 'border-border hover:border-emerald/50'
                     }`}
                     placeholder="Please describe your staffing needs, job requirements, or any other details..."
-                    required
                   />
                 </div>
               </div>
 
               {/* Attachments */}
               <div className="relative group">
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Attachments (Optional)
+                <label className="block text-xs font-medium text-foreground mb-1.5">
+                  Attachments <span className="text-muted-foreground text-xs">(Optional)</span>
                 </label>
                 <div className="relative">
                   <input
