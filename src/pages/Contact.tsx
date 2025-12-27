@@ -47,12 +47,17 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [captchaChecked, setCaptchaChecked] = useState(false);
   const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contactNumber: "",
     enquiryType: "",
     industry: "",
     timeline: "",
     requirements: "",
     attachment: null as File | null
   });
+
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   // Scroll to form if hash is present
   useEffect(() => {
@@ -63,7 +68,7 @@ const Contact = () => {
     }
   }, [location]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
@@ -75,7 +80,12 @@ const Contact = () => {
   };
 
   const isFormValid = () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[+]?[\d\s-]{10,}$/;
     return (
+      formData.name.trim() &&
+      emailRegex.test(formData.email) &&
+      phoneRegex.test(formData.contactNumber) &&
       formData.enquiryType &&
       formData.industry &&
       formData.timeline &&
@@ -108,6 +118,9 @@ const Contact = () => {
     
     // Reset form
     setFormData({
+      name: "",
+      email: "",
+      contactNumber: "",
       enquiryType: "",
       industry: "",
       timeline: "",
@@ -192,82 +205,207 @@ const Contact = () => {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-card border border-border shadow-lg space-y-6">
-              {/* Type of Enquiry */}
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Type of Enquiry <span className="text-destructive">*</span>
-                </label>
-                <select
-                  name="enquiryType"
-                  value={formData.enquiryType}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-foreground"
-                  required
-                >
-                  <option value="">Select enquiry type</option>
-                  {enquiryTypes.map(type => (
-                    <option key={type} value={type}>{type}</option>
-                  ))}
-                </select>
+            <form onSubmit={handleSubmit} className="relative p-8 md:p-10 rounded-3xl bg-card/80 backdrop-blur-sm border border-border/50 shadow-2xl space-y-8 overflow-hidden">
+              {/* Decorative background elements */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-emerald/5 rounded-full blur-3xl" />
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-champagne/5 rounded-full blur-3xl" />
+              
+              {/* Personal Information Section */}
+              <div className="relative space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-lg bg-emerald/10 flex items-center justify-center">
+                    <span className="text-emerald font-semibold text-sm">1</span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground">Personal Information</h3>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Full Name */}
+                  <div className="relative group">
+                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                      Full Name <span className="text-destructive">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField('name')}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground ${
+                        focusedField === 'name' 
+                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          : 'border-border hover:border-emerald/50'
+                      }`}
+                      placeholder="Enter your full name"
+                      required
+                    />
+                  </div>
+
+                  {/* Contact Number */}
+                  <div className="relative group">
+                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                      Contact Number <span className="text-destructive">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      name="contactNumber"
+                      value={formData.contactNumber}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField('contactNumber')}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground ${
+                        focusedField === 'contactNumber' 
+                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          : 'border-border hover:border-emerald/50'
+                      }`}
+                      placeholder="+91 XXXXX XXXXX"
+                      required
+                    />
+                  </div>
+                </div>
+
+                {/* Email - Full width */}
+                <div className="relative group">
+                  <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    Email Address <span className="text-destructive">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField('email')}
+                    onBlur={() => setFocusedField(null)}
+                    className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground ${
+                      focusedField === 'email' 
+                        ? 'border-emerald shadow-lg shadow-emerald/10' 
+                        : 'border-border hover:border-emerald/50'
+                    }`}
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
               </div>
 
-              {/* Industry */}
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Industry <span className="text-destructive">*</span>
-                </label>
-                <select
-                  name="industry"
-                  value={formData.industry}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-foreground"
-                  required
-                >
-                  <option value="">Select industry</option>
-                  {industries.map(ind => (
-                    <option key={ind} value={ind}>{ind}</option>
-                  ))}
-                </select>
+              {/* Divider */}
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-border/50"></div>
+                </div>
               </div>
 
-              {/* Timeline */}
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  What is your timeline? <span className="text-destructive">*</span>
-                </label>
-                <select
-                  name="timeline"
-                  value={formData.timeline}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-foreground"
-                  required
-                >
-                  <option value="">Select timeline</option>
-                  {timelines.map(time => (
-                    <option key={time} value={time}>{time}</option>
-                  ))}
-                </select>
-              </div>
+              {/* Enquiry Details Section */}
+              <div className="relative space-y-6">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-lg bg-champagne/20 flex items-center justify-center">
+                    <span className="text-champagne font-semibold text-sm">2</span>
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground">Enquiry Details</h3>
+                </div>
 
-              {/* Requirements */}
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Tell us about your requirements <span className="text-destructive">*</span>
-                </label>
-                <textarea
-                  name="requirements"
-                  value={formData.requirements}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 focus:outline-none transition-all text-foreground placeholder:text-muted-foreground resize-none"
-                  placeholder="Please describe your staffing needs, job requirements, or any other details..."
-                  required
-                />
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Type of Enquiry */}
+                  <div className="relative group">
+                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                      Type of Enquiry <span className="text-destructive">*</span>
+                    </label>
+                    <select
+                      name="enquiryType"
+                      value={formData.enquiryType}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField('enquiryType')}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer ${
+                        focusedField === 'enquiryType' 
+                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          : 'border-border hover:border-emerald/50'
+                      }`}
+                      required
+                    >
+                      <option value="">Select enquiry type</option>
+                      {enquiryTypes.map(type => (
+                        <option key={type} value={type}>{type}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Industry */}
+                  <div className="relative group">
+                    <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                      Industry <span className="text-destructive">*</span>
+                    </label>
+                    <select
+                      name="industry"
+                      value={formData.industry}
+                      onChange={handleChange}
+                      onFocus={() => setFocusedField('industry')}
+                      onBlur={() => setFocusedField(null)}
+                      className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer ${
+                        focusedField === 'industry' 
+                          ? 'border-emerald shadow-lg shadow-emerald/10' 
+                          : 'border-border hover:border-emerald/50'
+                      }`}
+                      required
+                    >
+                      <option value="">Select industry</option>
+                      {industries.map(ind => (
+                        <option key={ind} value={ind}>{ind}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* Timeline */}
+                <div className="relative group">
+                  <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    What is your timeline? <span className="text-destructive">*</span>
+                  </label>
+                  <select
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField('timeline')}
+                    onBlur={() => setFocusedField(null)}
+                    className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground cursor-pointer ${
+                      focusedField === 'timeline' 
+                        ? 'border-emerald shadow-lg shadow-emerald/10' 
+                        : 'border-border hover:border-emerald/50'
+                    }`}
+                    required
+                  >
+                    <option value="">Select timeline</option>
+                    {timelines.map(time => (
+                      <option key={time} value={time}>{time}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Requirements */}
+                <div className="relative group">
+                  <label className="block text-sm font-medium text-foreground mb-2 transition-colors group-focus-within:text-emerald">
+                    Tell us about your requirements <span className="text-destructive">*</span>
+                  </label>
+                  <textarea
+                    name="requirements"
+                    value={formData.requirements}
+                    onChange={handleChange}
+                    onFocus={() => setFocusedField('requirements')}
+                    onBlur={() => setFocusedField(null)}
+                    rows={5}
+                    className={`w-full px-4 py-3.5 rounded-xl bg-background border-2 transition-all duration-300 text-foreground placeholder:text-muted-foreground resize-none ${
+                      focusedField === 'requirements' 
+                        ? 'border-emerald shadow-lg shadow-emerald/10' 
+                        : 'border-border hover:border-emerald/50'
+                    }`}
+                    placeholder="Please describe your staffing needs, job requirements, or any other details..."
+                    required
+                  />
+                </div>
               </div>
 
               {/* Attachments */}
-              <div>
+              <div className="relative group">
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Attachments (Optional)
                 </label>
@@ -281,10 +419,12 @@ const Contact = () => {
                   />
                   <label
                     htmlFor="file-upload"
-                    className="flex items-center justify-center gap-3 w-full px-4 py-4 rounded-lg border-2 border-dashed border-border bg-secondary/50 hover:border-primary/50 cursor-pointer transition-colors"
+                    className="flex items-center justify-center gap-3 w-full px-4 py-5 rounded-xl border-2 border-dashed border-border bg-background hover:border-emerald/50 hover:bg-emerald/5 cursor-pointer transition-all duration-300 group"
                   >
-                    <Upload className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-muted-foreground">
+                    <div className="w-10 h-10 rounded-full bg-emerald/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Upload className="w-5 h-5 text-emerald" />
+                    </div>
+                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">
                       {formData.attachment ? formData.attachment.name : "Click to upload resume or documents"}
                     </span>
                   </label>
@@ -292,15 +432,20 @@ const Contact = () => {
               </div>
 
               {/* CAPTCHA Placeholder */}
-              <div className="p-4 rounded-lg bg-secondary/50 border border-border">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={captchaChecked}
-                    onChange={(e) => setCaptchaChecked(e.target.checked)}
-                    className="w-5 h-5 rounded border-border text-primary focus:ring-primary"
-                  />
-                  <span className="text-sm text-foreground">I'm not a robot</span>
+              <div className="p-5 rounded-xl bg-background border-2 border-border hover:border-emerald/30 transition-colors">
+                <label className="flex items-center gap-4 cursor-pointer group">
+                  <div className="relative">
+                    <input
+                      type="checkbox"
+                      checked={captchaChecked}
+                      onChange={(e) => setCaptchaChecked(e.target.checked)}
+                      className="peer w-6 h-6 rounded-lg border-2 border-border text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald"
+                    />
+                    {captchaChecked && (
+                      <CheckCircle className="absolute inset-0 w-6 h-6 text-primary-foreground pointer-events-none" />
+                    )}
+                  </div>
+                  <span className="text-sm text-foreground group-hover:text-emerald transition-colors">I'm not a robot</span>
                 </label>
               </div>
 
@@ -308,7 +453,7 @@ const Contact = () => {
               <Button
                 type="submit"
                 size="lg"
-                className="w-full bg-emerald hover:bg-emerald-light text-primary-foreground text-base"
+                className="w-full bg-emerald hover:bg-emerald-light text-primary-foreground text-base py-6 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:shadow-emerald/20 transition-all duration-300 hover:-translate-y-0.5"
                 disabled={!isFormValid() || isSubmitting}
               >
                 {isSubmitting ? (
