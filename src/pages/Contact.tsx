@@ -222,56 +222,11 @@ const Contact = () => {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-5 gap-12 items-start">
               
-              {/* Left Side - Info Panel */}
-              <div className="lg:col-span-2 space-y-8">
-                <div>
-                  <span className="inline-block px-3 py-1 rounded-full bg-emerald/10 text-emerald text-sm font-medium mb-4">
-                    Get Started
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4 leading-tight">
-                    Ready to Transform Your Workforce?
-                  </h2>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Fill out the form and our team will reach out within 24 hours to discuss your requirements.
-                  </p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-emerald/30 transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-emerald/10 flex items-center justify-center flex-shrink-0">
-                      <Briefcase className="w-5 h-5 text-emerald" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Expert Recruiters</h4>
-                      <p className="text-muted-foreground text-sm">Industry-specialized talent acquisition team</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-champagne/30 transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-champagne/10 flex items-center justify-center flex-shrink-0">
-                      <Users className="w-5 h-5 text-champagne" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Vetted Candidates</h4>
-                      <p className="text-muted-foreground text-sm">Thoroughly screened professionals</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4 p-4 rounded-xl bg-card border border-border/50 hover:border-emerald/30 transition-colors">
-                    <div className="w-10 h-10 rounded-xl bg-emerald/10 flex items-center justify-center flex-shrink-0">
-                      <Clock className="w-5 h-5 text-emerald" />
-                    </div>
-                    <div>
-                      <h4 className="font-heading font-semibold text-foreground text-sm mb-1">Fast Turnaround</h4>
-                      <p className="text-muted-foreground text-sm">Quick response within 24-48 hours</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side - Form */}
-              <div className="lg:col-span-3">
+              {/* Form Section - Full Width */}
+              <div className="lg:col-span-5">
+                <p className="text-center text-muted-foreground mb-8 text-lg">
+                  Fill out the form and our team will reach out within 24 hours to discuss your requirements.
+                </p>
                 <form onSubmit={handleSubmit} className="relative p-8 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl space-y-6 overflow-hidden">
                   {/* Decorative corner accent */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald/5 to-transparent rounded-bl-full" />
