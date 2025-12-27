@@ -227,7 +227,7 @@ const Contact = () => {
                 <p className="text-center text-muted-foreground mb-8 text-lg">
                   Fill out the form and our team will reach out within 24 hours to discuss your requirements.
                 </p>
-                <form onSubmit={handleSubmit} className="relative p-8 md:p-10 rounded-3xl bg-card border border-border/50 shadow-xl space-y-6 overflow-hidden">
+                <form onSubmit={handleSubmit} className="relative p-8 md:p-10 rounded-3xl bg-card border-2 border-emerald shadow-xl space-y-6 overflow-hidden">
                   {/* Decorative corner accent */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald/5 to-transparent rounded-bl-full" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-champagne/5 to-transparent rounded-tr-full" />
