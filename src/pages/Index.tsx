@@ -73,6 +73,16 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
+        {/* Animated background shapes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-champagne/30 to-champagne-light/20 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-emerald/20 to-emerald-light/10 rounded-full blur-3xl animate-float-slow" style={{
+          animationDelay: '2s'
+        }} />
+          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-br from-champagne/20 to-transparent rounded-full blur-3xl animate-float-slow" style={{
+          animationDelay: '4s'
+        }} />
+        </div>
 
         <div className="absolute inset-0">
           <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
@@ -157,6 +167,7 @@ const Index = () => {
       <section id="services" className="py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/30 to-transparent pointer-events-none" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-20">
@@ -199,6 +210,7 @@ const Index = () => {
 
       {/* Mission Section */}
       <section id="mission" className="py-24 bg-gradient-to-b from-background to-ivory relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald/5 via-transparent to-transparent opacity-70" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -246,6 +258,18 @@ const Index = () => {
       <section className="py-32 relative overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald-light to-emerald animate-gradient" />
+        
+        {/* Decorative shapes */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -right-20 w-80 h-80 bg-champagne/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '3s'
+        }} />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary-foreground/10 rounded-full animate-rotate-slow" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary-foreground/5 rounded-full animate-rotate-slow" style={{
+          animationDirection: 'reverse'
+        }} />
+        </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
