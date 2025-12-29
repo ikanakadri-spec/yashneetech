@@ -95,7 +95,7 @@ const PrivacyPolicy = () => {
               <h2 className="text-base font-heading font-semibold text-foreground mb-2">8. Cookies</h2>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 We use cookies and similar tracking technologies to enhance your experience on our website. For more information, please see our{" "}
-                <Link to="/terms-of-service" className="text-emerald hover:text-emerald-light font-medium">
+                <Link to="/terms" className="text-emerald hover:text-emerald-light underline">
                   Terms of Service
                 </Link>.
               </p>

@@ -432,11 +432,11 @@ const Contact = () => {
                       </div>
                       <span className="text-xs text-foreground leading-relaxed">
                         I agree to the{" "}
-                        <Link to="/privacy-policy" className="text-emerald hover:text-emerald-light font-medium" target="_blank">
+                        <Link to="/privacy" className="text-emerald hover:text-emerald-light underline" target="_blank">
                           Privacy Policy
                         </Link>
                         {" "}and{" "}
-                        <Link to="/terms-of-service" className="text-emerald hover:text-emerald-light font-medium" target="_blank">
+                        <Link to="/terms" className="text-emerald hover:text-emerald-light underline" target="_blank">
                           Terms of Service
                         </Link>
                         {" "}and allow Yashnee Tech to use my information.<span className="text-destructive">*</span>
