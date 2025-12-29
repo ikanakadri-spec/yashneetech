@@ -56,7 +56,7 @@ const GetStarted = () => {
             <div className="grid md:grid-cols-2 gap-8">
               
               {/* Employer Card */}
-              <Link to="/contact" className="group">
+              <Link to="/contact#contact-form" className="group">
                 <div className="relative h-full p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                   {/* Background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -104,7 +104,7 @@ const GetStarted = () => {
               </Link>
               
               {/* Job Seeker Card */}
-              <Link to="/contact" className="group">
+              <Link to="/contact#contact-form" className="group">
                 <div className="relative h-full p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                   {/* Background gradient */}
                   <div className="absolute inset-0 bg-gradient-to-br from-champagne/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
