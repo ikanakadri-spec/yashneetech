@@ -163,13 +163,13 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-32 bg-background/80 backdrop-blur-sm relative overflow-hidden">
+      <section id="services" className="py-16 bg-background/80 backdrop-blur-sm relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/30 to-transparent pointer-events-none" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald/5 rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
               <Star className="w-4 h-4" />
               Our Services
@@ -204,11 +204,11 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-24 bg-gradient-to-b from-background to-ivory relative overflow-hidden">
+      <section id="mission" className="py-16 bg-gradient-to-b from-background to-ivory relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald/5 via-transparent to-transparent opacity-70" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
               <Star className="w-4 h-4" />
               Our Mission
@@ -250,7 +250,7 @@ const Index = () => {
 
 
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 relative overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald-light to-emerald animate-gradient" />
         
