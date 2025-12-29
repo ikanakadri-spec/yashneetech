@@ -47,10 +47,6 @@ const WhoWeAre = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-emerald-dark via-emerald to-emerald-light overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-champagne/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 right-20 w-32 h-32 border-2 border-white/20 rounded-full animate-float" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-champagne/10 to-transparent rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -78,14 +74,13 @@ const WhoWeAre = () => {
 
       {/* Benefits Section */}
       <section className="py-24 bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/30 to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8">
             {/* For Clients */}
-            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center">
                   <Building2 className="w-7 h-7 text-primary-foreground" />
                 </div>
                 <h3 className="text-2xl font-heading font-bold text-foreground">For Our Clients</h3>
@@ -103,9 +98,9 @@ const WhoWeAre = () => {
             </div>
 
             {/* For Candidates */}
-            <div className="group p-10 rounded-3xl bg-card/70 backdrop-blur-sm border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center">
                   <Users className="w-7 h-7 text-emerald-dark" />
                 </div>
                 <h3 className="text-2xl font-heading font-bold text-foreground">For Our Candidates</h3>
