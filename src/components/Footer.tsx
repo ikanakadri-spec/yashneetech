@@ -15,7 +15,7 @@ export const Footer = () => {
               <img 
                 src={yashneeLogo} 
                 alt="Yashnee Tech Logo" 
-                className="h-12 w-auto object-contain brightness-0 invert opacity-80"
+                className="h-12 w-auto object-contain brightness-0 invert opacity-90"
               />
               <div className="-space-y-1">
                 <span className="font-heading font-bold text-2xl tracking-tighter leading-tight bg-gradient-to-r from-emerald via-white to-emerald bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">
