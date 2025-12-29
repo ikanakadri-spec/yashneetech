@@ -39,7 +39,7 @@ function buildCornerPalette(imageData: ImageData) {
   return Array.from(palette.values());
 }
 
-// Enhance color density and contrast of visible pixels
+// Enhance color density and contrast of visible pixels - with text sharpening
 function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFactor = 1.5) {
   const { data } = imageData;
   
@@ -49,10 +49,24 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     
     let r = data[i], g = data[i + 1], b = data[i + 2];
     
+    // Calculate brightness to identify text (darker pixels)
+    const brightness = (r + g + b) / 3;
+    
+    // Apply stronger contrast for darker pixels (text)
+    const textBoost = brightness < 100 ? 1.3 : 1.0;
+    const effectiveContrast = contrastFactor * textBoost;
+    
     // Apply contrast enhancement
-    r = Math.min(255, Math.max(0, ((r / 255 - 0.5) * contrastFactor + 0.5) * 255));
-    g = Math.min(255, Math.max(0, ((g / 255 - 0.5) * contrastFactor + 0.5) * 255));
-    b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * contrastFactor + 0.5) * 255));
+    r = Math.min(255, Math.max(0, ((r / 255 - 0.5) * effectiveContrast + 0.5) * 255));
+    g = Math.min(255, Math.max(0, ((g / 255 - 0.5) * effectiveContrast + 0.5) * 255));
+    b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * effectiveContrast + 0.5) * 255));
+    
+    // Make dark pixels even darker (for text crispness)
+    if (brightness < 80) {
+      r = Math.max(0, r * 0.7);
+      g = Math.max(0, g * 0.7);
+      b = Math.max(0, b * 0.7);
+    }
     
     // Apply saturation enhancement (convert to HSL, boost S, convert back)
     const max = Math.max(r, g, b);
@@ -91,6 +105,11 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     data[i] = r;
     data[i + 1] = g;
     data[i + 2] = b;
+    
+    // Boost alpha for dark text pixels
+    if (brightness < 100 && a < 255) {
+      data[i + 3] = Math.min(255, Math.round(a * 1.3));
+    }
   }
   
   return imageData;
@@ -298,7 +317,7 @@ export function AutoTransparentImage({
   src,
   alt,
   className,
-  maxDimension = 768,
+  maxDimension = 1024,
   tolerance = 36
 }: {
   src: string;
@@ -333,12 +352,12 @@ export function AutoTransparentImage({
         const imageData = ctx.getImageData(0, 0, w, h);
         const palette = buildCornerPalette(imageData);
         let cleaned = floodFillTransparent(imageData, palette, tolerance);
-        // Second pass: clean up edge artifacts
-        cleaned = cleanEdges(cleaned, 180);
+        // Second pass: clean up edge artifacts (higher threshold to preserve text)
+        cleaned = cleanEdges(cleaned, 210);
         // Third pass: smooth edges for anti-aliasing
         cleaned = smoothEdges(cleaned);
         // Fourth pass: enhance color density and contrast for visibility
-        cleaned = enhanceColors(cleaned, 1.5, 1.6);
+        cleaned = enhanceColors(cleaned, 1.8, 1.7);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
         if (!cancelled) {
