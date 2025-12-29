@@ -164,8 +164,8 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">Email Us</h3>
-                <a href="mailto:info@yashtech.com" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
-                  info@yashtech.com
+                <a href="mailto:info@yashneetech.com" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
+                  info@yashneetech.com
                 </a>
               </div>
             </div>
@@ -465,7 +465,7 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-primary-foreground/90 text-sm font-medium mb-6">
               <Briefcase className="w-4 h-4" />
-              <span>Careers at YashTech</span>
+              <span>Careers at Yashnee Tech</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4">
               Join Our Growing Team
@@ -474,11 +474,11 @@ const Contact = () => {
               We're always looking for talented individuals to join our dynamic team. Send us your resume and let's explore opportunities together.
             </p>
             <a
-              href="mailto:info@yashtech.com"
+              href="mailto:info@yashneetech.com"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-white text-emerald font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group"
             >
               <Mail className="w-5 h-5" />
-              info@yashtech.com
+              info@yashneetech.com
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
