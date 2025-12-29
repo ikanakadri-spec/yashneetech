@@ -249,9 +249,9 @@ export const Header = () => {
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]" 
-              tolerance={45}
-              maxDimension={1024}
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.25)]" 
+              tolerance={40}
+              maxDimension={1200}
             />
           </Link>
 
