@@ -202,7 +202,7 @@ const Index = () => {
               {" "}Connections
             </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
-              At Yashnee Tech, we believe great talent and great companies deserve each other. Our mission is to make those connections happen – faster, smarter, and with lasting impact.
+              At <span className="font-bold text-emerald">Yashnee Tech</span>, we believe great talent and great companies deserve each other. Our mission is to make those connections happen – faster, smarter, and with lasting impact.
             </p>
           </div>
 
