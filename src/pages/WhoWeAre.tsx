@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Building2, Clock, Target, TrendingUp, Shield, Award, MessageSquare, DollarSign } from "lucide-react";
 
 const clientBenefits = [
@@ -73,47 +74,51 @@ const WhoWeAre = () => {
       <section className="py-24 bg-background relative overflow-hidden">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <StaggerContainer className="grid lg:grid-cols-2 gap-8" staggerDelay={0.15}>
             {/* For Clients */}
-            <div className="group p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center">
-                  <Building2 className="w-7 h-7 text-primary-foreground" />
+            <StaggerItem>
+              <div className="group p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 h-full">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center">
+                    <Building2 className="w-7 h-7 text-primary-foreground" />
+                  </div>
+                  <h3 className="text-2xl font-heading font-bold text-foreground">For Our Clients</h3>
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-foreground">For Our Clients</h3>
+                <ul className="space-y-5">
+                  {clientBenefits.map((benefit) => (
+                    <li key={benefit.text} className="flex items-start gap-4 group/item">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne/20 to-champagne/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                        <benefit.icon className="w-5 h-5 text-champagne" />
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-5">
-                {clientBenefits.map((benefit) => (
-                  <li key={benefit.text} className="flex items-start gap-4 group/item">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-champagne/20 to-champagne/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                      <benefit.icon className="w-5 h-5 text-champagne" />
-                    </div>
-                    <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            </StaggerItem>
 
             {/* For Candidates */}
-            <div className="group p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center">
-                  <Users className="w-7 h-7 text-emerald-dark" />
+            <StaggerItem>
+              <div className="group p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 h-full">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-14 h-14 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center">
+                    <Users className="w-7 h-7 text-emerald-dark" />
+                  </div>
+                  <h3 className="text-2xl font-heading font-bold text-foreground">For Our Candidates</h3>
                 </div>
-                <h3 className="text-2xl font-heading font-bold text-foreground">For Our Candidates</h3>
+                <ul className="space-y-5">
+                  {candidateBenefits.map((benefit) => (
+                    <li key={benefit.text} className="flex items-start gap-4 group/item">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald/20 to-emerald/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                        <benefit.icon className="w-5 h-5 text-emerald" />
+                      </div>
+                      <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul className="space-y-5">
-                {candidateBenefits.map((benefit) => (
-                  <li key={benefit.text} className="flex items-start gap-4 group/item">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald/20 to-emerald/10 flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
-                      <benefit.icon className="w-5 h-5 text-emerald" />
-                    </div>
-                    <span className="text-muted-foreground leading-relaxed pt-2">{benefit.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
