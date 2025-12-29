@@ -245,11 +245,11 @@ export const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
-          <Link to="/" className="flex items-center group transition-all duration-500 hover:scale-105">
+          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-500 group-hover:drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] group-hover:brightness-110" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" 
               tolerance={90} 
             />
           </Link>
