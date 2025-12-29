@@ -69,7 +69,7 @@ const TermsOfService = () => {
               </ul>
               <p className="text-xs text-muted-foreground leading-relaxed mt-2">
                 By continuing to use our website, you consent to our use of cookies as described in our{" "}
-                <Link to="/privacy" className="text-emerald hover:text-emerald-light underline">
+                <Link to="/privacy-policy" className="text-emerald hover:text-emerald-light font-medium">
                   Privacy Policy
                 </Link>.
               </p>
