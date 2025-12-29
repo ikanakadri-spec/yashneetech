@@ -255,7 +255,7 @@ export const Header = () => {
                   tolerance={90} 
                 />
               </div>
-              <span className="-mt-3 md:-mt-4 lg:-mt-5 text-gold font-bold text-[9px] md:text-[11px] lg:text-sm tracking-wider italic whitespace-nowrap [text-shadow:0_1px_3px_rgba(0,0,0,0.9),0_0_8px_rgba(0,0,0,0.7)]">
+              <span className="-mt-3 md:-mt-4 lg:-mt-5 font-bold text-[9px] md:text-[11px] lg:text-sm tracking-wider italic whitespace-nowrap bg-gradient-to-r from-gold via-white to-gold bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer [filter:drop-shadow(0_0_8px_rgba(212,175,55,0.6))]">
                 Next Gen Talent Partner
               </span>
             </div>
