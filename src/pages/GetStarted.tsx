@@ -20,10 +20,6 @@ const GetStarted = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-emerald-dark via-emerald to-emerald-light overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-champagne/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 right-20 w-32 h-32 border-2 border-white/20 rounded-full animate-float" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-champagne/10 to-transparent rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
@@ -57,12 +53,9 @@ const GetStarted = () => {
               
               {/* Employer Card */}
               <Link to="/contact#contact-form" className="group">
-                <div className="relative h-full p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-emerald/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                  {/* Background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+                <div className="relative h-full p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-2 overflow-hidden">
                   <div className="relative z-10">
-                    <div className="w-20 h-20 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald/20 group-hover:scale-110 transition-transform duration-500">
+                    <div className="w-20 h-20 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                       <Building2 className="w-10 h-10 text-primary-foreground" />
                     </div>
                     
@@ -105,12 +98,9 @@ const GetStarted = () => {
               
               {/* Job Seeker Card */}
               <Link to="/contact#contact-form" className="group">
-                <div className="relative h-full p-10 rounded-3xl bg-card border border-border/50 shadow-xl hover:shadow-2xl hover:shadow-champagne/10 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
-                  {/* Background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-champagne/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
+                <div className="relative h-full p-10 rounded-3xl bg-card border border-border transition-all duration-300 hover:-translate-y-2 overflow-hidden">
                   <div className="relative z-10">
-                    <div className="w-20 h-20 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-champagne/20 group-hover:scale-110 transition-transform duration-500">
+                    <div className="w-20 h-20 bg-gradient-to-br from-champagne to-champagne-light rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                       <Users className="w-10 h-10 text-emerald-dark" />
                     </div>
                     

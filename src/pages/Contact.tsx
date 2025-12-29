@@ -137,14 +137,8 @@ const Contact = () => {
 
       {/* Hero Section - Professional Gradient */}
       <section className="relative pt-28 pb-32 overflow-hidden">
-        {/* Background with gradient overlay */}
+        {/* Background - solid gradient only */}
         <div className="absolute inset-0 gradient-hero" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(42_85%_55%/0.15),_transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(160_45%_30%/0.3),_transparent_50%)]" />
-        
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-champagne/10 rounded-full blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-emerald-light/10 rounded-full blur-3xl" />
         
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
@@ -164,9 +158,9 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Email Card */}
-            <div className="group p-6 rounded-2xl bg-card border border-border/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 shadow-lg shadow-emerald/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Mail className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">Email Us</h3>
@@ -177,9 +171,9 @@ const Contact = () => {
             </div>
             
             {/* Phone Card */}
-            <div className="group p-6 rounded-2xl bg-card border border-border/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 shadow-lg shadow-champagne/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Phone className="w-6 h-6 text-foreground" />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">Call Us</h3>
@@ -190,9 +184,9 @@ const Contact = () => {
             </div>
             
             {/* Location Card */}
-            <div className="group p-6 rounded-2xl bg-card border border-border/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+            <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
               <div className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 shadow-lg shadow-emerald/20 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <h3 className="font-heading font-semibold text-foreground mb-2">Visit Us</h3>
@@ -219,10 +213,7 @@ const Contact = () => {
               </p>
             </div>
             
-            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald shadow-xl space-y-3 overflow-hidden">
-                  {/* Decorative corner accent */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald/5 to-transparent rounded-bl-full" />
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-champagne/5 to-transparent rounded-tr-full" />
+            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald space-y-3 overflow-hidden">
                   
                   {/* Form Fields */}
                   <div className="relative space-y-3">

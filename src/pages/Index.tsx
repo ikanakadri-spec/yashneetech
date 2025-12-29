@@ -73,16 +73,6 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
-        {/* Animated background shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-champagne/30 to-champagne-light/20 rounded-full blur-3xl animate-float-slow" />
-          <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-emerald/20 to-emerald-light/10 rounded-full blur-3xl animate-float-slow" style={{
-          animationDelay: '2s'
-        }} />
-          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-br from-champagne/20 to-transparent rounded-full blur-3xl animate-float-slow" style={{
-          animationDelay: '4s'
-        }} />
-        </div>
 
         <div className="absolute inset-0">
           <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
@@ -163,10 +153,9 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-10 bg-background/80 backdrop-blur-sm relative overflow-hidden">
+      <section id="services" className="py-10 bg-background relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-ivory/30 to-transparent pointer-events-none" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-emerald/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-ivory/50 pointer-events-none" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-12">
@@ -185,14 +174,11 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-ivory border border-emerald/20 hover:border-emerald hover:bg-emerald/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald/30" style={{
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-ivory border border-emerald/20 hover:border-emerald hover:bg-emerald/10 transition-all duration-300 hover:-translate-y-2" style={{
             animationDelay: `${index * 100}ms`
           }}>
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald/15 via-champagne/10 to-emerald/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald/30 transition-all duration-500">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
                     <service.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
@@ -204,8 +190,7 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-10 bg-gradient-to-b from-background to-ivory relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-emerald/5 via-transparent to-transparent opacity-70" />
+      <section id="mission" className="py-10 bg-ivory relative overflow-hidden">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-10">
@@ -225,7 +210,7 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {missionCards.map((card) => (
-              <div key={card.title} className="group relative h-[400px] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700">
+              <div key={card.title} className="group relative h-[400px] rounded-3xl overflow-hidden transition-all duration-500">
                 <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
                 
@@ -251,20 +236,8 @@ const Index = () => {
 
       {/* CTA Section */}
       <section className="py-14 relative overflow-hidden">
-        {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald-light to-emerald animate-gradient" />
-        
-        {/* Decorative shapes */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -right-20 w-80 h-80 bg-champagne/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-primary-foreground/5 rounded-full blur-3xl animate-float" style={{
-          animationDelay: '3s'
-        }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-primary-foreground/10 rounded-full animate-rotate-slow" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-primary-foreground/5 rounded-full animate-rotate-slow" style={{
-          animationDirection: 'reverse'
-        }} />
-        </div>
+        {/* Solid gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald-light to-emerald" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -285,7 +258,7 @@ const Index = () => {
             
             <div className="flex flex-wrap justify-center gap-6">
               <Link to="/contact">
-                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-12 py-8 font-bold shadow-2xl hover:shadow-champagne/30 transition-all duration-500 hover:scale-105">
+                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-12 py-8 font-bold transition-all duration-300 hover:scale-105">
                   I'm an Employer
                   <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
