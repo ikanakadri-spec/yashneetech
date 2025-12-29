@@ -222,6 +222,16 @@ export function AutoTransparentImage({
         cleaned = cleanEdges(cleaned, 180);
         // Third pass: remove isolated white patches
         cleaned = removeIsolatedPatches(cleaned, 200);
+        // Fourth pass: fill transparent areas with white
+        const { data } = cleaned;
+        for (let i = 0; i < data.length; i += 4) {
+          if (data[i + 3] === 0) {
+            data[i] = 255;     // R
+            data[i + 1] = 255; // G
+            data[i + 2] = 255; // B
+            data[i + 3] = 255; // A
+          }
+        }
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
         if (!cancelled) {
