@@ -246,12 +246,43 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-            <AutoTransparentImage 
-              src={yashneeLogo} 
-              alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" 
-              tolerance={90} 
-            />
+            <div className="relative">
+              <AutoTransparentImage 
+                src={yashneeLogo} 
+                alt="Yashnee - Next Gen Talent Partner" 
+                className="h-20 md:h-28 lg:h-32 w-auto object-contain" 
+                tolerance={90} 
+              />
+              <div 
+                className="absolute inset-0 pointer-events-none mix-blend-color"
+                style={{
+                  background: 'linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(142, 76%, 36%) 40%, hsl(25, 95%, 53%) 60%, hsl(25, 95%, 53%) 100%)',
+                  maskImage: 'url(' + yashneeLogo + ')',
+                  WebkitMaskImage: 'url(' + yashneeLogo + ')',
+                  maskSize: 'contain',
+                  WebkitMaskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskPosition: 'center',
+                }}
+              />
+              <div 
+                className="absolute inset-0 pointer-events-none opacity-80"
+                style={{
+                  background: 'linear-gradient(135deg, hsl(142, 76%, 46%) 0%, hsl(25, 95%, 53%) 100%)',
+                  filter: 'blur(12px)',
+                  maskImage: 'url(' + yashneeLogo + ')',
+                  WebkitMaskImage: 'url(' + yashneeLogo + ')',
+                  maskSize: 'contain',
+                  WebkitMaskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  WebkitMaskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskPosition: 'center',
+                }}
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
