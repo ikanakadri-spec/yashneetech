@@ -121,8 +121,9 @@ const Index = () => {
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-10 py-7 backdrop-blur-sm transition-all duration-500 hover:border-champagne">
+                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-champagne/25 transition-all duration-500 hover:scale-105">
                   Submit Resume
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
@@ -138,16 +139,6 @@ const Index = () => {
                   <div className="text-sm text-primary-foreground/60">{stat.label}</div>
                 </div>)}
             </div>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-0 animate-fade-up" style={{
-        animationDelay: '1000ms',
-        animationFillMode: 'forwards'
-      }}>
-          <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-1.5">
-            <div className="w-1.5 h-3 bg-champagne rounded-full animate-bounce-subtle" />
           </div>
         </div>
       </section>
