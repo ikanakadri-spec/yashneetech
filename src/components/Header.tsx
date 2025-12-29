@@ -245,16 +245,13 @@ export const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
-          <Link to="/" className="flex flex-col items-start group transition-transform duration-300 hover:scale-105">
+          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]" 
               tolerance={45} 
             />
-            <span className="text-[10px] md:text-xs font-semibold tracking-widest text-white bg-gold/90 px-2 py-0.5 rounded-sm -mt-1 ml-1 uppercase shadow-sm">
-              Next-Gen Talent Partner
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
