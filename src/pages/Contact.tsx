@@ -219,15 +219,15 @@ const Contact = () => {
               </p>
             </div>
             
-            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald shadow-xl space-y-5 overflow-hidden">
+            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald shadow-xl space-y-3 overflow-hidden">
                   {/* Decorative corner accent */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-emerald/5 to-transparent rounded-bl-full" />
                   <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-champagne/5 to-transparent rounded-tr-full" />
                   
                   {/* Form Fields */}
-                  <div className="relative space-y-5">
+                  <div className="relative space-y-3">
 
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid md:grid-cols-2 gap-3">
                       {/* Full Name */}
                       <div className="relative group">
                         <label className="block text-sm font-medium text-foreground mb-2">
@@ -297,7 +297,7 @@ const Contact = () => {
                   </div>
 
                   {/* Additional Fields */}
-                  <div className="relative space-y-5">
+                  <div className="relative space-y-3">
                     {/* Type of Enquiry */}
                     <div className="relative group">
                       <label className="block text-sm font-medium text-foreground mb-2">
@@ -323,7 +323,7 @@ const Contact = () => {
                       </select>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-5">
+                    <div className="grid md:grid-cols-2 gap-3">
                       {/* Industry - Optional */}
                       <div className="relative group">
                         <label className="block text-sm font-medium text-foreground mb-2">
