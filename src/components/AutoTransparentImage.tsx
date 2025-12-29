@@ -127,12 +127,56 @@ function floodFillTransparent(imageData: ImageData, palette: RGB[], tolerance: n
     const i = id * 4;
     data[i + 3] = 0; // alpha
 
-    // 4-neighborhood
-    if (x > 0 && !visited[id - 1] && isBg(x - 1, y)) push(x - 1, y);
-    if (x < w - 1 && !visited[id + 1] && isBg(x + 1, y)) push(x + 1, y);
-    if (y > 0 && !visited[id - w] && isBg(x, y - 1)) push(x, y - 1);
-    if (y < h - 1 && !visited[id + w] && isBg(x, y + 1)) push(x, y + 1);
+    // 8-neighborhood for better coverage (includes diagonals)
+    for (let dy = -1; dy <= 1; dy++) {
+      for (let dx = -1; dx <= 1; dx++) {
+        if (dx === 0 && dy === 0) continue;
+        const nx = x + dx, ny = y + dy;
+        if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+          const nid = ny * w + nx;
+          if (!visited[nid] && isBg(nx, ny)) push(nx, ny);
+        }
+      }
+    }
   }
+  return imageData;
+}
+
+// Remove isolated white/light patches that are surrounded by transparent pixels
+function removeIsolatedPatches(imageData: ImageData, brightnessThreshold: number = 220) {
+  const { width: w, height: h, data } = imageData;
+  
+  // Find and remove small isolated light patches
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const i = (y * w + x) * 4;
+      const a = data[i + 3];
+      
+      if (a === 0) continue; // Skip transparent
+      
+      const r = data[i], g = data[i + 1], b = data[i + 2];
+      const brightness = (r + g + b) / 3;
+      
+      // Check if this is a light pixel
+      if (brightness > brightnessThreshold) {
+        // Count transparent neighbors in 3x3 area
+        let transparentCount = 0;
+        for (let dy = -1; dy <= 1; dy++) {
+          for (let dx = -1; dx <= 1; dx++) {
+            if (dx === 0 && dy === 0) continue;
+            const ni = ((y + dy) * w + (x + dx)) * 4;
+            if (data[ni + 3] === 0) transparentCount++;
+          }
+        }
+        
+        // If mostly surrounded by transparent pixels, remove it
+        if (transparentCount >= 4) {
+          data[i + 3] = 0;
+        }
+      }
+    }
+  }
+  
   return imageData;
 }
 export function AutoTransparentImage({
@@ -176,6 +220,8 @@ export function AutoTransparentImage({
         let cleaned = floodFillTransparent(imageData, palette, tolerance);
         // Second pass: clean up edge artifacts
         cleaned = cleanEdges(cleaned, 180);
+        // Third pass: remove isolated white patches
+        cleaned = removeIsolatedPatches(cleaned, 200);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
         if (!cancelled) {
