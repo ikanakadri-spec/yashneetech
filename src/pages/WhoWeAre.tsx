@@ -56,10 +56,7 @@ const WhoWeAre = () => {
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-8">
               Your Strategic{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 gradient-text-animated">Partner</span>
-                <span className="absolute -bottom-2 left-0 w-full h-3 bg-champagne/30 -skew-x-12" />
-              </span>
+              <span className="gradient-text-animated">Partner</span>
               {" "}for Talent
             </h1>
             <p className="text-xl text-primary-foreground/80 leading-relaxed max-w-3xl mx-auto">
