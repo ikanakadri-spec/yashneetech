@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AutoTransparentImage } from "@/components/AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-new.png";
+import yashneeLogo from "@/assets/yashnee-logo-transparent-pro.png";
 
 // Searchable content items
 const searchableContent = [
@@ -249,9 +249,9 @@ export const Header = () => {
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.25)]" 
-              tolerance={40}
-              maxDimension={1200}
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_1px_3px_rgba(0,0,0,0.2)]" 
+              tolerance={55}
+              maxDimension={1400}
             />
           </Link>
 
