@@ -2,9 +2,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AutoTransparentImage } from "@/components/AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-new.png";
-
+import { BrandLogo } from "@/components/BrandLogo";
 // Searchable content items
 const searchableContent = [
   { title: "Home", description: "Welcome to Yashnee Tech - Your Next-Gen Talent Partner", path: "/", keywords: ["home", "welcome", "main"] },
@@ -246,11 +244,11 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-            <AutoTransparentImage 
-              src={yashneeLogo} 
-              alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" 
-              tolerance={90} 
+            <BrandLogo
+              size="xl"
+              symbolColor="brightness-0 invert"
+              nameColor="text-white"
+              taglineColor="text-gold"
             />
           </Link>
 
