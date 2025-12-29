@@ -249,7 +249,7 @@ export const Header = () => {
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain contrast-125 saturate-150 hue-rotate-[25deg] sepia-[0.3] brightness-110" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain contrast-150 saturate-200 hue-rotate-[35deg] sepia-[0.5] brightness-105" 
               tolerance={90} 
             />
           </Link>
