@@ -417,21 +417,21 @@ const Contact = () => {
                   </div>
 
                   {/* Privacy Consent */}
-                  <div className="p-4 rounded-xl bg-background border-2 border-gray-300 hover:border-emerald/30 transition-colors">
-                    <label className="flex items-start gap-4 cursor-pointer group">
+                  <div className="p-2.5 rounded-lg bg-background border border-gray-300 hover:border-emerald/30 transition-colors">
+                    <label className="flex items-start gap-2.5 cursor-pointer group">
                       <div className="relative mt-0.5">
                         <input
                           type="checkbox"
                           checked={privacyConsent}
                           onChange={(e) => setPrivacyConsent(e.target.checked)}
-                          className="peer w-6 h-6 rounded-lg border-2 border-gray-300 text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
+                          className="peer w-4 h-4 rounded border-2 border-gray-300 text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
                         />
                         {privacyConsent && (
-                          <CheckCircle className="absolute inset-0 w-6 h-6 text-primary-foreground pointer-events-none" />
+                          <CheckCircle className="absolute inset-0 w-4 h-4 text-primary-foreground pointer-events-none" />
                         )}
                       </div>
-                      <span className="text-sm text-foreground leading-relaxed">
-                        I consent to Yashnee Tech collecting and processing my personal data in accordance with the{" "}
+                      <span className="text-xs text-foreground leading-relaxed">
+                        I agree to the{" "}
                         <Link to="/privacy" className="text-emerald hover:text-emerald-light underline" target="_blank">
                           Privacy Policy
                         </Link>
@@ -439,26 +439,26 @@ const Contact = () => {
                         <Link to="/terms" className="text-emerald hover:text-emerald-light underline" target="_blank">
                           Terms of Service
                         </Link>
-                        . <span className="text-destructive">*</span>
+                        {" "}and allow Yashnee Tech to use my information.<span className="text-destructive">*</span>
                       </span>
                     </label>
                   </div>
 
                   {/* CAPTCHA */}
-                  <div className="p-4 rounded-xl bg-background border-2 border-gray-300 hover:border-emerald/30 transition-colors">
-                    <label className="flex items-center gap-4 cursor-pointer group">
+                  <div className="p-2.5 rounded-lg bg-background border border-gray-300 hover:border-emerald/30 transition-colors">
+                    <label className="flex items-center gap-2.5 cursor-pointer group">
                       <div className="relative">
                         <input
                           type="checkbox"
                           checked={captchaChecked}
                           onChange={(e) => setCaptchaChecked(e.target.checked)}
-                          className="peer w-6 h-6 rounded-lg border-2 border-gray-300 text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
+                          className="peer w-4 h-4 rounded border-2 border-gray-300 text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
                         />
                         {captchaChecked && (
-                          <CheckCircle className="absolute inset-0 w-6 h-6 text-primary-foreground pointer-events-none" />
+                          <CheckCircle className="absolute inset-0 w-4 h-4 text-primary-foreground pointer-events-none" />
                         )}
                       </div>
-                      <span className="text-sm text-foreground group-hover:text-emerald transition-colors">I'm not a robot</span>
+                      <span className="text-xs text-foreground group-hover:text-emerald transition-colors">I'm not a robot</span>
                     </label>
                   </div>
 
