@@ -107,7 +107,7 @@ const Index = () => {
             animationDelay: '400ms',
             animationFillMode: 'forwards'
           }}>
-              Precision meets human expertise. We connect exceptional talent with exceptional opportunities.
+              Precision meets human expertise. We connect relevant talent with exceptional opportunities.
             </p>
             
             <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up" style={{
