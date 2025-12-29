@@ -62,8 +62,8 @@ export const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-champagne mt-0.5" />
-                <a href="mailto:info@yashtech.com" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  info@yashtech.com
+              <a href="mailto:info@yashneetech.com" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+                  info@yashneetech.com
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -87,11 +87,11 @@ export const Footer = () => {
               Willing to join our dynamic team? Drop your resume at:
             </p>
             <a
-              href="mailto:info@yashtech.com"
+              href="mailto:info@yashneetech.com"
               className="inline-flex items-center gap-2 text-champagne hover:text-champagne-light transition-colors font-medium"
             >
               <Mail className="w-4 h-4" />
-              info@yashtech.com
+              info@yashneetech.com
             </a>
           </div>
         </div>
@@ -99,7 +99,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/50 text-sm">
-            © {currentYear} YASH TECH. All rights reserved.
+            © {currentYear} Yashnee Tech. All rights reserved.
           </p>
 
           {/* Social Links */}
