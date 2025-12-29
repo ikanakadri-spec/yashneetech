@@ -39,6 +39,48 @@ function buildCornerPalette(imageData: ImageData) {
   return Array.from(palette.values());
 }
 
+// Apply anti-aliasing to smooth edges between transparent and opaque pixels
+function smoothEdges(imageData: ImageData) {
+  const { width: w, height: h, data } = imageData;
+  const copy = new Uint8ClampedArray(data);
+  
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const i = (y * w + x) * 4;
+      const alpha = copy[i + 3];
+      
+      // Only process edge pixels (opaque pixels next to transparent ones)
+      if (alpha === 0) continue;
+      
+      // Count transparent neighbors and sum alpha values
+      let transparentCount = 0;
+      let alphaSum = 0;
+      let neighborCount = 0;
+      
+      for (let dy = -1; dy <= 1; dy++) {
+        for (let dx = -1; dx <= 1; dx++) {
+          if (dx === 0 && dy === 0) continue;
+          const ni = ((y + dy) * w + (x + dx)) * 4;
+          const na = copy[ni + 3];
+          alphaSum += na;
+          neighborCount++;
+          if (na === 0) transparentCount++;
+        }
+      }
+      
+      // If this pixel borders transparent pixels, apply anti-aliasing
+      if (transparentCount > 0 && transparentCount < 6) {
+        // Blend alpha based on surrounding transparency
+        const avgAlpha = alphaSum / neighborCount;
+        const blendFactor = 1 - (transparentCount / 8);
+        data[i + 3] = Math.round(alpha * blendFactor + avgAlpha * (1 - blendFactor) * 0.3);
+      }
+    }
+  }
+  
+  return imageData;
+}
+
 // Clean up semi-transparent edge pixels (anti-aliasing artifacts)
 function cleanEdges(imageData: ImageData, threshold: number = 200) {
   const { width: w, height: h, data } = imageData;
@@ -236,6 +278,8 @@ export function AutoTransparentImage({
         let cleaned = floodFillTransparent(imageData, palette, tolerance);
         // Second pass: clean up edge artifacts
         cleaned = cleanEdges(cleaned, 180);
+        // Third pass: smooth edges for anti-aliasing
+        cleaned = smoothEdges(cleaned);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
         if (!cancelled) {
