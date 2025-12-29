@@ -113,7 +113,7 @@ const Index = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-primary-foreground/80 mb-12 leading-relaxed max-w-2xl opacity-0 animate-fade-up" style={{
+            <p className="text-xl md:text-2xl text-primary-foreground mb-12 max-w-3xl opacity-0 animate-fade-up whitespace-nowrap" style={{
             animationDelay: '400ms',
             animationFillMode: 'forwards'
           }}>
