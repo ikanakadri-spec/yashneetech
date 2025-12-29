@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-import yashneeLogo from "@/assets/yashnee-logo-header.png";
+import yashneeLogo from "@/assets/yashnee-logo-footer.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
