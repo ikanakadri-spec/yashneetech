@@ -172,7 +172,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-ivory border border-emerald/20 hover:border-emerald hover:bg-emerald/10 transition-all duration-300 hover:-translate-y-2" style={{
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-emerald hover:bg-emerald/5 transition-all duration-300 hover:-translate-y-2" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 <div className="relative z-10">
