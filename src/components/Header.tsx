@@ -246,16 +246,14 @@ export const Header = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
           <Link to="/" className="relative flex items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
-            <div className="relative flex flex-col items-center">
-              <div className="overflow-hidden" style={{ clipPath: 'inset(0 0 18% 0)' }}>
-                <AutoTransparentImage 
-                  src={yashneeLogo} 
-                  alt="Yashnee Tech" 
-                  className="h-16 md:h-20 lg:h-24 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
-                  tolerance={90} 
-                />
-              </div>
-              <span className="-mt-3 md:-mt-4 lg:-mt-5 text-gold font-bold text-[9px] md:text-[11px] lg:text-sm tracking-wider italic whitespace-nowrap [text-shadow:0_1px_3px_rgba(0,0,0,0.9),0_0_8px_rgba(0,0,0,0.7)]">
+            <div className="relative">
+              <AutoTransparentImage 
+                src={yashneeLogo} 
+                alt="Yashnee - Next Gen Talent Partner" 
+                className="h-16 md:h-20 lg:h-24 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
+                tolerance={90} 
+              />
+              <span className="absolute bottom-1 md:bottom-1.5 lg:bottom-2 left-1/2 -translate-x-1/2 text-gold font-bold text-[8px] md:text-[10px] lg:text-xs tracking-wide italic whitespace-nowrap [text-shadow:0_1px_3px_rgba(0,0,0,0.9),0_0_8px_rgba(0,0,0,0.7)]">
                 Next Gen Talent Partner
               </span>
             </div>
