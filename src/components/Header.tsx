@@ -250,7 +250,8 @@ export const Header = () => {
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
               className="h-20 md:h-28 lg:h-32 w-auto object-contain" 
-              tolerance={90} 
+              tolerance={90}
+              maxDimension={1536}
             />
           </Link>
 
