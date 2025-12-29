@@ -97,7 +97,7 @@ const Index = () => {
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-[1.1] overflow-hidden">
               <span className="inline-block overflow-hidden">
                 <span className="inline-block text-primary-foreground opacity-0 animate-reveal-text" style={{ animationDelay: '200ms' }}>
-                  Find Your{" "}
+                  Find Your&nbsp;
                 </span>
               </span>
               <span className="relative inline-block overflow-hidden">
