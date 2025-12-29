@@ -13,11 +13,11 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-              <AutoTransparentImage
-                src={yashneeLogo}
-                alt="Yashnee Tech - Next Gen Talent Partner"
-                className="h-16 md:h-20 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
-                tolerance={35}
+              <AutoTransparentImage 
+                src={yashneeLogo} 
+                alt="Yashnee - Next Gen Talent Partner" 
+                className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
+                tolerance={90} 
               />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
