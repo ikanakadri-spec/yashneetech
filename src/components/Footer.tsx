@@ -12,13 +12,23 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-              <AutoTransparentImage
-                src={yashneeLogo}
-                alt="Yashnee Tech Logo"
-                className="h-16 md:h-20 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
-                tolerance={35}
-              />
+            <Link to="/" className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
+              <div className="overflow-hidden" style={{ clipPath: 'inset(0 0 18% 0)' }}>
+                <AutoTransparentImage
+                  src={yashneeLogo}
+                  alt="Yashnee Tech Logo"
+                  className="h-14 md:h-16 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
+                  tolerance={35}
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-lg md:text-xl text-primary-foreground tracking-wide">
+                  YASHNEE TECH
+                </span>
+                <span className="-mt-1 bg-gradient-to-r from-gold via-white to-gold bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer text-[10px] md:text-xs tracking-wider italic font-semibold [filter:drop-shadow(0_0_6px_rgba(212,175,55,0.5))]">
+                  Next Gen Talent Partner
+                </span>
+              </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
