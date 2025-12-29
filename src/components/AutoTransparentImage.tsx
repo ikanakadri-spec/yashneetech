@@ -39,6 +39,63 @@ function buildCornerPalette(imageData: ImageData) {
   return Array.from(palette.values());
 }
 
+// Enhance color density and contrast of visible pixels
+function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFactor = 1.5) {
+  const { data } = imageData;
+  
+  for (let i = 0; i < data.length; i += 4) {
+    const a = data[i + 3];
+    if (a === 0) continue; // Skip transparent pixels
+    
+    let r = data[i], g = data[i + 1], b = data[i + 2];
+    
+    // Apply contrast enhancement
+    r = Math.min(255, Math.max(0, ((r / 255 - 0.5) * contrastFactor + 0.5) * 255));
+    g = Math.min(255, Math.max(0, ((g / 255 - 0.5) * contrastFactor + 0.5) * 255));
+    b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * contrastFactor + 0.5) * 255));
+    
+    // Apply saturation enhancement (convert to HSL, boost S, convert back)
+    const max = Math.max(r, g, b);
+    const min = Math.min(r, g, b);
+    const l = (max + min) / 2 / 255;
+    
+    if (max !== min) {
+      const d = (max - min) / 255;
+      let s = l > 0.5 ? d / (2 - (max + min) / 255) : d / ((max + min) / 255);
+      s = Math.min(1, s * saturationFactor);
+      
+      // Convert back to RGB with boosted saturation
+      const h = max === r 
+        ? ((g - b) / (max - min) + (g < b ? 6 : 0)) / 6
+        : max === g 
+          ? ((b - r) / (max - min) + 2) / 6
+          : ((r - g) / (max - min) + 4) / 6;
+      
+      const hue2rgb = (p: number, q: number, t: number) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1/6) return p + (q - p) * 6 * t;
+        if (t < 1/2) return q;
+        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+      };
+      
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      
+      r = Math.round(hue2rgb(p, q, h + 1/3) * 255);
+      g = Math.round(hue2rgb(p, q, h) * 255);
+      b = Math.round(hue2rgb(p, q, h - 1/3) * 255);
+    }
+    
+    data[i] = r;
+    data[i + 1] = g;
+    data[i + 2] = b;
+  }
+  
+  return imageData;
+}
+
 // Apply anti-aliasing to smooth edges between transparent and opaque pixels
 function smoothEdges(imageData: ImageData) {
   const { width: w, height: h, data } = imageData;
@@ -280,6 +337,8 @@ export function AutoTransparentImage({
         cleaned = cleanEdges(cleaned, 180);
         // Third pass: smooth edges for anti-aliasing
         cleaned = smoothEdges(cleaned);
+        // Fourth pass: enhance color density and contrast for visibility
+        cleaned = enhanceColors(cleaned, 1.5, 1.6);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
         if (!cancelled) {
