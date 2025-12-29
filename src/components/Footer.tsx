@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-import { AutoTransparentImage } from "@/components/AutoTransparentImage";
 import yashneeLogo from "@/assets/yashnee-logo-header.png";
 
 export const Footer = () => {
@@ -12,13 +11,20 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
-              <AutoTransparentImage 
-                src={yashneeLogo} 
-                alt="Yashnee - Next Gen Talent Partner" 
-                className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
-                tolerance={90} 
-              />
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={yashneeLogo} 
+                  alt="Yashnee Tech Logo" 
+                  className="h-10 w-10 object-cover object-center drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                />
+              </div>
+              <div className="-space-y-1">
+                <span className="font-heading font-bold text-2xl tracking-tighter leading-tight bg-gradient-to-r from-emerald via-white to-emerald bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">
+                  YASHNEE TECH
+                </span>
+                <p className="text-xs text-white leading-tight drop-shadow-[0_0_6px_rgba(255,255,255,0.5)] italic">Next-Gen Talent Partner</p>
+              </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
