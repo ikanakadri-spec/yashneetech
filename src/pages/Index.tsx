@@ -185,14 +185,14 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card/70 backdrop-blur-sm border border-border/50 hover:border-champagne/50 hover:bg-emerald/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-ivory border border-emerald/20 hover:border-emerald hover:bg-emerald/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-emerald/30" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/10 via-emerald/5 to-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-emerald/15 via-champagne/10 to-emerald/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald/20 transition-all duration-500">
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald/30 transition-all duration-500">
                     <service.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
