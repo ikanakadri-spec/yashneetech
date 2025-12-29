@@ -154,8 +154,6 @@ const Index = () => {
 
       {/* Services Section */}
       <section id="services" className="py-10 bg-background relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-ivory/50 pointer-events-none" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-12">
@@ -190,7 +188,7 @@ const Index = () => {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-10 bg-ivory relative overflow-hidden">
+      <section id="mission" className="py-10 bg-background relative overflow-hidden">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="text-center mb-10">
