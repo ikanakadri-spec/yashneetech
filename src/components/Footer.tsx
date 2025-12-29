@@ -7,16 +7,18 @@ export const Footer = () => {
 
   return (
     <footer className="bg-emerald text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="container mx-auto px-4 lg:px-8 py-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3">
-              <img 
-                src={yashneeLogo} 
-                alt="Yashnee Tech Logo" 
-                className="h-12 w-auto object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
-              />
+          <div className="space-y-4">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-10 h-10 flex items-center justify-center overflow-hidden">
+                <img 
+                  src={yashneeLogo} 
+                  alt="Yashnee Tech Logo" 
+                  className="h-10 w-10 object-cover object-center drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                />
+              </div>
               <div className="-space-y-1">
                 <span className="font-heading font-bold text-2xl tracking-tighter leading-tight bg-gradient-to-r from-emerald via-white to-emerald bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">
                   YASHNEE TECH
@@ -29,9 +31,8 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Quick Links</h4>
+            <h4 className="font-heading font-semibold text-base mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
                 <Link to="/#who-we-are" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
@@ -56,9 +57,8 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Contact</h4>
+            <h4 className="font-heading font-semibold text-base mb-4">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-champagne mt-0.5" />
@@ -81,9 +81,8 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Join Our Team */}
           <div>
-            <h4 className="font-heading font-semibold text-lg mb-6">Join Our Team</h4>
+            <h4 className="font-heading font-semibold text-base mb-4">Join Our Team</h4>
             <p className="text-primary-foreground/70 text-sm mb-4">
               Willing to join our dynamic team? Drop your resume at:
             </p>
@@ -98,7 +97,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-8 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/50 text-sm">
             © {currentYear} YASH TECH. All rights reserved.
           </p>
