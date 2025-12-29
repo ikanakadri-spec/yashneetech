@@ -197,14 +197,6 @@ export default {
             backgroundPosition: "-200% center",
           },
         },
-        "shimmer": {
-          "0%, 100%": { 
-            backgroundPosition: "200% center",
-          },
-          "50%": { 
-            backgroundPosition: "-200% center",
-          },
-        },
         "spin-slow": {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
@@ -248,7 +240,6 @@ export default {
         "spin-slow": "spin-slow 3s linear infinite",
         "float-up": "float-up 0.6s ease-out forwards",
         "flip-3d": "flip-3d 4s ease-in-out infinite",
-        "shimmer": "shimmer 3s ease-in-out infinite",
       },
     },
   },
