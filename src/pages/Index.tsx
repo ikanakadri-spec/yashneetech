@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
 import officeHero from "@/assets/office-hero.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
@@ -147,7 +148,7 @@ const Index = () => {
       <section id="services" className="py-10 bg-background relative overflow-hidden">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
+          <ScrollReveal className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
               <Star className="w-4 h-4" />
               Our Services
@@ -160,21 +161,23 @@ const Index = () => {
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
               From temporary staffing to executive search, we provide end-to-end talent solutions that drive your business forward.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-emerald hover:bg-emerald/5 transition-all duration-300 hover:-translate-y-2" style={{
-            animationDelay: `${index * 100}ms`
-          }}>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
-                    <service.icon className="w-8 h-8 text-primary-foreground" />
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
+            {services.map((service, index) => (
+              <StaggerItem key={service.title}>
+                <div className="group relative p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-emerald hover:bg-emerald/5 transition-all duration-300 hover:-translate-y-2">
+                  <div className="relative z-10">
+                    <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300">
+                      <service.icon className="w-8 h-8 text-primary-foreground" />
+                    </div>
+                    <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </div>
-              </div>)}
-          </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
 
@@ -182,7 +185,7 @@ const Index = () => {
       <section id="mission" className="py-10 bg-background relative overflow-hidden">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center mb-10">
+          <ScrollReveal className="text-center mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
               <Star className="w-4 h-4" />
               Our Mission
@@ -195,30 +198,32 @@ const Index = () => {
             <p className="text-muted-foreground max-w-3xl mx-auto text-lg">
               At <span className="font-bold text-emerald">Yashnee Tech</span>, we believe great talent and great companies deserve each other. Our mission is to make those connections happen – faster, smarter, and with lasting impact.
             </p>
-          </div>
+          </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
             {missionCards.map((card) => (
-              <div key={card.title} className="group relative h-[400px] rounded-3xl overflow-hidden transition-all duration-500">
-                <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
-                
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                    <div className="w-12 h-12 bg-champagne/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-champagne/30">
-                      <Sparkles className="w-6 h-6 text-champagne" />
+              <StaggerItem key={card.title}>
+                <div className="group relative h-[400px] rounded-3xl overflow-hidden transition-all duration-500">
+                  <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
+                  
+                  <div className="absolute inset-0 flex flex-col justify-end p-8">
+                    <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                      <div className="w-12 h-12 bg-champagne/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-champagne/30">
+                        <Sparkles className="w-6 h-6 text-champagne" />
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-3">
+                        {card.title}
+                      </h3>
+                      <p className="text-primary-foreground/80 leading-relaxed">
+                        {card.description}
+                      </p>
                     </div>
-                    <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-3">
-                      {card.title}
-                    </h3>
-                    <p className="text-primary-foreground/80 leading-relaxed">
-                      {card.description}
-                    </p>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -229,7 +234,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-emerald via-emerald-light to-emerald" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
+          <ScrollReveal className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8">
               <Zap className="w-4 h-4 text-champagne" />
               <span className="text-primary-foreground text-sm font-medium">Ready to Get Started?</span>
@@ -259,7 +264,7 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 

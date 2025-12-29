@@ -3,6 +3,7 @@ import { useLocation, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { 
   Mail, 
   Phone, 
@@ -159,46 +160,52 @@ const Contact = () => {
       {/* Contact Info Cards - Floating Style */}
       <section className="relative -mt-16 pb-6 z-10">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" staggerDelay={0.1}>
             {/* Email Card */}
-            <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-6 h-6 text-primary-foreground" />
+            <StaggerItem>
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Email Us</h3>
+                  <a href="mailto:info@yashneetech.com" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
+                    info@yashneetech.com
+                  </a>
                 </div>
-                <h3 className="font-heading font-semibold text-foreground mb-2">Email Us</h3>
-                <a href="mailto:info@yashneetech.com" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
-                  info@yashneetech.com
-                </a>
               </div>
-            </div>
+            </StaggerItem>
             
             {/* Phone Card */}
-            <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="w-6 h-6 text-foreground" />
+            <StaggerItem>
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-6 h-6 text-foreground" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Call Us</h3>
+                  <a href="tel:+914049964796" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
+                    +91 40 4996 4796
+                  </a>
                 </div>
-                <h3 className="font-heading font-semibold text-foreground mb-2">Call Us</h3>
-                <a href="tel:+914049964796" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
-                  +91 40 4996 4796
-                </a>
               </div>
-            </div>
+            </StaggerItem>
             
             {/* Location Card */}
-            <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="w-6 h-6 text-primary-foreground" />
+            <StaggerItem>
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Visit Us</h3>
+                  <span className="text-muted-foreground font-medium">
+                    Hyderabad, Telangana, India
+                  </span>
                 </div>
-                <h3 className="font-heading font-semibold text-foreground mb-2">Visit Us</h3>
-                <span className="text-muted-foreground font-medium">
-                  Hyderabad, Telangana, India
-                </span>
               </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -207,16 +214,17 @@ const Contact = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto">
             {/* Highlighted Form Header */}
-            <div className="text-center mb-6">
+            <ScrollReveal className="text-center mb-6">
               <h2 className="inline-block text-lg md:text-xl font-heading font-bold text-foreground bg-gradient-to-r from-champagne/30 to-emerald/20 px-6 py-3 rounded-xl border border-emerald/30">
                 Tell Us About Your Requirements
               </h2>
               <p className="text-muted-foreground mt-4 text-base">
                 Our team will reach out within 24 hours to discuss your requirements.
               </p>
-            </div>
+            </ScrollReveal>
             
-            <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald space-y-3 overflow-hidden">
+            <ScrollReveal delay={0.1}>
+              <form onSubmit={handleSubmit} className="relative p-6 md:p-8 rounded-2xl bg-card border-2 border-emerald space-y-3 overflow-hidden">
                   
                   {/* Form Fields */}
                   <div className="relative space-y-3">
@@ -483,6 +491,7 @@ const Contact = () => {
                     )}
                   </Button>
                 </form>
+              </ScrollReveal>
           </div>
         </div>
       </section>
@@ -493,7 +502,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(42_85%_55%/0.15),_transparent_70%)]" />
         
         <div className="container relative mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-primary-foreground/90 text-sm font-medium mb-6">
               <Briefcase className="w-4 h-4" />
               <span>Careers at Yashnee Tech</span>
@@ -512,7 +521,7 @@ const Contact = () => {
               info@yashneetech.com
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
