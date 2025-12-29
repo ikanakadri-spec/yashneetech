@@ -39,8 +39,8 @@ function buildCornerPalette(imageData: ImageData) {
   return Array.from(palette.values());
 }
 
-// Enhance color density and contrast of visible pixels, with special treatment for light text
-function enhanceColors(imageData: ImageData, contrastFactor = 1.6, saturationFactor = 1.6) {
+// Enhance color density and contrast of visible pixels
+function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFactor = 1.5) {
   const { data } = imageData;
   
   for (let i = 0; i < data.length; i += 4) {
@@ -49,36 +49,17 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.6, saturationFac
     
     let r = data[i], g = data[i + 1], b = data[i + 2];
     
-    // Calculate luminance to detect light/white text
-    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-    
-    // For light colored pixels (like white/cream text), boost them to pure white
-    if (luminance > 0.7) {
-      // Boost light pixels toward pure white for better visibility
-      const boostFactor = 1.2;
-      r = Math.min(255, r * boostFactor);
-      g = Math.min(255, g * boostFactor);
-      b = Math.min(255, b * boostFactor);
-      
-      // Make near-white pixels fully white for crisp text
-      if (luminance > 0.85) {
-        r = 255;
-        g = 255;
-        b = 255;
-      }
-    } else {
-      // Apply contrast enhancement to darker pixels
-      r = Math.min(255, Math.max(0, ((r / 255 - 0.5) * contrastFactor + 0.5) * 255));
-      g = Math.min(255, Math.max(0, ((g / 255 - 0.5) * contrastFactor + 0.5) * 255));
-      b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * contrastFactor + 0.5) * 255));
-    }
+    // Apply contrast enhancement
+    r = Math.min(255, Math.max(0, ((r / 255 - 0.5) * contrastFactor + 0.5) * 255));
+    g = Math.min(255, Math.max(0, ((g / 255 - 0.5) * contrastFactor + 0.5) * 255));
+    b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * contrastFactor + 0.5) * 255));
     
     // Apply saturation enhancement (convert to HSL, boost S, convert back)
     const max = Math.max(r, g, b);
     const min = Math.min(r, g, b);
     const l = (max + min) / 2 / 255;
     
-    if (max !== min && luminance <= 0.7) {
+    if (max !== min) {
       const d = (max - min) / 255;
       let s = l > 0.5 ? d / (2 - (max + min) / 255) : d / ((max + min) / 255);
       s = Math.min(1, s * saturationFactor);
