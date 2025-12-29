@@ -139,19 +139,10 @@ export const Header = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 50);
-      
-      // Show header when scrolling up, hide when scrolling down
-      if (currentScrollY < lastScrollY || currentScrollY < 50) {
-        setVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setVisible(false);
-      }
-      
-      setLastScrollY(currentScrollY);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, []);
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -170,7 +161,7 @@ export const Header = () => {
       setSearchOpen(false);
     }
   };
-  return <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
