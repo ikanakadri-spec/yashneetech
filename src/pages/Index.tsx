@@ -94,17 +94,16 @@ const Index = () => {
           <div className="max-w-4xl">
             
             
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-8 leading-[1.1] overflow-hidden">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-[1.1] overflow-hidden">
               <span className="inline-block overflow-hidden">
                 <span className="inline-block text-primary-foreground opacity-0 animate-reveal-text" style={{ animationDelay: '200ms' }}>
                   Find Your&nbsp;
                 </span>
               </span>
-              <span className="relative inline-block overflow-hidden">
+              <span className="inline-block overflow-hidden">
                 <span className="inline-block opacity-0 animate-reveal-text" style={{ animationDelay: '500ms' }}>
-                  <span className="relative z-10 gradient-text-animated">Perfect</span>
+                  <span className="gradient-text-animated">Perfect</span>
                 </span>
-                <span className="absolute -bottom-2 left-0 w-full h-3 bg-champagne/30 -skew-x-12 origin-left animate-[scaleX_0.5s_ease-out_0.9s_forwards] scale-x-0" />
               </span>
               <br />
               <span className="inline-block overflow-hidden">
@@ -186,11 +185,11 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card/70 backdrop-blur-sm border border-border/50 hover:border-champagne/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
+            {services.map((service, index) => <div key={service.title} className="group relative p-8 rounded-2xl bg-card/70 backdrop-blur-sm border border-border/50 hover:border-champagne/50 hover:bg-emerald/10 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-champagne/10" style={{
             animationDelay: `${index * 100}ms`
           }}>
                 {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/5 via-transparent to-emerald/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-champagne/10 via-emerald/5 to-emerald/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <div className="relative z-10">
                   <div className="w-16 h-16 bg-gradient-to-br from-emerald to-emerald-light rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-emerald/20 transition-all duration-500">
@@ -198,10 +197,6 @@ const Index = () => {
                   </div>
                   <h3 className="text-xl font-heading font-bold text-foreground mb-3 group-hover:text-emerald transition-colors">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{service.description}</p>
-                  
-                  <div className="mt-6 flex items-center text-champagne font-medium opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                    Learn more <ChevronRight className="w-4 h-4 ml-1" />
-                  </div>
                 </div>
               </div>)}
           </div>
