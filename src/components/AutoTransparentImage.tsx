@@ -52,8 +52,8 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     // Calculate brightness to identify text (darker pixels)
     const brightness = (r + g + b) / 3;
     
-    // Apply stronger contrast for darker pixels (text)
-    const textBoost = brightness < 100 ? 1.3 : 1.0;
+    // Apply much stronger contrast for darker pixels (text)
+    const textBoost = brightness < 120 ? 1.8 : 1.0;
     const effectiveContrast = contrastFactor * textBoost;
     
     // Apply contrast enhancement
@@ -61,11 +61,16 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     g = Math.min(255, Math.max(0, ((g / 255 - 0.5) * effectiveContrast + 0.5) * 255));
     b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * effectiveContrast + 0.5) * 255));
     
-    // Make dark pixels even darker (for text crispness)
-    if (brightness < 80) {
-      r = Math.max(0, r * 0.7);
-      g = Math.max(0, g * 0.7);
-      b = Math.max(0, b * 0.7);
+    // Make dark pixels much darker (for text crispness and boldness)
+    if (brightness < 100) {
+      r = Math.max(0, r * 0.4);
+      g = Math.max(0, g * 0.4);
+      b = Math.max(0, b * 0.4);
+    } else if (brightness < 150) {
+      // Medium dark pixels also get darkened
+      r = Math.max(0, r * 0.6);
+      g = Math.max(0, g * 0.6);
+      b = Math.max(0, b * 0.6);
     }
     
     // Apply saturation enhancement (convert to HSL, boost S, convert back)
@@ -106,9 +111,11 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     data[i + 1] = g;
     data[i + 2] = b;
     
-    // Boost alpha for dark text pixels
-    if (brightness < 100 && a < 255) {
-      data[i + 3] = Math.min(255, Math.round(a * 1.3));
+    // Strongly boost alpha for dark text pixels to make them more opaque
+    if (brightness < 120) {
+      data[i + 3] = 255; // Full opacity for text
+    } else if (brightness < 180 && a < 255) {
+      data[i + 3] = Math.min(255, Math.round(a * 1.5));
     }
   }
   
