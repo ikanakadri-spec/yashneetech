@@ -111,7 +111,7 @@ function floodFillTransparent(imageData: ImageData, palette: RGB[], tolerance: n
     queue[qt++] = id;
   };
 
-  // Seed from edges only (prevents removing white highlights inside the logo)
+  // Seed from edges (outer background)
   for (let x = 0; x < w; x++) {
     if (isBg(x, 0)) push(x, 0);
     if (isBg(x, h - 1)) push(x, h - 1);
@@ -120,6 +120,8 @@ function floodFillTransparent(imageData: ImageData, palette: RGB[], tolerance: n
     if (isBg(0, y)) push(0, y);
     if (isBg(w - 1, y)) push(w - 1, y);
   }
+  
+  // Process edge-connected background first
   while (qh < qt) {
     const id = queue[qh++];
     const x = id % w;
@@ -133,6 +135,64 @@ function floodFillTransparent(imageData: ImageData, palette: RGB[], tolerance: n
     if (y > 0 && !visited[id - w] && isBg(x, y - 1)) push(x, y - 1);
     if (y < h - 1 && !visited[id + w] && isBg(x, y + 1)) push(x, y + 1);
   }
+  
+  // Second pass: find and fill enclosed background regions (letter counters like in a, e, o)
+  // These are interior holes that weren't connected to the edge
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const id = y * w + x;
+      if (!visited[id] && isBg(x, y)) {
+        // Check if this is a small enclosed region (likely a letter counter)
+        // by checking if it's surrounded by non-background pixels
+        const regionPixels: number[] = [];
+        const tempQueue: number[] = [id];
+        const tempVisited = new Set<number>();
+        tempVisited.add(id);
+        let touchesEdge = false;
+        
+        while (tempQueue.length > 0) {
+          const currentId = tempQueue.shift()!;
+          const cx = currentId % w;
+          const cy = Math.floor(currentId / w);
+          regionPixels.push(currentId);
+          
+          // Check if this region touches the image edge
+          if (cx === 0 || cx === w - 1 || cy === 0 || cy === h - 1) {
+            touchesEdge = true;
+          }
+          
+          // Check 4-neighbors
+          const neighbors = [
+            [cx - 1, cy], [cx + 1, cy], [cx, cy - 1], [cx, cy + 1]
+          ];
+          for (const [nx, ny] of neighbors) {
+            if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
+              const nid = ny * w + nx;
+              if (!visited[nid] && !tempVisited.has(nid) && isBg(nx, ny)) {
+                tempVisited.add(nid);
+                tempQueue.push(nid);
+              }
+            }
+          }
+        }
+        
+        // If this enclosed region doesn't touch edges and is reasonably sized,
+        // it's likely a letter counter - make it transparent
+        if (!touchesEdge && regionPixels.length > 5 && regionPixels.length < (w * h) / 4) {
+          for (const pid of regionPixels) {
+            visited[pid] = 1;
+            data[pid * 4 + 3] = 0;
+          }
+        } else {
+          // Mark as visited to avoid reprocessing
+          for (const pid of regionPixels) {
+            visited[pid] = 1;
+          }
+        }
+      }
+    }
+  }
+  
   return imageData;
 }
 export function AutoTransparentImage({
