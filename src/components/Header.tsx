@@ -248,18 +248,10 @@ export const Header = () => {
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
             <AutoTransparentImage 
               src={yashneeLogo} 
-              alt="Yashnee Logo" 
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain" 
+              alt="Yashnee - Next Gen Talent Partner" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]" 
               tolerance={120} 
             />
-            <div className="flex flex-col -ml-1 animate-fade-in">
-              <span className="text-xl md:text-2xl lg:text-3xl font-heading tracking-tight uppercase leading-none font-bold text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.8)] [text-shadow:_0_0_20px_rgba(255,255,255,0.6),_0_0_40px_rgba(255,255,255,0.3)]">
-                YASHNEE TECH
-              </span>
-              <span className="text-[10px] md:text-xs text-white/90 tracking-wide italic font-medium font-serif leading-tight mt-0.5 drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]">
-                Next-Gen Talent Partner
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
