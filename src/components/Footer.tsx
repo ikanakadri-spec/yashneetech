@@ -25,7 +25,7 @@ export const Footer = () => {
                 <span className="font-heading font-bold text-lg md:text-xl text-primary-foreground tracking-wide">
                   YASHNEE TECH
                 </span>
-                <span className="-mt-1 bg-gradient-to-r from-gold via-white to-gold bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer text-[10px] md:text-xs tracking-wider italic font-semibold [filter:drop-shadow(0_0_6px_rgba(212,175,55,0.5))]">
+                <span className="-mt-1 bg-gradient-to-r from-champagne via-cream to-champagne bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer text-[10px] md:text-xs tracking-wider italic font-semibold [text-shadow:0_1px_2px_hsl(var(--foreground)_/_0.35),0_0_12px_hsl(var(--champagne)_/_0.45)]">
                   Next Gen Talent Partner
                 </span>
               </div>
