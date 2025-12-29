@@ -69,7 +69,7 @@ const Dropdown = ({
         {label}
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      {isOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border py-1 z-50 animate-slide-down">
+      {isOpen && <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-border py-1 z-[100] animate-slide-down">
           {items.map((item, index) => item.external ? <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={itemClasses} style={{
         animationDelay: `${index * 50}ms`
       }} onClick={() => {
@@ -116,7 +116,7 @@ const ExpertiseDropdown = ({
         Areas of Expertise
         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} />
       </button>
-      {isOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-border py-1 z-50 animate-slide-down">
+      {isOpen && <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-border py-1 z-[100] animate-slide-down">
           {expertiseItems.map((item, index) => <button key={item} onClick={() => handleExpertiseClick(item)} className={itemClasses} style={{
         animationDelay: `${index * 50}ms`
       }}>
@@ -170,7 +170,7 @@ export const Header = () => {
       setSearchOpen(false);
     }
   };
-  return <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
+  return <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'} ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
           <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
@@ -203,7 +203,7 @@ export const Header = () => {
               <button onClick={() => setSearchOpen(!searchOpen)} className="p-2 text-white/70 hover:text-gold transition-colors">
                 <Search className="w-5 h-5" />
               </button>
-              {searchOpen && <form onSubmit={handleSearch} className="absolute top-full right-0 mt-2 w-72 bg-card rounded-lg shadow-lg border border-border p-3 z-50 animate-slide-down">
+              {searchOpen && <form onSubmit={handleSearch} className="absolute top-full right-0 mt-2 w-72 bg-card rounded-lg shadow-lg border border-border p-3 z-[100] animate-slide-down">
                   <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Search..." className="w-full px-3 py-2 bg-secondary rounded-md text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary" autoFocus />
                 </form>}
             </div>
