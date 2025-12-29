@@ -139,12 +139,6 @@ const Contact = () => {
       <section className="relative pt-28 pb-32 overflow-hidden">
         {/* Background with gradient overlay */}
         <div className="absolute inset-0 gradient-hero" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(42_85%_55%/0.15),_transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_hsl(160_45%_30%/0.3),_transparent_50%)]" />
-        
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-10 w-72 h-72 bg-champagne/10 rounded-full blur-3xl animate-pulse-subtle" />
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-emerald-light/10 rounded-full blur-3xl" />
         
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
@@ -468,7 +462,6 @@ const Contact = () => {
       {/* Join Our Team - Premium CTA */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-emerald via-emerald-light to-emerald" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(42_85%_55%/0.15),_transparent_70%)]" />
         
         <div className="container relative mx-auto px-4 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">

@@ -20,10 +20,6 @@ const GetStarted = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 bg-gradient-to-b from-emerald-dark via-emerald to-emerald-light overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 border-2 border-champagne/20 rounded-full animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 right-20 w-32 h-32 border-2 border-white/20 rounded-full animate-float" style={{ animationDelay: '3s' }} />
-        <div className="absolute top-1/2 -left-20 w-72 h-72 bg-gradient-to-br from-champagne/10 to-transparent rounded-full blur-3xl" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
