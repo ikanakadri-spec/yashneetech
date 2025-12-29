@@ -12,13 +12,19 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105">
+            <Link to="/" className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
               <AutoTransparentImage
                 src={yashneeLogo}
                 alt="Yashnee Tech Logo"
-                className="h-16 md:h-20 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
+                className="h-14 md:h-16 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
                 tolerance={35}
               />
+              <div className="-space-y-1">
+                <span className="font-heading font-bold text-xl md:text-2xl tracking-tight leading-tight text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]">
+                  YASHNEE TECH
+                </span>
+                <p className="text-xs text-champagne leading-tight font-medium">Next Gen Talent Partner</p>
+              </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
