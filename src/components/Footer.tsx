@@ -17,7 +17,7 @@ export const Footer = () => {
                 src={yashneeLogo} 
                 alt="Yashnee - Next Gen Talent Partner" 
                 className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
-                tolerance={25} 
+                tolerance={90} 
               />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
