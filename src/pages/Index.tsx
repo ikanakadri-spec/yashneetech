@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
-import heroCorporate from "@/assets/hero-corporate.jpg";
+import themeOfficeLounge from "@/assets/theme-office-lounge.jpg";
+import themeOfficeDesk from "@/assets/theme-office-desk.jpg";
 import missionBoardroom from "@/assets/mission-boardroom.jpg";
-import missionWorkspace from "@/assets/mission-workspace.jpg";
 import missionExecutive from "@/assets/mission-executive.jpg";
 const services = [{
   icon: Users,
@@ -58,7 +58,7 @@ const missionCards = [
   },
   {
     title: "Changing Lives",
-    image: missionWorkspace,
+    image: themeOfficeDesk,
     description: "Connecting talented professionals with opportunities that transform their careers."
   },
   {
@@ -75,7 +75,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
 
         <div className="absolute inset-0">
-          <img src={heroCorporate} alt="Modern corporate office space" className="w-full h-full object-cover" />
+          <img src={themeOfficeLounge} alt="Modern corporate office space" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/50 via-emerald/30 to-emerald/15" />
           <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/30 via-transparent to-transparent" />
         </div>
