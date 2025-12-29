@@ -249,7 +249,7 @@ export const Header = () => {
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain drop-shadow-[0_0_10px_rgba(76,175,80,0.4)]" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain brightness-0 invert drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]" 
               tolerance={90} 
             />
           </Link>
