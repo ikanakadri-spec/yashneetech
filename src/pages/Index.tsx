@@ -139,7 +139,7 @@ const Index = () => {
                 <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
                   <Users className="w-6 h-6 text-white/90 mb-2" />
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-white mb-1">500+</div>
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-white mb-1">100+</div>
                   <div className="text-sm text-white/80">Placements</div>
                 </div>
               </div>
