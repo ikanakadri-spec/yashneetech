@@ -46,12 +46,29 @@ const timelines = [
   "Seeking Consultation"
 ];
 
+// Declare grecaptcha for TypeScript
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (callback: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+      render: (container: string | HTMLElement, options: object) => number;
+      reset: (widgetId?: number) => void;
+      getResponse: (widgetId?: number) => string;
+    };
+  }
+}
+
+// Your reCAPTCHA v2 site key - replace with your actual site key
+const RECAPTCHA_SITE_KEY = "6LfylpArAAAAADLUfKuPomfBfSECt6M8kAPOg0em";
+
 const Contact = () => {
   const location = useLocation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [captchaChecked, setCaptchaChecked] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
   const [privacyConsent, setPrivacyConsent] = useState(false);
+  const [recaptchaWidgetId, setRecaptchaWidgetId] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -64,6 +81,41 @@ const Contact = () => {
   });
 
   const [focusedField, setFocusedField] = useState<string | null>(null);
+
+  // Initialize reCAPTCHA widget
+  useEffect(() => {
+    const initRecaptcha = () => {
+      if (window.grecaptcha && document.getElementById('recaptcha-container')) {
+        try {
+          const widgetId = window.grecaptcha.render('recaptcha-container', {
+            sitekey: RECAPTCHA_SITE_KEY,
+            callback: (token: string) => setRecaptchaToken(token),
+            'expired-callback': () => setRecaptchaToken(null),
+            'error-callback': () => setRecaptchaToken(null),
+            theme: 'light',
+            size: 'normal'
+          });
+          setRecaptchaWidgetId(widgetId);
+        } catch (e) {
+          // Widget already rendered
+        }
+      }
+    };
+
+    // Check if grecaptcha is already loaded
+    if (window.grecaptcha) {
+      window.grecaptcha.ready(initRecaptcha);
+    } else {
+      // Wait for script to load
+      const checkInterval = setInterval(() => {
+        if (window.grecaptcha) {
+          clearInterval(checkInterval);
+          window.grecaptcha.ready(initRecaptcha);
+        }
+      }, 100);
+      return () => clearInterval(checkInterval);
+    }
+  }, []);
 
   // Scroll to form if hash is present
   useEffect(() => {
@@ -93,7 +145,7 @@ const Contact = () => {
       emailRegex.test(formData.email) &&
       phoneRegex.test(formData.contactNumber) &&
       formData.enquiryType &&
-      captchaChecked &&
+      recaptchaToken &&
       privacyConsent
     );
   };
@@ -123,6 +175,7 @@ const Contact = () => {
           timeline: formData.timeline || undefined,
           requirements: formData.requirements || undefined,
           fileName: formData.attachment?.name || undefined,
+          captchaToken: recaptchaToken,
         }
       });
 
@@ -144,8 +197,12 @@ const Contact = () => {
         requirements: "",
         attachment: null
       });
-      setCaptchaChecked(false);
+      setRecaptchaToken(null);
       setPrivacyConsent(false);
+      // Reset reCAPTCHA widget
+      if (recaptchaWidgetId !== null && window.grecaptcha) {
+        window.grecaptcha.reset(recaptchaWidgetId);
+      }
     } catch (error: any) {
       console.error("Submission error:", error);
       toast({
@@ -475,22 +532,9 @@ const Contact = () => {
                     </label>
                   </div>
 
-                  {/* CAPTCHA */}
-                  <div className="p-2.5 rounded-lg bg-background border border-gray-300 hover:border-emerald/30 transition-colors">
-                    <label className="flex items-center gap-2.5 cursor-pointer group">
-                      <div className="relative">
-                        <input
-                          type="checkbox"
-                          checked={captchaChecked}
-                          onChange={(e) => setCaptchaChecked(e.target.checked)}
-                          className="peer w-4 h-4 rounded border-2 border-gray-300 text-emerald focus:ring-emerald focus:ring-offset-0 transition-all cursor-pointer checked:bg-emerald checked:border-emerald appearance-none"
-                        />
-                        {captchaChecked && (
-                          <CheckCircle className="absolute inset-0 w-4 h-4 text-primary-foreground pointer-events-none" />
-                        )}
-                      </div>
-                      <span className="text-xs text-foreground group-hover:text-emerald transition-colors">I'm not a robot</span>
-                    </label>
+                  {/* reCAPTCHA Widget */}
+                  <div className="flex justify-center">
+                    <div id="recaptcha-container"></div>
                   </div>
 
                   {/* Submit Button */}
