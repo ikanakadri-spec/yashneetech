@@ -125,7 +125,7 @@ export const Footer = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               style={{ color: '#0A66C2' }}
             >
               <Linkedin className="w-5 h-5" />
@@ -134,7 +134,7 @@ export const Footer = () => {
               href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground hover:text-emerald transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-foreground hover:bg-foreground hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
             >
               <XLogo className="w-5 h-5" />
             </a>
@@ -142,7 +142,7 @@ export const Footer = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-[#E4405F] hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#E4405F] hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               style={{ color: '#E4405F' }}
             >
               <Instagram className="w-5 h-5" />
@@ -151,7 +151,7 @@ export const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
+              className="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
               style={{ color: '#1877F2' }}
             >
               <Facebook className="w-5 h-5" />
