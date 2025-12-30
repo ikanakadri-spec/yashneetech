@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-import { AutoTransparentImage } from "@/components/AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-header.png";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,23 +10,10 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
-              <div className="overflow-hidden" style={{ clipPath: 'inset(0 0 18% 0)' }}>
-                <AutoTransparentImage
-                  src={yashneeLogo}
-                  alt="Yashnee Tech Logo"
-                  className="h-14 md:h-16 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.5))_drop-shadow(0_0_4px_rgba(255,255,255,0.4))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
-                  tolerance={35}
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-lg md:text-xl text-primary-foreground tracking-wide">
-                  YASHNEE TECH
-                </span>
-                <span className="-mt-1 bg-gradient-to-r from-champagne via-cream to-champagne bg-[length:200%_auto] bg-clip-text text-transparent animate-text-shimmer text-[10px] md:text-xs tracking-wider italic font-semibold [text-shadow:0_1px_2px_hsl(var(--foreground)_/_0.35),0_0_12px_hsl(var(--champagne)_/_0.45)]">
-                  Next Gen Talent Partner
-                </span>
-              </div>
+            <Link to="/" className="group transition-transform duration-300 hover:scale-105">
+              <span className="font-heading font-bold text-xl md:text-2xl text-primary-foreground tracking-wide">
+                Yashnee Tech Solutions
+              </span>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
