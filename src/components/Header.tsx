@@ -3,7 +3,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AutoTransparentImage } from "@/components/AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-new.png";
+import yashneeLogo from "@/assets/yashnee-logo-clean.png";
 
 // Searchable content items
 const searchableContent = [
