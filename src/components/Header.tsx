@@ -248,7 +248,7 @@ export const Header = () => {
             <img 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" 
+              className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90 mix-blend-screen brightness-110 contrast-110 hover:opacity-100 transition-opacity duration-300" 
             />
           </Link>
 
