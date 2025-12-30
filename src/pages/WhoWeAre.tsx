@@ -51,8 +51,8 @@ const WhoWeAre = () => {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 text-champagne font-semibold text-lg md:text-xl mb-6 backdrop-blur-sm">
-              <Users className="w-5 h-5" />
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 text-champagne font-bold text-xl md:text-2xl mb-6 backdrop-blur-sm">
+              <Users className="w-6 h-6" />
               Who We Are
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-8">
