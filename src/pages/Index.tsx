@@ -144,6 +144,65 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Stats Section */}
+      <section className="py-16 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8">
+          <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+            {/* Placements Tile */}
+            <StaggerItem>
+              <div className="group relative p-8 rounded-3xl bg-gradient-to-br from-emerald via-emerald-light to-teal-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-emerald/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                <div className="relative z-10">
+                  <Users className="w-10 h-10 text-white/90 mb-4" />
+                  <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">500+</div>
+                  <div className="text-white/80 font-medium">Successful Placements</div>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Success Rate Tile */}
+            <StaggerItem>
+              <div className="group relative p-8 rounded-3xl bg-gradient-to-br from-champagne via-amber-400 to-orange-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-champagne/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                <div className="relative z-10">
+                  <Target className="w-10 h-10 text-emerald-dark/90 mb-4" />
+                  <div className="text-4xl md:text-5xl font-heading font-bold text-emerald-dark mb-2">98%</div>
+                  <div className="text-emerald-dark/80 font-medium">Success Rate</div>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Industries Tile */}
+            <StaggerItem>
+              <div className="group relative p-8 rounded-3xl bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                <div className="relative z-10">
+                  <Globe className="w-10 h-10 text-white/90 mb-4" />
+                  <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">50+</div>
+                  <div className="text-white/80 font-medium">Industries Served</div>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Support Tile */}
+            <StaggerItem>
+              <div className="group relative p-8 rounded-3xl bg-gradient-to-br from-rose-500 via-pink-500 to-red-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-rose-500/30">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
+                <div className="relative z-10">
+                  <Zap className="w-10 h-10 text-white/90 mb-4" />
+                  <div className="text-4xl md:text-5xl font-heading font-bold text-white mb-2">24/7</div>
+                  <div className="text-white/80 font-medium">Dedicated Support</div>
+                </div>
+              </div>
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
+      </section>
+
       {/* Services Section */}
       <section id="services" className="py-10 bg-background relative overflow-hidden">
         
