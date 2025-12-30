@@ -52,8 +52,11 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     // Calculate brightness to identify text (darker pixels)
     const brightness = (r + g + b) / 3;
     
-    // Apply stronger contrast for darker pixels (text)
-    const textBoost = brightness < 100 ? 1.3 : 1.0;
+    // Check if pixel has significant color (green, orange, etc.)
+    const hasColor = Math.abs(r - g) > 15 || Math.abs(g - b) > 15 || Math.abs(r - b) > 15;
+    
+    // Apply stronger contrast for darker pixels (text) and colored pixels
+    const textBoost = brightness < 120 || hasColor ? 1.4 : 1.0;
     const effectiveContrast = contrastFactor * textBoost;
     
     // Apply contrast enhancement
@@ -62,10 +65,10 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     b = Math.min(255, Math.max(0, ((b / 255 - 0.5) * effectiveContrast + 0.5) * 255));
     
     // Make dark pixels even darker (for text crispness)
-    if (brightness < 80) {
-      r = Math.max(0, r * 0.7);
-      g = Math.max(0, g * 0.7);
-      b = Math.max(0, b * 0.7);
+    if (brightness < 100) {
+      r = Math.max(0, r * 0.6);
+      g = Math.max(0, g * 0.6);
+      b = Math.max(0, b * 0.6);
     }
     
     // Apply saturation enhancement (convert to HSL, boost S, convert back)
@@ -106,9 +109,11 @@ function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFac
     data[i + 1] = g;
     data[i + 2] = b;
     
-    // Boost alpha for dark text pixels
-    if (brightness < 100 && a < 255) {
-      data[i + 3] = Math.min(255, Math.round(a * 1.3));
+    // Force full opacity for any pixel that has color or is dark (text)
+    if (hasColor || brightness < 150) {
+      data[i + 3] = 255;
+    } else if (a < 255) {
+      data[i + 3] = Math.min(255, Math.round(a * 1.5));
     }
   }
   
@@ -158,11 +163,12 @@ function smoothEdges(imageData: ImageData) {
 }
 
 // Clean up semi-transparent edge pixels (anti-aliasing artifacts)
+// Be more careful to preserve text pixels
 function cleanEdges(imageData: ImageData, threshold: number = 200) {
   const { width: w, height: h, data } = imageData;
   
-  // Multiple passes to ensure thorough edge cleaning
-  for (let pass = 0; pass < 3; pass++) {
+  // Only 2 passes and be more conservative
+  for (let pass = 0; pass < 2; pass++) {
     for (let y = 0; y < h; y++) {
       for (let x = 0; x < w; x++) {
         const i = (y * w + x) * 4;
@@ -171,32 +177,38 @@ function cleanEdges(imageData: ImageData, threshold: number = 200) {
         // Skip already transparent pixels
         if (a === 0) continue;
         
-        // If pixel is light colored and near a transparent pixel, make it transparent
         const brightness = (r + g + b) / 3;
+        
+        // Preserve any pixel that has significant color (text is usually colored)
+        const hasColor = Math.abs(r - g) > 20 || Math.abs(g - b) > 20 || Math.abs(r - b) > 20;
+        if (hasColor) continue;
+        
+        // Only remove very bright pixels near transparent areas
         if (brightness > threshold) {
-          // Check if any neighbor is transparent (8-neighborhood)
-          let hasTransparentNeighbor = false;
+          // Check if MOST neighbors are transparent (more conservative)
+          let transparentCount = 0;
+          let totalNeighbors = 0;
           for (let dy = -1; dy <= 1; dy++) {
             for (let dx = -1; dx <= 1; dx++) {
               if (dx === 0 && dy === 0) continue;
               const nx = x + dx, ny = y + dy;
               if (nx >= 0 && nx < w && ny >= 0 && ny < h) {
                 const ni = (ny * w + nx) * 4;
+                totalNeighbors++;
                 if (data[ni + 3] === 0) {
-                  hasTransparentNeighbor = true;
-                  break;
+                  transparentCount++;
                 }
               }
             }
-            if (hasTransparentNeighbor) break;
           }
-          if (hasTransparentNeighbor) {
+          // Only remove if majority of neighbors are transparent
+          if (transparentCount > totalNeighbors / 2) {
             data[i + 3] = 0;
           }
         }
         
-        // Also make semi-transparent light pixels fully transparent
-        if (a > 0 && a < 255 && brightness > 150) {
+        // Only remove VERY light semi-transparent pixels
+        if (a > 0 && a < 200 && brightness > 220) {
           data[i + 3] = 0;
         }
       }
