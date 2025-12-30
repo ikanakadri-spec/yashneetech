@@ -39,34 +39,6 @@ function buildCornerPalette(imageData: ImageData) {
   return Array.from(palette.values());
 }
 
-// Convert orange/gold tones to white for better visibility on dark backgrounds
-function convertOrangeToWhite(imageData: ImageData) {
-  const { data } = imageData;
-  
-  for (let i = 0; i < data.length; i += 4) {
-    const a = data[i + 3];
-    if (a === 0) continue; // Skip transparent pixels
-    
-    const r = data[i], g = data[i + 1], b = data[i + 2];
-    
-    // Detect orange/gold tones (high red, medium-high green, low blue)
-    // Orange typically has R > 180, G between 80-180, B < 100
-    const isOrange = r > 150 && g > 60 && g < 200 && b < 120 && r > g && r > b;
-    
-    // Also detect golden yellows (high red, high green, low blue)
-    const isGold = r > 180 && g > 140 && b < 100 && Math.abs(r - g) < 80;
-    
-    if (isOrange || isGold) {
-      // Convert to white
-      data[i] = 255;
-      data[i + 1] = 255;
-      data[i + 2] = 255;
-    }
-  }
-  
-  return imageData;
-}
-
 // Enhance color density and contrast of visible pixels - with text sharpening
 function enhanceColors(imageData: ImageData, contrastFactor = 1.4, saturationFactor = 1.5) {
   const { data } = imageData;
@@ -346,19 +318,17 @@ export function AutoTransparentImage({
   alt,
   className,
   maxDimension = 1024,
-  tolerance = 36,
-  orangeToWhite = false
+  tolerance = 36
 }: {
   src: string;
   alt: string;
   className?: string;
   maxDimension?: number;
   tolerance?: number;
-  orangeToWhite?: boolean;
 }) {
   const [processedSrc, setProcessedSrc] = useState<string | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const key = useMemo(() => `${src}|${maxDimension}|${tolerance}|${orangeToWhite}`, [src, maxDimension, tolerance, orangeToWhite]);
+  const key = useMemo(() => `${src}|${maxDimension}|${tolerance}`, [src, maxDimension, tolerance]);
   
   useEffect(() => {
     let cancelled = false;
@@ -386,11 +356,7 @@ export function AutoTransparentImage({
         cleaned = cleanEdges(cleaned, 210);
         // Third pass: smooth edges for anti-aliasing
         cleaned = smoothEdges(cleaned);
-        // Fourth pass: convert orange to white if requested
-        if (orangeToWhite) {
-          cleaned = convertOrangeToWhite(cleaned);
-        }
-        // Fifth pass: enhance color density and contrast for visibility
+        // Fourth pass: enhance color density and contrast for visibility
         cleaned = enhanceColors(cleaned, 1.8, 1.7);
         ctx.putImageData(cleaned, 0, 0);
         const url = canvas.toDataURL("image/png");
@@ -413,7 +379,7 @@ export function AutoTransparentImage({
     return () => {
       cancelled = true;
     };
-  }, [key, src, maxDimension, tolerance, orangeToWhite]);
+  }, [key, src, maxDimension, tolerance]);
   
   return (
     <img 
