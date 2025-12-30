@@ -145,17 +145,17 @@ const Index = () => {
               </div>
 
               {/* Success Rate */}
-              <div className="group relative p-5 rounded-2xl bg-gradient-to-br from-champagne via-amber-400 to-orange-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-champagne/30">
+              <div className="group relative p-5 rounded-2xl bg-gradient-to-br from-emerald via-emerald-light to-teal-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald/30">
                 <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
-                  <Target className="w-6 h-6 text-emerald-dark/90 mb-2" />
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-emerald-dark mb-1">98%</div>
-                  <div className="text-sm text-emerald-dark/80">Success Rate</div>
+                  <Target className="w-6 h-6 text-white/90 mb-2" />
+                  <div className="text-3xl md:text-4xl font-heading font-bold text-white mb-1">98%</div>
+                  <div className="text-sm text-white/80">Success Rate</div>
                 </div>
               </div>
 
               {/* Industries */}
-              <div className="group relative p-5 rounded-2xl bg-gradient-to-br from-violet-500 via-purple-500 to-fuchsia-500 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/30">
+              <div className="group relative p-5 rounded-2xl bg-gradient-to-br from-emerald via-emerald-light to-teal-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald/30">
                 <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
                   <Globe className="w-6 h-6 text-white/90 mb-2" />
@@ -165,7 +165,7 @@ const Index = () => {
               </div>
 
               {/* Support */}
-              <div className="group relative p-5 rounded-2xl bg-gradient-to-br from-rose-500 via-pink-500 to-red-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-rose-500/30">
+              <div className="group relative p-5 rounded-2xl bg-gradient-to-br from-emerald via-emerald-light to-teal-400 overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-emerald/30">
                 <div className="absolute -right-2 -top-2 w-16 h-16 bg-white/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700" />
                 <div className="relative z-10">
                   <Zap className="w-6 h-6 text-white/90 mb-2" />
