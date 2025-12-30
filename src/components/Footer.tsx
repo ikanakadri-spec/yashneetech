@@ -17,7 +17,7 @@ export const Footer = () => {
                 <AutoTransparentImage
                   src={yashneeLogo}
                   alt="Yashnee Tech Logo"
-                  className="h-14 md:h-16 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
+                  className="h-14 md:h-16 w-auto object-contain [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.5))_drop-shadow(0_0_4px_rgba(255,255,255,0.4))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]"
                   tolerance={35}
                 />
               </div>
