@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect, useMemo } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AutoTransparentImage } from "@/components/AutoTransparentImage";
-import yashneeLogo from "@/assets/yashnee-logo-new.png";
+import yashneeLogo from "@/assets/yashnee-logo-transparent-clean.png";
 
 // Searchable content items
 const searchableContent = [
@@ -245,12 +244,11 @@ export const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
-          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
-            <AutoTransparentImage 
+          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105 -ml-2 lg:-ml-4">
+            <img 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
-              tolerance={90} 
+              className="h-16 md:h-20 lg:h-24 w-auto object-contain drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]" 
             />
           </Link>
 
