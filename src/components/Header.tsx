@@ -252,7 +252,7 @@ export const Header = () => {
               className="h-16 md:h-20 lg:h-24 w-auto object-contain [clip-path:inset(0_0_18%_0)] [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
               tolerance={90} 
             />
-            <span className="-mt-4 md:-mt-5 lg:-mt-6 ml-1 text-[10px] md:text-xs lg:text-sm tracking-wide italic font-semibold text-[#E67E22] [text-shadow:0_1px_2px_rgba(0,0,0,0.3),0_0_8px_rgba(230,126,34,0.4)]">
+            <span className="-mt-4 md:-mt-5 lg:-mt-6 ml-1 text-[10px] md:text-xs lg:text-sm tracking-wide italic font-bold text-[#D35400] [text-shadow:0_1px_3px_rgba(0,0,0,0.5),0_0_10px_rgba(211,84,0,0.6)]">
               Next Gen Talent Partner
             </span>
           </Link>
