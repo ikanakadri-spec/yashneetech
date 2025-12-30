@@ -23,8 +23,8 @@ const GetStarted = () => {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-champagne font-semibold text-sm mb-6 backdrop-blur-sm">
-              <Sparkles className="w-4 h-4" />
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 text-champagne font-semibold text-base md:text-lg mb-6 backdrop-blur-sm">
+              <Sparkles className="w-5 h-5" />
               Get Started
             </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-8">
