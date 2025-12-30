@@ -58,8 +58,53 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Submission saved to database:", dbData.id);
 
+    // Send notification email to team
+    const teamEmailResponse = await resend.emails.send({
+      from: "Yashnee Tech <onboarding@resend.dev>",
+      to: ["info@yashneetech.com"],
+      subject: `New ${submission.enquiryType} - ${submission.name}`,
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="background: linear-gradient(135deg, #059669, #10b981); padding: 30px; border-radius: 12px 12px 0 0; text-align: center;">
+            <h1 style="color: white; margin: 0; font-size: 24px;">New Contact Form Submission</h1>
+          </div>
+          
+          <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 12px 12px; border: 1px solid #e5e7eb; border-top: none;">
+            <div style="background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #e5e7eb;">
+              <h3 style="margin-top: 0; color: #059669;">Contact Details</h3>
+              <p><strong>Name:</strong> ${submission.name}</p>
+              <p><strong>Email:</strong> <a href="mailto:${submission.email}" style="color: #059669;">${submission.email}</a></p>
+              <p><strong>Phone:</strong> <a href="tel:${submission.contactNumber}" style="color: #059669;">${submission.contactNumber}</a></p>
+            </div>
+            
+            <div style="background: white; padding: 20px; border-radius: 8px; border: 1px solid #e5e7eb;">
+              <h3 style="margin-top: 0; color: #059669;">Enquiry Details</h3>
+              <p><strong>Type:</strong> ${submission.enquiryType}</p>
+              ${submission.industry ? `<p><strong>Industry:</strong> ${submission.industry}</p>` : ''}
+              ${submission.timeline ? `<p><strong>Timeline:</strong> ${submission.timeline}</p>` : ''}
+              ${submission.requirements ? `<p><strong>Additional Details:</strong><br>${submission.requirements}</p>` : ''}
+              ${submission.fileName ? `<p><strong>Attachment:</strong> ${submission.fileName}</p>` : ''}
+            </div>
+            
+            <p style="margin-top: 20px; color: #6b7280; font-size: 12px;">
+              Submitted on ${new Date().toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' })}
+            </p>
+          </div>
+        </body>
+        </html>
+      `,
+    });
+
+    console.log("Team notification email sent:", teamEmailResponse);
+
     // Send confirmation email to user
-    const emailResponse = await resend.emails.send({
+    const userEmailResponse = await resend.emails.send({
       from: "Yashnee Tech <onboarding@resend.dev>",
       to: [submission.email],
       subject: "Thank you for contacting Yashnee Tech",
@@ -102,7 +147,7 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Confirmation email sent:", emailResponse);
+    console.log("User confirmation email sent:", userEmailResponse);
 
     return new Response(
       JSON.stringify({ 
