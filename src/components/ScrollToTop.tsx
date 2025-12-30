@@ -10,12 +10,12 @@ export const ScrollToTop = () => {
       setTimeout(() => {
         const element = document.getElementById(hash.substring(1));
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 100);
     } else {
       // Scroll to top when navigating to a new page
-      window.scrollTo({ top: 0, behavior: "instant" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [pathname, hash]);
 
