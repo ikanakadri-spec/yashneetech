@@ -18,6 +18,7 @@ import {
   Globe
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const enquiryTypes = [
   "Staffing Needs",
@@ -111,28 +112,50 @@ const Contact = () => {
 
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast({
-      title: "Form submitted successfully!",
-      description: "We'll be in touch with you shortly.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      contactNumber: "",
-      enquiryType: "",
-      industry: "",
-      timeline: "",
-      requirements: "",
-      attachment: null
-    });
-    setCaptchaChecked(false);
-    setPrivacyConsent(false);
-    setIsSubmitting(false);
+    try {
+      const { data, error } = await supabase.functions.invoke('submit-contact', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          contactNumber: formData.contactNumber,
+          enquiryType: formData.enquiryType,
+          industry: formData.industry || undefined,
+          timeline: formData.timeline || undefined,
+          requirements: formData.requirements || undefined,
+          fileName: formData.attachment?.name || undefined,
+        }
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Form submitted successfully!",
+        description: "We'll be in touch with you shortly. Check your email for confirmation.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        contactNumber: "",
+        enquiryType: "",
+        industry: "",
+        timeline: "",
+        requirements: "",
+        attachment: null
+      });
+      setCaptchaChecked(false);
+      setPrivacyConsent(false);
+    } catch (error: any) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
