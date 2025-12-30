@@ -245,16 +245,13 @@ export const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
-          <Link to="/" className="flex flex-col items-start group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
+          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
             <AutoTransparentImage 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain [clip-path:inset(0_0_18%_0)] [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
               tolerance={90} 
             />
-            <span className="-mt-4 md:-mt-5 lg:-mt-6 ml-1 text-[10px] md:text-xs lg:text-sm tracking-wide italic font-semibold text-[#E67E22] [text-shadow:0_1px_2px_rgba(0,0,0,0.3),0_0_8px_rgba(230,126,34,0.4)]">
-              Next Gen Talent Partner
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
