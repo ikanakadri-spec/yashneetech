@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-
+import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone } from "lucide-react";
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -60,22 +59,34 @@ export const Footer = () => {
             <h4 className="font-heading font-semibold text-base mb-4">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-champagne mt-0.5" />
-              <a href="mailto:info@yashneetech.com" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  info@yashneetech.com
+                <MapPin className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
+                <span className="text-primary-foreground/70 text-sm">
+                  Office No. 1105, Door No. 1-61/AS/B, Asian Sun City, Block B, Kothaguda, Hyderabad, Telangana State, India - 500 084
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <Smartphone className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
+                <a href="tel:+919848896747" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+                  +91 98488 96747
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-champagne mt-0.5" />
+                <Phone className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
                 <a href="tel:+914049964796" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
                   +91 40 4996 4796
                 </a>
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-champagne mt-0.5" />
-                <span className="text-primary-foreground/70 text-sm">
-                  Hyderabad, Telangana, India
-                </span>
+                <Mail className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
+                <a href="mailto:info@yashneetech.com" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+                  info@yashneetech.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Globe className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
+                <a href="https://www.yashneetech.co" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+                  www.yashneetech.co
+                </a>
               </li>
             </ul>
           </div>
