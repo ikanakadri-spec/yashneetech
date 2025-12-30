@@ -201,7 +201,7 @@ const Index = () => {
           <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
             {missionCards.map((card) => (
               <StaggerItem key={card.title}>
-                <div className="group relative h-[400px] rounded-3xl overflow-hidden transition-all duration-500 shadow-lg hover:shadow-xl border border-gray-200/50 hover:border-emerald/30">
+                <div className="group relative h-[400px] rounded-3xl overflow-hidden transition-all duration-500">
                   <img src={card.image} alt={card.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark via-emerald-dark/60 to-transparent opacity-90 group-hover:opacity-95 transition-opacity duration-500" />
                   
