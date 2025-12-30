@@ -183,7 +183,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal className="text-center mb-12">
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald/10 text-emerald font-semibold text-lg md:text-xl mb-6">
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald/10 text-emerald font-bold text-xl md:text-2xl mb-6">
               Our Services
             </span>
             <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
@@ -219,7 +219,7 @@ const Index = () => {
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald/10 text-emerald font-semibold text-lg md:text-xl mb-6">
+            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald/10 text-emerald font-bold text-xl md:text-2xl mb-6">
               Our Mission
             </span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
@@ -265,7 +265,7 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8">
-              <span className="text-primary-foreground text-lg md:text-xl font-medium">Ready to Get Started?</span>
+              <span className="text-primary-foreground text-xl md:text-2xl font-bold">Ready to Get Started?</span>
             </div>
             
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-8 leading-tight">
