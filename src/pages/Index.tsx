@@ -150,7 +150,6 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal className="text-center mb-12">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
-              <Star className="w-4 h-4" />
               Our Services
             </span>
             <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
@@ -187,7 +186,6 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal className="text-center mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald/10 text-emerald font-semibold text-sm mb-6">
-              <Star className="w-4 h-4" />
               Our Mission
             </span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
@@ -236,7 +234,6 @@ const Index = () => {
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <ScrollReveal className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 mb-8">
-              <Zap className="w-4 h-4 text-champagne" />
               <span className="text-primary-foreground text-sm font-medium">Ready to Get Started?</span>
             </div>
             
