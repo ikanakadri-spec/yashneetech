@@ -20,6 +20,7 @@ const ContactSchema = z.object({
   timeline: z.string().max(100, "Timeline must be less than 100 characters").optional(),
   requirements: z.string().max(2000, "Requirements must be less than 2000 characters").optional(),
   fileName: z.string().max(255, "File name must be less than 255 characters").optional(),
+  captchaToken: z.string().min(1, "CAPTCHA token is required"),
 });
 
 type ContactSubmission = z.infer<typeof ContactSchema>;
@@ -88,6 +89,36 @@ const handler = async (req: Request): Promise<Response> => {
     }
 
     const submission = validationResult.data;
+    
+    // Verify reCAPTCHA token with Google
+    const recaptchaSecretKey = Deno.env.get("RECAPTCHA_SECRET_KEY");
+    if (!recaptchaSecretKey) {
+      console.error("[INTERNAL] RECAPTCHA_SECRET_KEY not configured");
+      return new Response(
+        JSON.stringify({ error: "Server configuration error. Please try again later." }),
+        { status: 500, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    const recaptchaResponse = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `secret=${recaptchaSecretKey}&response=${submission.captchaToken}`,
+    });
+
+    const recaptchaData = await recaptchaResponse.json();
+    
+    if (!recaptchaData.success) {
+      console.log("reCAPTCHA verification failed:", recaptchaData["error-codes"]);
+      return new Response(
+        JSON.stringify({ error: "CAPTCHA verification failed. Please try again." }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
+
+    console.log("reCAPTCHA verified successfully");
     console.log("Received valid contact submission from:", submission.email.replace(/(.{2}).*@/, "$1***@"));
 
     // Create Supabase client
