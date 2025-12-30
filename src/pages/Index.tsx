@@ -207,9 +207,6 @@ const Index = () => {
                   
                   <div className="absolute inset-0 flex flex-col justify-end p-8">
                     <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                      <div className="w-12 h-12 bg-champagne/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-champagne/30">
-                        <Sparkles className="w-6 h-6 text-champagne" />
-                      </div>
                       <h3 className="text-2xl font-heading font-bold text-primary-foreground mb-3">
                         {card.title}
                       </h3>
