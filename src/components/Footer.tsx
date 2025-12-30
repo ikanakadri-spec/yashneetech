@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone } from "lucide-react";
 
 // Custom X (formerly Twitter) logo component
@@ -9,6 +9,12 @@ const XLogo = ({ className }: { className?: string }) => (
 );
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+
+  const handleHashNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    e.preventDefault();
+    navigate("/" + hash);
+  };
 
   return (
     <footer className="bg-emerald text-primary-foreground">
@@ -35,12 +41,20 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="/#services" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+                <a 
+                  href="/#services" 
+                  onClick={(e) => handleHashNavigation(e, "#services")}
+                  className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer"
+                >
                   Our Services
                 </a>
               </li>
               <li>
-                <a href="/#mission" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+                <a 
+                  href="/#mission" 
+                  onClick={(e) => handleHashNavigation(e, "#mission")}
+                  className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer"
+                >
                   Our Mission
                 </a>
               </li>
