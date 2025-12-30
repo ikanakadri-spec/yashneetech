@@ -60,7 +60,7 @@ declare global {
 }
 
 // Your reCAPTCHA v2 site key - replace with your actual site key
-const RECAPTCHA_SITE_KEY = "6LfylpArAAAAADLUfKuPomfBfSECt6M8kAPOg0em";
+const RECAPTCHA_SITE_KEY = "6Ld-8DosAAAAAJYHvHwGavXzguEVgUIEm2k3kRcF";
 
 const Contact = () => {
   const location = useLocation();
