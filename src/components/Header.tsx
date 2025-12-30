@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import yashneeLogo from "@/assets/yashnee-logo-transparent-clean.png";
+import yashneeLogo from "@/assets/yashnee-logo-hero.png";
 
 // Searchable content items
 const searchableContent = [
@@ -248,7 +248,7 @@ export const Header = () => {
             <img 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
-              className="h-16 md:h-20 lg:h-24 w-auto object-contain opacity-90 mix-blend-screen brightness-110 contrast-110 hover:opacity-100 transition-opacity duration-300" 
+              className="h-14 md:h-16 lg:h-20 w-auto object-contain" 
             />
           </Link>
 
