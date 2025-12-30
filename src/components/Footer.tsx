@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Twitter, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone } from "lucide-react";
+import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone } from "lucide-react";
+
+// Custom X (formerly Twitter) logo component
+const XLogo = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+);
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -118,23 +125,25 @@ export const Footer = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:bg-champagne hover:text-emerald transition-all"
+              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all"
+              style={{ color: '#0A66C2' }}
             >
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://twitter.com"
+              href="https://x.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:bg-champagne hover:text-emerald transition-all"
+              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground hover:bg-primary-foreground hover:text-emerald transition-all"
             >
-              <Twitter className="w-5 h-5" />
+              <XLogo className="w-5 h-5" />
             </a>
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:bg-champagne hover:text-emerald transition-all"
+              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-[#E4405F] hover:text-white transition-all"
+              style={{ color: '#E4405F' }}
             >
               <Instagram className="w-5 h-5" />
             </a>
@@ -142,7 +151,8 @@ export const Footer = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/70 hover:bg-champagne hover:text-emerald transition-all"
+              className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-[#1877F2] hover:text-white transition-all"
+              style={{ color: '#1877F2' }}
             >
               <Facebook className="w-5 h-5" />
             </a>
