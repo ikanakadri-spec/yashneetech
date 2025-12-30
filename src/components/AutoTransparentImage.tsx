@@ -161,8 +161,8 @@ function smoothEdges(imageData: ImageData) {
 function cleanEdges(imageData: ImageData, threshold: number = 200) {
   const { width: w, height: h, data } = imageData;
   
-  // Multiple passes to ensure thorough edge cleaning
-  for (let pass = 0; pass < 3; pass++) {
+  // More aggressive cleaning passes
+  for (let pass = 0; pass < 5; pass++) {
     for (let y = 0; y < h; y++) {
       for (let x = 0; x < w; x++) {
         const i = (y * w + x) * 4;
@@ -171,11 +171,16 @@ function cleanEdges(imageData: ImageData, threshold: number = 200) {
         // Skip already transparent pixels
         if (a === 0) continue;
         
-        // If pixel is light colored and near a transparent pixel, make it transparent
         const brightness = (r + g + b) / 3;
-        if (brightness > threshold) {
+        
+        // Aggressive threshold for light pixels near edges
+        const dynamicThreshold = pass < 2 ? threshold : threshold - 20;
+        
+        if (brightness > dynamicThreshold) {
           // Check if any neighbor is transparent (8-neighborhood)
           let hasTransparentNeighbor = false;
+          let transparentCount = 0;
+          
           for (let dy = -1; dy <= 1; dy++) {
             for (let dx = -1; dx <= 1; dx++) {
               if (dx === 0 && dy === 0) continue;
@@ -184,24 +189,60 @@ function cleanEdges(imageData: ImageData, threshold: number = 200) {
                 const ni = (ny * w + nx) * 4;
                 if (data[ni + 3] === 0) {
                   hasTransparentNeighbor = true;
-                  break;
+                  transparentCount++;
                 }
               }
             }
-            if (hasTransparentNeighbor) break;
           }
+          
+          // If near transparent pixels, make transparent
           if (hasTransparentNeighbor) {
             data[i + 3] = 0;
           }
         }
         
-        // Also make semi-transparent light pixels fully transparent
-        if (a > 0 && a < 255 && brightness > 150) {
+        // Make semi-transparent light pixels fully transparent (lower threshold)
+        if (a > 0 && a < 255 && brightness > 130) {
+          data[i + 3] = 0;
+        }
+        
+        // Clean up very light pixels regardless of neighbors
+        if (brightness > 240 && a > 0) {
           data[i + 3] = 0;
         }
       }
     }
   }
+  
+  // Final pass: remove isolated light pixels
+  for (let y = 1; y < h - 1; y++) {
+    for (let x = 1; x < w - 1; x++) {
+      const i = (y * w + x) * 4;
+      const a = data[i + 3];
+      if (a === 0) continue;
+      
+      const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
+      if (brightness > 180) {
+        // Count opaque dark neighbors
+        let darkNeighbors = 0;
+        for (let dy = -1; dy <= 1; dy++) {
+          for (let dx = -1; dx <= 1; dx++) {
+            if (dx === 0 && dy === 0) continue;
+            const ni = ((y + dy) * w + (x + dx)) * 4;
+            if (data[ni + 3] > 128) {
+              const nb = (data[ni] + data[ni + 1] + data[ni + 2]) / 3;
+              if (nb < 150) darkNeighbors++;
+            }
+          }
+        }
+        // If not enough dark neighbors, likely an artifact
+        if (darkNeighbors < 2) {
+          data[i + 3] = 0;
+        }
+      }
+    }
+  }
+  
   return imageData;
 }
 function floodFillTransparent(imageData: ImageData, palette: RGB[], tolerance: number) {
