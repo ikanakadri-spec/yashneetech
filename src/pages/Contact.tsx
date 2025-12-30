@@ -15,7 +15,8 @@ import {
   ArrowRight,
   Briefcase,
   Users,
-  Globe
+  Globe,
+  Smartphone
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -240,17 +241,32 @@ const Contact = () => {
       {/* Contact Info Cards - Floating Style */}
       <section className="relative -mt-16 pb-6 z-10">
         <div className="container mx-auto px-4 lg:px-8">
-          <StaggerContainer className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto" staggerDelay={0.1}>
-            {/* Email Card */}
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" staggerDelay={0.1}>
+            {/* Address Card */}
             <StaggerItem>
-              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="flex flex-col items-center text-center">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-6 h-6 text-primary-foreground" />
+                    <MapPin className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Email Us</h3>
-                  <a href="mailto:info@yashneetech.com" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
-                    info@yashneetech.com
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Visit Us</h3>
+                  <span className="text-muted-foreground text-sm leading-relaxed">
+                    Office No. 1105, Door No. 1-61/AS/B, Asian Sun City, Block B, Kothaguda, Hyderabad, Telangana State, India - 500 084
+                  </span>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Mobile Card */}
+            <StaggerItem>
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 h-full">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Smartphone className="w-6 h-6 text-foreground" />
+                  </div>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Mobile</h3>
+                  <a href="tel:+919848896747" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
+                    +91 98488 96747
                   </a>
                 </div>
               </div>
@@ -258,30 +274,30 @@ const Contact = () => {
             
             {/* Phone Card */}
             <StaggerItem>
-              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="w-6 h-6 text-foreground" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-6 h-6 text-primary-foreground" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Call Us</h3>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Telephone</h3>
                   <a href="tel:+914049964796" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
                     +91 40 4996 4796
                   </a>
                 </div>
               </div>
             </StaggerItem>
-            
-            {/* Location Card */}
+
+            {/* Email Card */}
             <StaggerItem>
-              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1">
+              <div className="group p-6 rounded-2xl bg-card border border-border transition-all duration-300 hover:-translate-y-1 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald to-emerald-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <MapPin className="w-6 h-6 text-primary-foreground" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-champagne to-champagne-light flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-6 h-6 text-foreground" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Visit Us</h3>
-                  <span className="text-muted-foreground font-medium">
-                    Hyderabad, Telangana, India
-                  </span>
+                  <h3 className="font-heading font-semibold text-foreground mb-2">Email Us</h3>
+                  <a href="mailto:info@yashneetech.com" className="text-muted-foreground hover:text-emerald transition-colors font-medium">
+                    info@yashneetech.com
+                  </a>
                 </div>
               </div>
             </StaggerItem>
