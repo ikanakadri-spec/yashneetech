@@ -80,25 +80,36 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent" />
         </div>
         
-        {/* Floating Recruitment Icons */}
+        {/* Floating Recruitment Icons - Left Side */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[15%] left-[8%] opacity-[0.08] animate-pulse">
-            <UserCheck className="w-20 h-20 text-emerald-dark" style={{ animationDuration: '4s' }} />
+          <div className="absolute top-[18%] left-[6%] opacity-[0.12] animate-float">
+            <UserCheck className="w-16 h-16 text-emerald" />
           </div>
-          <div className="absolute top-[25%] left-[25%] opacity-[0.06] animate-pulse" style={{ animationDelay: '1s' }}>
+          <div className="absolute top-[40%] left-[3%] opacity-[0.10] animate-float-delayed">
             <FileText className="w-14 h-14 text-emerald-dark" />
           </div>
-          <div className="absolute top-[60%] left-[5%] opacity-[0.07] animate-pulse" style={{ animationDelay: '2s' }}>
-            <Briefcase className="w-16 h-16 text-emerald-dark" />
+          <div className="absolute top-[65%] left-[8%] opacity-[0.11] animate-float-slow">
+            <Briefcase className="w-18 h-18 text-emerald" />
           </div>
-          <div className="absolute top-[45%] left-[20%] opacity-[0.05] animate-pulse" style={{ animationDelay: '0.5s' }}>
-            <Search className="w-12 h-12 text-emerald-dark" />
+          <div className="absolute top-[50%] left-[18%] opacity-[0.08] animate-float">
+            <Users className="w-20 h-20 text-emerald-dark" />
           </div>
-          <div className="absolute top-[75%] left-[15%] opacity-[0.06] animate-pulse" style={{ animationDelay: '1.5s' }}>
-            <Award className="w-18 h-18 text-emerald-dark" />
+          
+          {/* Right Side Icons */}
+          <div className="absolute top-[12%] right-[8%] opacity-[0.15] animate-float-slow">
+            <UserCheck className="w-24 h-24 text-white" />
           </div>
-          <div className="absolute top-[35%] left-[35%] opacity-[0.04] animate-pulse" style={{ animationDelay: '2.5s' }}>
-            <Users className="w-24 h-24 text-emerald-dark" />
+          <div className="absolute top-[30%] right-[15%] opacity-[0.12] animate-float">
+            <FileText className="w-18 h-18 text-white" />
+          </div>
+          <div className="absolute top-[55%] right-[5%] opacity-[0.14] animate-float-delayed">
+            <Users className="w-20 h-20 text-white" />
+          </div>
+          <div className="absolute top-[75%] right-[12%] opacity-[0.10] animate-float-slow">
+            <Briefcase className="w-16 h-16 text-white" />
+          </div>
+          <div className="absolute top-[45%] right-[25%] opacity-[0.08] animate-float">
+            <Award className="w-14 h-14 text-white" />
           </div>
         </div>
         
