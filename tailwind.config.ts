@@ -56,19 +56,15 @@ export default {
         emerald: {
           DEFAULT: "hsl(var(--emerald))",
           light: "hsl(var(--emerald-light))",
-          dark: "hsl(152 55% 15%)",
+          dark: "hsl(160 50% 15%)",
         },
         champagne: {
           DEFAULT: "hsl(var(--champagne))",
           light: "hsl(var(--champagne-light))",
         },
-        orange: {
-          DEFAULT: "hsl(var(--orange))",
-          light: "hsl(var(--orange-light))",
-        },
         gold: {
-          DEFAULT: "hsl(25 95% 53%)",
-          light: "hsl(30 90% 65%)",
+          DEFAULT: "hsl(42 85% 55%)",
+          light: "hsl(42 70% 70%)",
         },
         cream: "hsl(var(--cream))",
         ivory: "hsl(var(--ivory))",
@@ -101,10 +97,10 @@ export default {
         },
         "glow-pulse": {
           "0%, 100%": { 
-            textShadow: "0 0 20px hsl(var(--orange) / 0.3), 0 0 40px hsl(var(--orange) / 0.1)"
+            textShadow: "0 0 20px hsl(var(--champagne) / 0.3), 0 0 40px hsl(var(--champagne) / 0.1)"
           },
           "50%": { 
-            textShadow: "0 0 30px hsl(var(--orange) / 0.5), 0 0 60px hsl(var(--orange) / 0.2)"
+            textShadow: "0 0 30px hsl(var(--champagne) / 0.5), 0 0 60px hsl(var(--champagne) / 0.2)"
           },
         },
         "slide-in-blur": {
