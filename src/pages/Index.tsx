@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
-import officeHero from "@/assets/office-hero.jpg";
+import heroPremium from "@/assets/hero-premium.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
 import officeWorkspace from "@/assets/office-workspace.jpg";
 import officeExecutive from "@/assets/office-executive.jpg";
@@ -76,9 +76,8 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
 
         <div className="absolute inset-0">
-          <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/50 via-emerald/30 to-emerald/15" />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/30 via-transparent to-transparent" />
+          <img src={heroPremium} alt="Premium green and white abstract design" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/70 via-emerald-dark/40 to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
