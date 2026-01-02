@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
-import heroGeometric from "@/assets/hero-geometric.jpg";
+import heroWaves from "@/assets/hero-waves.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
 import officeWorkspace from "@/assets/office-workspace.jpg";
 import officeExecutive from "@/assets/office-executive.jpg";
@@ -76,7 +76,7 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
 
         <div className="absolute inset-0">
-          <img src={heroGeometric} alt="Premium geometric emerald design" className="w-full h-full object-cover" />
+          <img src={heroWaves} alt="Premium wave design with emerald and white patterns" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
         </div>
         
