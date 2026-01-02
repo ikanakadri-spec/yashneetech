@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
-import heroWaves from "@/assets/hero-waves.jpg";
+import officeHero from "@/assets/office-hero.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
 import officeWorkspace from "@/assets/office-workspace.jpg";
 import officeExecutive from "@/assets/office-executive.jpg";
@@ -76,8 +76,9 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
 
         <div className="absolute inset-0">
-          <img src={heroWaves} alt="Premium wave design with emerald and white patterns" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+          <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/50 via-emerald/30 to-emerald/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/30 via-transparent to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -86,7 +87,7 @@ const Index = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-[1.1] overflow-hidden">
               <span className="inline-block overflow-hidden">
-                <span className="inline-block text-foreground opacity-0 animate-reveal-text" style={{ animationDelay: '200ms' }}>
+                <span className="inline-block text-primary-foreground opacity-0 animate-reveal-text" style={{ animationDelay: '200ms' }}>
                   Find Your&nbsp;
                 </span>
               </span>
@@ -97,13 +98,13 @@ const Index = () => {
               </span>
               <br />
               <span className="inline-block overflow-hidden">
-                <span className="inline-block text-foreground/90 opacity-0 animate-slide-in-blur" style={{ animationDelay: '800ms' }}>
+                <span className="inline-block text-primary-foreground/90 opacity-0 animate-slide-in-blur" style={{ animationDelay: '800ms' }}>
                   Talent Match
                 </span>
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-foreground/80 mb-12 max-w-3xl opacity-0 animate-fade-up whitespace-nowrap font-bold" style={{
+            <p className="text-xl md:text-2xl text-primary-foreground mb-12 max-w-3xl opacity-0 animate-fade-up whitespace-nowrap font-bold" style={{
             animationDelay: '400ms',
             animationFillMode: 'forwards'
           }}>
@@ -115,13 +116,13 @@ const Index = () => {
             animationFillMode: 'forwards'
           }}>
               <Link to="/get-started">
-                <Button size="lg" className="group bg-emerald text-primary-foreground hover:bg-emerald-dark text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-emerald/25 transition-all duration-500 hover:scale-105 min-w-[220px] justify-center">
+                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-champagne/25 transition-all duration-500 hover:scale-105 min-w-[220px] justify-center">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="group border-2 border-emerald text-emerald hover:bg-emerald hover:text-primary-foreground text-lg px-10 py-7 font-semibold transition-all duration-500 hover:scale-105 min-w-[220px] justify-center">
+                <Button size="lg" variant="outline" className="group border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-10 py-7 font-semibold backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-champagne min-w-[220px] justify-center">
                   Submit Resume
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
