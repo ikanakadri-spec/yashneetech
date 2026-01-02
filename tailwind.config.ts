@@ -222,25 +222,6 @@ export default {
             transform: "perspective(400px) rotateY(360deg)",
           },
         },
-        "float": {
-          "0%, 100%": { 
-            transform: "translateY(0)",
-          },
-          "50%": { 
-            transform: "translateY(-12px)",
-          },
-        },
-        "float-delayed": {
-          "0%, 100%": { 
-            transform: "translateY(0) translateX(0)",
-          },
-          "33%": { 
-            transform: "translateY(-8px) translateX(5px)",
-          },
-          "66%": { 
-            transform: "translateY(-15px) translateX(-3px)",
-          },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -252,15 +233,13 @@ export default {
         "slide-in-blur": "slide-in-blur 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "float-particle": "float-particle 12s ease-in-out infinite",
         "float-particle-rotate": "float-particle-rotate 15s ease-in-out infinite",
-        "float-slow": "float-slow 6s ease-in-out infinite",
+        "float-slow": "float-slow 8s ease-in-out infinite",
         "float-slow-reverse": "float-slow-reverse 10s ease-in-out infinite",
         "pulse-slow": "pulse-slow 4s ease-in-out infinite",
         "text-shimmer": "text-shimmer 8s ease-in-out infinite",
         "spin-slow": "spin-slow 3s linear infinite",
         "float-up": "float-up 0.6s ease-out forwards",
         "flip-3d": "flip-3d 4s ease-in-out infinite",
-        "float": "float 4s ease-in-out infinite",
-        "float-delayed": "float-delayed 5s ease-in-out infinite",
       },
     },
   },

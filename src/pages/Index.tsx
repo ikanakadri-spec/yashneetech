@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
-import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, UserCheck, FileText, Search, Award } from "lucide-react";
+import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
 import heroGeometric from "@/assets/hero-geometric.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
 import officeWorkspace from "@/assets/office-workspace.jpg";
@@ -77,40 +77,7 @@ const Index = () => {
 
         <div className="absolute inset-0">
           <img src={heroGeometric} alt="Premium geometric emerald design" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent" />
-        </div>
-        
-        {/* Floating Recruitment Icons - Left Side */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-[18%] left-[6%] opacity-[0.12] animate-float">
-            <UserCheck className="w-16 h-16 text-emerald" />
-          </div>
-          <div className="absolute top-[40%] left-[3%] opacity-[0.10] animate-float-delayed">
-            <FileText className="w-14 h-14 text-emerald-dark" />
-          </div>
-          <div className="absolute top-[65%] left-[8%] opacity-[0.11] animate-float-slow">
-            <Briefcase className="w-18 h-18 text-emerald" />
-          </div>
-          <div className="absolute top-[50%] left-[18%] opacity-[0.08] animate-float">
-            <Users className="w-20 h-20 text-emerald-dark" />
-          </div>
-          
-          {/* Right Side Icons */}
-          <div className="absolute top-[12%] right-[8%] opacity-[0.15] animate-float-slow">
-            <UserCheck className="w-24 h-24 text-white" />
-          </div>
-          <div className="absolute top-[30%] right-[15%] opacity-[0.12] animate-float">
-            <FileText className="w-18 h-18 text-white" />
-          </div>
-          <div className="absolute top-[55%] right-[5%] opacity-[0.14] animate-float-delayed">
-            <Users className="w-20 h-20 text-white" />
-          </div>
-          <div className="absolute top-[75%] right-[12%] opacity-[0.10] animate-float-slow">
-            <Briefcase className="w-16 h-16 text-white" />
-          </div>
-          <div className="absolute top-[45%] right-[25%] opacity-[0.08] animate-float">
-            <Award className="w-14 h-14 text-white" />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
