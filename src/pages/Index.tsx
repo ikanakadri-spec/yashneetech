@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
-import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
+import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, UserCheck, FileText, Search, Award } from "lucide-react";
 import heroGeometric from "@/assets/hero-geometric.jpg";
 import officeMeeting from "@/assets/office-meeting.jpg";
 import officeWorkspace from "@/assets/office-workspace.jpg";
@@ -77,7 +77,29 @@ const Index = () => {
 
         <div className="absolute inset-0">
           <img src={heroGeometric} alt="Premium geometric emerald design" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/70 via-white/40 to-transparent" />
+        </div>
+        
+        {/* Floating Recruitment Icons */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[15%] left-[8%] opacity-[0.08] animate-pulse">
+            <UserCheck className="w-20 h-20 text-emerald-dark" style={{ animationDuration: '4s' }} />
+          </div>
+          <div className="absolute top-[25%] left-[25%] opacity-[0.06] animate-pulse" style={{ animationDelay: '1s' }}>
+            <FileText className="w-14 h-14 text-emerald-dark" />
+          </div>
+          <div className="absolute top-[60%] left-[5%] opacity-[0.07] animate-pulse" style={{ animationDelay: '2s' }}>
+            <Briefcase className="w-16 h-16 text-emerald-dark" />
+          </div>
+          <div className="absolute top-[45%] left-[20%] opacity-[0.05] animate-pulse" style={{ animationDelay: '0.5s' }}>
+            <Search className="w-12 h-12 text-emerald-dark" />
+          </div>
+          <div className="absolute top-[75%] left-[15%] opacity-[0.06] animate-pulse" style={{ animationDelay: '1.5s' }}>
+            <Award className="w-18 h-18 text-emerald-dark" />
+          </div>
+          <div className="absolute top-[35%] left-[35%] opacity-[0.04] animate-pulse" style={{ animationDelay: '2.5s' }}>
+            <Users className="w-24 h-24 text-emerald-dark" />
+          </div>
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
