@@ -73,13 +73,7 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden">
-
-        <div className="absolute inset-0">
-          <img src={officeHero} alt="Modern corporate office space" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-dark/50 via-emerald/30 to-emerald/15" />
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-dark/30 via-transparent to-transparent" />
-        </div>
+      <section className="relative min-h-screen flex items-center pt-24 lg:pt-28 overflow-hidden bg-background">
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="max-w-4xl ml-auto text-right">
@@ -87,7 +81,7 @@ const Index = () => {
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-[1.1] overflow-hidden">
               <span className="inline-block overflow-hidden">
-                <span className="inline-block text-primary-foreground opacity-0 animate-reveal-text" style={{ animationDelay: '200ms' }}>
+                <span className="inline-block text-foreground opacity-0 animate-reveal-text" style={{ animationDelay: '200ms' }}>
                   Find Your&nbsp;
                 </span>
               </span>
@@ -98,7 +92,7 @@ const Index = () => {
               </span>
               <br />
               <span className="inline-block overflow-hidden">
-                <span className="inline-block text-primary-foreground/90 opacity-0 animate-slide-in-blur" style={{ animationDelay: '800ms' }}>
+                <span className="inline-block text-foreground opacity-0 animate-slide-in-blur" style={{ animationDelay: '800ms' }}>
                   Talent Match
                 </span>
               </span>
@@ -111,18 +105,18 @@ const Index = () => {
               Precision meets human expertise. We connect relevant talent with exceptional opportunities.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up" style={{
+            <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up justify-end" style={{
             animationDelay: '600ms',
             animationFillMode: 'forwards'
           }}>
               <Link to="/get-started">
-                <Button size="lg" className="group bg-champagne text-emerald-dark hover:bg-champagne-light text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-champagne/25 transition-all duration-500 hover:scale-105 min-w-[220px] justify-center">
+                <Button size="lg" className="group bg-emerald text-primary-foreground hover:bg-emerald-dark text-lg px-10 py-7 font-semibold shadow-lg hover:shadow-emerald/25 transition-all duration-500 hover:scale-105 min-w-[220px] justify-center">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline" className="group border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-10 py-7 font-semibold backdrop-blur-sm transition-all duration-500 hover:scale-105 hover:border-champagne min-w-[220px] justify-center">
+                <Button size="lg" variant="outline" className="group border-2 border-emerald text-emerald hover:bg-emerald/10 text-lg px-10 py-7 font-semibold transition-all duration-500 hover:scale-105 min-w-[220px] justify-center">
                   Submit Resume
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
