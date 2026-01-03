@@ -82,7 +82,7 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl ml-auto text-right">
             
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-[1.1] overflow-hidden">
