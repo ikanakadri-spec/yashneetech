@@ -164,7 +164,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send notification email to team
     const teamEmailResponse = await resend.emails.send({
-      from: "Yashnee Tech <onboarding@resend.dev>",
+      from: "Yashnee Tech <noreply@yashneetech.com>",
       to: ["info@yashneetech.com"],
       subject: `New ${safeEnquiryType} - ${safeName}`,
       html: `
@@ -209,7 +209,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to user
     const userEmailResponse = await resend.emails.send({
-      from: "Yashnee Tech <onboarding@resend.dev>",
+      from: "Yashnee Tech <noreply@yashneetech.com>",
       to: [submission.email],
       subject: "Thank you for contacting Yashnee Tech",
       html: `
