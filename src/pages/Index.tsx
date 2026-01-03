@@ -104,13 +104,6 @@ const Index = () => {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-primary-foreground mb-12 max-w-3xl opacity-0 animate-fade-up whitespace-nowrap font-bold" style={{
-            animationDelay: '400ms',
-            animationFillMode: 'forwards'
-          }}>
-              Precision meets human expertise. We connect relevant talent with exceptional opportunities.
-            </p>
-            
             <div className="flex flex-wrap gap-4 mb-16 opacity-0 animate-fade-up" style={{
             animationDelay: '600ms',
             animationFillMode: 'forwards'
