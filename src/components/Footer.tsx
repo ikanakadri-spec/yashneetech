@@ -26,7 +26,7 @@ export const Footer = () => {
               <span className="font-heading font-bold text-xl md:text-2xl text-primary-foreground tracking-wide">
                 Yashnee Tech Solutions
               </span>
-              <span className="block text-champagne text-sm font-medium mt-1">
+              <span className="block text-champagne text-sm font-medium">
                 Next Gen Talent Partner
               </span>
             </Link>
