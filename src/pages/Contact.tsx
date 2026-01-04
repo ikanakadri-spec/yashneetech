@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { 
@@ -217,6 +218,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Contact Us | Yashnee Tech – Next-Gen Staffing & Talent Solutions"
+        description="Get in touch with Yashnee Tech for your staffing and recruitment needs. Submit your resume or inquire about our talent solutions."
+        canonical="https://yashneetech.com/contact"
+      />
       <Header />
 
       {/* Hero Section - Professional Gradient */}

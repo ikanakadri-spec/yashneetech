@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Brain, Globe, Briefcase, Rocket, Building2, ArrowRight, Target, ChevronRight, Zap, Star, Sparkles } from "lucide-react";
 import officeHero from "@/assets/office-hero.jpg";
@@ -70,6 +71,7 @@ const missionCards = [
 ];
 const Index = () => {
   return <div className="min-h-screen bg-background overflow-x-hidden">
+      <SEO />
       <Header />
 
       {/* Hero Section */}

@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import { Users, Building2, Clock, Target, TrendingUp, Shield, Award, MessageSquare, DollarSign } from "lucide-react";
 
@@ -44,6 +45,11 @@ const candidateBenefits = [
 const WhoWeAre = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <SEO 
+        title="About Us | Yashnee Tech – Next-Gen Staffing & Talent Solutions"
+        description="Learn about Yashnee Tech, your strategic partner for talent acquisition. We provide expert staffing solutions across multiple industries."
+        canonical="https://yashneetech.com/who-we-are"
+      />
       <Header />
 
       {/* Hero Section */}
