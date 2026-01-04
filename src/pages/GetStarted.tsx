@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { 
   Building2, 
@@ -16,6 +17,11 @@ import {
 const GetStarted = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <SEO 
+        title="Get Started | Yashnee Tech – Next-Gen Staffing & Talent Solutions"
+        description="Start your journey with Yashnee Tech. Whether you're hiring or job seeking, we're here to help you find the perfect match."
+        canonical="https://yashneetech.com/get-started"
+      />
       <Header />
 
       {/* Hero Section */}
