@@ -22,13 +22,13 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="group transition-transform duration-300 hover:scale-105">
-              <span className="font-heading font-bold text-xl md:text-2xl text-primary-foreground tracking-wide">
+            <Link to="/" className="group transition-transform duration-300 hover:scale-105 block">
+              <h3 className="font-heading font-semibold text-2xl md:text-3xl text-champagne tracking-tight leading-tight">
                 Yashnee Tech Solutions
-              </span>
-              <span className="block text-champagne text-sm font-medium">
+              </h3>
+              <p className="text-primary-foreground/90 text-sm tracking-widest uppercase mt-1">
                 Next Gen Talent Partner
-              </span>
+              </p>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
