@@ -126,7 +126,7 @@ export const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
+            <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <Linkedin className="w-5 h-5 transition-colors duration-300" />
             </a>
             <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-foreground hover:bg-foreground [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
