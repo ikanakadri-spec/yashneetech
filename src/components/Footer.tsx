@@ -17,7 +17,7 @@ export const Footer = () => {
     navigate("/" + hash);
   };
   return <footer className="bg-emerald text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-6">
+      <div className="container mx-auto px-4 lg:px-8 py-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
@@ -25,7 +25,7 @@ export const Footer = () => {
               <h3 className="font-heading text-2xl tracking-tight leading-tight md:text-2xl font-bold text-card">
                 Yashnee Tech Solutions
               </h3>
-              <p className="tracking-widest uppercase text-xs font-sans font-semibold bg-gradient-to-r from-champagne via-white to-champagne bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
+              <p className="tracking-widest uppercase text-orange-600 text-xs font-sans font-semibold">
                 Next Gen Talent Partner
               </p>
             </Link>
