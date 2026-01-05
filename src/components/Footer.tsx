@@ -2,31 +2,30 @@ import { Link, useNavigate } from "react-router-dom";
 import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone } from "lucide-react";
 
 // Custom X (formerly Twitter) logo component
-const XLogo = ({ className }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+const XLogo = ({
+  className
+}: {
+  className?: string;
+}) => <svg viewBox="0 0 24 24" className={className} fill="currentColor">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
+  </svg>;
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
-
   const handleHashNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
     navigate("/" + hash);
   };
-
-  return (
-    <footer className="bg-emerald text-primary-foreground">
+  return <footer className="bg-emerald text-primary-foreground">
       <div className="container mx-auto px-4 lg:px-8 py-10">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="group transition-transform duration-300 hover:scale-105 block">
-              <h3 className="font-heading font-semibold text-2xl md:text-3xl text-champagne tracking-tight leading-tight">
+              <h3 className="font-heading text-2xl tracking-tight leading-tight md:text-2xl font-bold text-card">
                 Yashnee Tech Solutions
               </h3>
-              <p className="text-primary-foreground/90 text-sm tracking-widest uppercase mt-1">
+              <p className="tracking-widest uppercase mt-1 text-orange-600 text-xs font-sans font-semibold">
                 Next Gen Talent Partner
               </p>
             </Link>
@@ -44,20 +43,12 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a 
-                  href="/#services" 
-                  onClick={(e) => handleHashNavigation(e, "#services")}
-                  className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer"
-                >
+                <a href="/#services" onClick={e => handleHashNavigation(e, "#services")} className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer">
                   Our Services
                 </a>
               </li>
               <li>
-                <a 
-                  href="/#mission" 
-                  onClick={(e) => handleHashNavigation(e, "#mission")}
-                  className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer"
-                >
+                <a href="/#mission" onClick={e => handleHashNavigation(e, "#mission")} className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer">
                   Our Mission
                 </a>
               </li>
@@ -120,10 +111,7 @@ export const Footer = () => {
             <p className="text-primary-foreground/70 text-sm mb-4">
               Willing to join our dynamic team? Drop your resume at:
             </p>
-            <a
-              href="mailto:info@yashneetech.com"
-              className="inline-flex items-center gap-2 text-champagne hover:text-champagne-light transition-colors font-medium"
-            >
+            <a href="mailto:info@yashneetech.com" className="inline-flex items-center gap-2 text-champagne hover:text-champagne-light transition-colors font-medium">
               <Mail className="w-4 h-4" />
               info@yashneetech.com
             </a>
@@ -138,41 +126,20 @@ export const Footer = () => {
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <Linkedin className="w-5 h-5 transition-colors duration-300" />
             </a>
-            <a
-              href="https://x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-foreground hover:bg-foreground [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-foreground hover:bg-foreground [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <XLogo className="w-5 h-5 transition-colors duration-300" />
             </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#E4405F] hover:bg-[#E4405F] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#E4405F] hover:bg-[#E4405F] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <Instagram className="w-5 h-5 transition-colors duration-300" />
             </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1"
-            >
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
               <Facebook className="w-5 h-5 transition-colors duration-300" />
             </a>
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
