@@ -25,7 +25,7 @@ export const Footer = () => {
               <h3 className="font-heading text-2xl tracking-tight leading-tight md:text-2xl font-bold text-card">
                 Yashnee Tech Solutions
               </h3>
-              <p className="tracking-widest uppercase text-orange-600 text-xs font-sans font-semibold">
+              <p className="tracking-widest uppercase text-xs font-sans font-semibold bg-gradient-to-r from-champagne via-white to-champagne bg-[length:200%_100%] bg-clip-text text-transparent animate-shimmer">
                 Next Gen Talent Partner
               </p>
             </Link>
