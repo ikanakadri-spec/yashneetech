@@ -17,7 +17,7 @@ export const Footer = () => {
     navigate("/" + hash);
   };
   return <footer className="bg-emerald text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-10">
+      <div className="container mx-auto px-4 lg:px-8 py-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
