@@ -32,7 +32,7 @@ export const Footer = () => {
             }} className="text-3xl font-bold text-white tracking-tight md:text-2xl">
                 Yashnee Tech Solutions
               </h3>
-              <p className="tracking-[0.2em] text-orange-40 mt-1 text-xs font-semibold text-center my-0">
+              <p className="tracking-[0.2em] text-champagne/80 mt-1 text-[10px] font-medium text-center my-0">
                 Next Gen Talent Partner
               </p>
             </Link>
