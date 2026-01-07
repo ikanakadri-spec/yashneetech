@@ -22,10 +22,10 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="group transition-transform duration-300 hover:scale-105 block">
-              <h3 className="font-heading text-2xl tracking-tight leading-tight md:text-2xl font-bold text-card">
-                Yashnee Tech Solutions
+              <h3 className="font-heading text-2xl tracking-tight leading-tight md:text-2xl font-bold text-champagne uppercase">
+                Yashnee Tech
               </h3>
-              <p className="tracking-widest uppercase text-orange-500 text-xs font-sans font-semibold">
+              <p className="tracking-[0.3em] uppercase text-orange-500 text-[10px] font-heading font-semibold">
                 Next Gen Talent Partner
               </p>
             </Link>
