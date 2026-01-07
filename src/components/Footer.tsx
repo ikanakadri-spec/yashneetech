@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone } from "lucide-react";
+import { Linkedin, Instagram, Facebook, Mail, Phone, MapPin, Globe, Smartphone, ArrowUpRight } from "lucide-react";
 
 // Custom X (formerly Twitter) logo component
 const XLogo = ({
@@ -9,137 +9,194 @@ const XLogo = ({
 }) => <svg viewBox="0 0 24 24" className={className} fill="currentColor">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>;
+
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
+  
   const handleHashNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
     navigate("/" + hash);
   };
-  return <footer className="bg-emerald text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
-          <div className="space-y-4">
-            <Link to="/" className="group transition-transform duration-300 hover:scale-105 block">
-              <h3 className="font-heading text-2xl tracking-tight leading-tight md:text-2xl font-bold text-card">
-                Yashnee Tech Solutions
+
+  return (
+    <footer className="relative bg-gradient-to-b from-emerald-900 to-emerald-950 text-white overflow-hidden">
+      {/* Decorative top border */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-champagne via-orange-500 to-champagne" />
+      
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-6 lg:px-12 pt-16 pb-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+          
+          {/* Brand Column - Larger */}
+          <div className="lg:col-span-4 space-y-6">
+            <Link to="/" className="group inline-block">
+              <h3 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight">
+                Yashnee Tech
               </h3>
-              <p className="tracking-widest uppercase text-orange-500 text-xs font-sans font-semibold">
+              <p className="tracking-[0.2em] uppercase text-orange-400 text-sm font-medium mt-1">
                 Next Gen Talent Partner
               </p>
             </Link>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed">
+            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
             </p>
+            
+            {/* Social Links */}
+            <div className="flex items-center gap-3 pt-2">
+              <a 
+                href="https://www.linkedin.com/company/yashnee-tech-solutions/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://x.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
+              >
+                <XLogo className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-heading font-semibold text-base mb-4">Quick Links</h4>
+          {/* Quick Links */}
+          <div className="lg:col-span-2">
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-5">
+              Quick Links
+            </h4>
             <ul className="space-y-3">
-              <li>
-                <Link to="/who-we-are" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <a href="/#services" onClick={e => handleHashNavigation(e, "#services")} className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer">
-                  Our Services
-                </a>
-              </li>
-              <li>
-                <a href="/#mission" onClick={e => handleHashNavigation(e, "#mission")} className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm cursor-pointer">
-                  Our Mission
-                </a>
-              </li>
-              <li>
-                <Link to="/contact" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy-policy" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/terms-of-service" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  Terms of Service
-                </Link>
-              </li>
+              {[
+                { label: "About Us", to: "/who-we-are" },
+                { label: "Our Services", hash: "#services" },
+                { label: "Our Mission", hash: "#mission" },
+                { label: "Contact Us", to: "/contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  {link.to ? (
+                    <Link 
+                      to={link.to} 
+                      className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group"
+                    >
+                      {link.label}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    </Link>
+                  ) : (
+                    <a 
+                      href={`/${link.hash}`}
+                      onClick={e => handleHashNavigation(e, link.hash!)}
+                      className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group cursor-pointer"
+                    >
+                      {link.label}
+                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    </a>
+                  )}
+                </li>
+              ))}
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-heading font-semibold text-base mb-4">Contact</h4>
+          {/* Legal Links */}
+          <div className="lg:col-span-2">
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-5">
+              Legal
+            </h4>
+            <ul className="space-y-3">
+              {[
+                { label: "Privacy Policy", to: "/privacy-policy" },
+                { label: "Terms of Service", to: "/terms-of-service" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <Link 
+                    to={link.to} 
+                    className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group"
+                  >
+                    {link.label}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="lg:col-span-4">
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-5">
+              Get in Touch
+            </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/70 text-sm">
-                  Office No. 1105, Door No. 1-61/AS/B, Asian Sun City, Block B, Kothaguda, Hyderabad, Telangana State, India - 500 084
+              <li className="flex items-start gap-3 group">
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500/20 transition-colors">
+                  <MapPin className="w-4 h-4 text-orange-400" />
+                </div>
+                <span className="text-white/60 text-sm leading-relaxed">
+                  Office No. 1105, Door No. 1-61/AS/B, Asian Sun City, Block B, Kothaguda, Hyderabad, India - 500 084
                 </span>
               </li>
-              <li className="flex items-start gap-3">
-                <Smartphone className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
-                <a href="tel:+919848896747" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  +91 98488 96747
-                </a>
+              <li className="flex items-center gap-3 group">
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500/20 transition-colors">
+                  <Phone className="w-4 h-4 text-orange-400" />
+                </div>
+                <div className="flex flex-col">
+                  <a href="tel:+919848896747" className="text-white/60 hover:text-white transition-colors text-sm">
+                    +91 98488 96747
+                  </a>
+                  <a href="tel:+914049964796" className="text-white/60 hover:text-white transition-colors text-sm">
+                    +91 40 4996 4796
+                  </a>
+                </div>
               </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
-                <a href="tel:+914049964796" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
-                  +91 40 4996 4796
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
-                <a href="mailto:info@yashneetech.com" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+              <li className="flex items-center gap-3 group">
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500/20 transition-colors">
+                  <Mail className="w-4 h-4 text-orange-400" />
+                </div>
+                <a href="mailto:info@yashneetech.com" className="text-white/60 hover:text-white transition-colors text-sm">
                   info@yashneetech.com
                 </a>
               </li>
-              <li className="flex items-start gap-3">
-                <Globe className="w-5 h-5 text-champagne mt-0.5 flex-shrink-0" />
-                <a href="https://yashneetech.com" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/70 hover:text-champagne transition-colors text-sm">
+              <li className="flex items-center gap-3 group">
+                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-orange-500/20 transition-colors">
+                  <Globe className="w-4 h-4 text-orange-400" />
+                </div>
+                <a href="https://yashneetech.com" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors text-sm">
                   yashneetech.com
                 </a>
               </li>
             </ul>
           </div>
-
-          <div>
-            <h4 className="font-heading font-semibold text-base mb-4">Join Our Team</h4>
-            <p className="text-primary-foreground/70 text-sm mb-4">
-              Willing to join our dynamic team? Drop your resume at:
-            </p>
-            <a href="mailto:info@yashneetech.com" className="inline-flex items-center gap-2 text-champagne hover:text-champagne-light transition-colors font-medium">
-              <Mail className="w-4 h-4" />
-              info@yashneetech.com
-            </a>
-          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-primary-foreground/50 text-sm">
-            © {currentYear} Yashnee Tech. All rights reserved.
-          </p>
-
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <Linkedin className="w-5 h-5 transition-colors duration-300" />
-            </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-foreground hover:bg-foreground [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <XLogo className="w-5 h-5 transition-colors duration-300" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#E4405F] hover:bg-[#E4405F] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <Instagram className="w-5 h-5 transition-colors duration-300" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] [&:hover>svg]:text-white transition-all duration-300 hover:scale-110 hover:-translate-y-1">
-              <Facebook className="w-5 h-5 transition-colors duration-300" />
-            </a>
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/40 text-sm">
+              © {currentYear} Yashnee Tech Solutions. All rights reserved.
+            </p>
+            <p className="text-white/40 text-sm">
+              Crafted with excellence in Hyderabad, India
+            </p>
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  );
 };
