@@ -31,8 +31,8 @@ export const Footer = () => {
           {/* Brand Column - Larger */}
           <div className="lg:col-span-4 space-y-6">
             <Link to="/" className="group inline-block">
-              <h3 className="font-heading text-3xl md:text-4xl font-bold text-white tracking-tight">
-                Yashnee Tech
+            <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+                Yashnee Tech Solutions
               </h3>
               <p className="tracking-[0.2em] uppercase text-orange-400 text-sm font-medium mt-1">
                 Next Gen Talent Partner
