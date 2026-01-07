@@ -21,8 +21,8 @@ export const Footer = () => {
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-champagne via-orange-500 to-champagne" />
       
       {/* Main Footer Content */}
-      <div className="container mx-auto px-6 lg:px-12 pt-16 pb-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div className="container mx-auto px-6 lg:px-12 pt-12 pb-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6">
           
           {/* Brand Column - Larger */}
           <div className="lg:col-span-4 space-y-6">
@@ -58,11 +58,11 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2">
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-5">
+          <div className="lg:col-span-4">
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">
               Quick Links
             </h4>
-            <ul className="space-y-3">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
               {[{
               label: "About Us",
               to: "/who-we-are"
@@ -75,6 +75,12 @@ export const Footer = () => {
             }, {
               label: "Contact Us",
               to: "/contact"
+            }, {
+              label: "Privacy Policy",
+              to: "/privacy-policy"
+            }, {
+              label: "Terms of Service",
+              to: "/terms-of-service"
             }].map(link => <li key={link.label}>
                   {link.to ? <Link to={link.to} className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group">
                       {link.label}
@@ -83,27 +89,6 @@ export const Footer = () => {
                       {link.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     </a>}
-                </li>)}
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div className="lg:col-span-2">
-            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-5">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              {[{
-              label: "Privacy Policy",
-              to: "/privacy-policy"
-            }, {
-              label: "Terms of Service",
-              to: "/terms-of-service"
-            }].map(link => <li key={link.label}>
-                  <Link to={link.to} className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group">
-                    {link.label}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </Link>
                 </li>)}
             </ul>
           </div>
@@ -156,7 +141,7 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-8 pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/40 text-sm">
               © {currentYear} Yashnee Tech Solutions. All rights reserved.
