@@ -9,18 +9,14 @@ const XLogo = ({
 }) => <svg viewBox="0 0 24 24" className={className} fill="currentColor">
     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>;
-
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const navigate = useNavigate();
-  
   const handleHashNavigation = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
     e.preventDefault();
     navigate("/" + hash);
   };
-
-  return (
-    <footer className="relative bg-gradient-to-b from-emerald-900 to-emerald-950 text-white overflow-hidden">
+  return <footer className="relative bg-gradient-to-b from-emerald-900 to-emerald-950 text-white overflow-hidden">
       {/* Decorative top border */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-champagne via-orange-500 to-champagne" />
       
@@ -31,10 +27,12 @@ export const Footer = () => {
           {/* Brand Column - Larger */}
           <div className="lg:col-span-4 space-y-6">
             <Link to="/" className="group inline-block">
-            <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h3 style={{
+              fontFamily: "'Playfair Display', serif"
+            }} className="text-3xl font-bold text-white tracking-tight md:text-2xl">
                 Yashnee Tech Solutions
               </h3>
-              <p className="tracking-[0.2em] uppercase text-orange-400 text-sm font-medium mt-1">
+              <p className="tracking-[0.2em] text-orange-40 mt-1 text-xs font-semibold text-center my-0">
                 Next Gen Talent Partner
               </p>
             </Link>
@@ -44,36 +42,16 @@ export const Footer = () => {
             
             {/* Social Links */}
             <div className="flex items-center gap-3 pt-2">
-              <a 
-                href="https://www.linkedin.com/company/yashnee-tech-solutions/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
-              >
+              <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="https://x.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
-              >
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
                 <XLogo className="w-5 h-5" />
               </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
-              >
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent"
-              >
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
@@ -85,33 +63,27 @@ export const Footer = () => {
               Quick Links
             </h4>
             <ul className="space-y-3">
-              {[
-                { label: "About Us", to: "/who-we-are" },
-                { label: "Our Services", hash: "#services" },
-                { label: "Our Mission", hash: "#mission" },
-                { label: "Contact Us", to: "/contact" },
-              ].map((link) => (
-                <li key={link.label}>
-                  {link.to ? (
-                    <Link 
-                      to={link.to} 
-                      className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group"
-                    >
+              {[{
+              label: "About Us",
+              to: "/who-we-are"
+            }, {
+              label: "Our Services",
+              hash: "#services"
+            }, {
+              label: "Our Mission",
+              hash: "#mission"
+            }, {
+              label: "Contact Us",
+              to: "/contact"
+            }].map(link => <li key={link.label}>
+                  {link.to ? <Link to={link.to} className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group">
                       {link.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    </Link>
-                  ) : (
-                    <a 
-                      href={`/${link.hash}`}
-                      onClick={e => handleHashNavigation(e, link.hash!)}
-                      className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group cursor-pointer"
-                    >
+                    </Link> : <a href={`/${link.hash}`} onClick={e => handleHashNavigation(e, link.hash!)} className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group cursor-pointer">
                       {link.label}
                       <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                    </a>
-                  )}
-                </li>
-              ))}
+                    </a>}
+                </li>)}
             </ul>
           </div>
 
@@ -121,20 +93,18 @@ export const Footer = () => {
               Legal
             </h4>
             <ul className="space-y-3">
-              {[
-                { label: "Privacy Policy", to: "/privacy-policy" },
-                { label: "Terms of Service", to: "/terms-of-service" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link 
-                    to={link.to} 
-                    className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group"
-                  >
+              {[{
+              label: "Privacy Policy",
+              to: "/privacy-policy"
+            }, {
+              label: "Terms of Service",
+              to: "/terms-of-service"
+            }].map(link => <li key={link.label}>
+                  <Link to={link.to} className="text-white/60 hover:text-orange-400 transition-colors text-sm inline-flex items-center gap-1 group">
                     {link.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   </Link>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -197,6 +167,5 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
