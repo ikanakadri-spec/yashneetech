@@ -6,17 +6,6 @@ import yashneeLogo from "@/assets/yashnee-logo-new.png";
 
 export const AnimatedHeaderLogo = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [showTagline, setShowTagline] = useState(false);
-
-  useEffect(() => {
-    if (isHovered) {
-      setShowTagline(true);
-    } else {
-      // Delay hiding to allow fade out animation
-      const timer = setTimeout(() => setShowTagline(false), 600);
-      return () => clearTimeout(timer);
-    }
-  }, [isHovered]);
 
   return (
     <Link 
@@ -34,38 +23,34 @@ export const AnimatedHeaderLogo = () => {
           tolerance={90} 
         />
         
-        {/* Animated Tagline - Moves around the logo */}
+        {/* Animated Tagline - Appears below logo and fades away */}
         <AnimatePresence>
-          {showTagline && (
+          {isHovered && (
             <motion.span
-              className="absolute whitespace-nowrap text-[10px] md:text-xs font-bold text-champagne pointer-events-none"
+              className="absolute whitespace-nowrap text-[10px] md:text-xs font-bold text-champagne pointer-events-none left-1/2"
               style={{
                 textShadow: '0 0 8px rgba(212, 175, 55, 0.9), 0 0 16px rgba(212, 175, 55, 0.6)',
               }}
               initial={{ 
                 opacity: 0,
-                top: '100%',
-                left: '0%',
-                x: 0,
-                y: 0,
+                bottom: '-5px',
+                x: '-50%',
+                scale: 0.8,
               }}
-              animate={isHovered ? {
-                opacity: [0, 1, 1, 1, 1, 0.8, 0],
-                top: ['100%', '100%', '50%', '0%', '0%', '50%', '100%'],
-                left: ['0%', '100%', '100%', '100%', '0%', '-20%', '0%'],
-                x: [0, 0, 0, 0, -100, -100, 0],
-                y: [10, 10, 0, -10, -10, 0, 10],
-              } : {
-                opacity: 0,
+              animate={{
+                opacity: [0, 1, 1, 0],
+                bottom: ['-5px', '-2px', '-2px', '5px'],
+                scale: [0.8, 1, 1, 0.9],
               }}
               exit={{ 
                 opacity: 0,
-                transition: { duration: 0.3 }
+                scale: 0.8,
+                transition: { duration: 0.2 }
               }}
               transition={{
-                duration: 4,
+                duration: 2.5,
                 ease: 'easeInOut',
-                times: [0, 0.15, 0.35, 0.5, 0.65, 0.85, 1],
+                times: [0, 0.2, 0.7, 1],
               }}
             >
               Next Gen Talent Partner
