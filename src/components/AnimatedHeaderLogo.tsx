@@ -1,47 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { AutoTransparentImage } from "@/components/AutoTransparentImage";
 import yashneeLogo from "@/assets/yashnee-logo-new.png";
 
 export const AnimatedHeaderLogo = () => {
-  const [showTagline, setShowTagline] = useState(true);
-  const [animationPhase, setAnimationPhase] = useState<'entering' | 'orbiting' | 'exiting'>('entering');
-
-  useEffect(() => {
-    // Start orbit animation after entering
-    const enterTimer = setTimeout(() => {
-      setAnimationPhase('orbiting');
-    }, 800);
-
-    // Start exit animation
-    const orbitTimer = setTimeout(() => {
-      setAnimationPhase('exiting');
-    }, 4000);
-
-    // Hide tagline completely
-    const exitTimer = setTimeout(() => {
-      setShowTagline(false);
-    }, 5000);
-
-    // Restart animation cycle
-    const restartTimer = setTimeout(() => {
-      setShowTagline(true);
-      setAnimationPhase('entering');
-    }, 8000);
-
-    return () => {
-      clearTimeout(enterTimer);
-      clearTimeout(orbitTimer);
-      clearTimeout(exitTimer);
-      clearTimeout(restartTimer);
-    };
-  }, [showTagline]);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <Link 
       to="/" 
       className="flex items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6 relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Logo */}
       <AutoTransparentImage 
@@ -51,9 +22,9 @@ export const AnimatedHeaderLogo = () => {
         tolerance={90} 
       />
       
-      {/* Animated Orbiting Tagline */}
+      {/* Animated Orbiting Tagline - Appears on Hover */}
       <AnimatePresence>
-        {showTagline && (
+        {isHovered && (
           <motion.div
             className="absolute pointer-events-none"
             style={{
@@ -65,7 +36,7 @@ export const AnimatedHeaderLogo = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.3 }}
           >
             <motion.div
               className="absolute"
@@ -73,17 +44,13 @@ export const AnimatedHeaderLogo = () => {
                 width: '100%',
                 height: '100%',
               }}
-              animate={
-                animationPhase === 'entering' 
-                  ? { rotate: 0 }
-                  : animationPhase === 'orbiting'
-                  ? { rotate: 360 }
-                  : { rotate: 720 }
-              }
+              initial={{ rotate: -90 }}
+              animate={{ rotate: 270 }}
+              exit={{ rotate: 360 }}
               transition={{
-                duration: animationPhase === 'entering' ? 0 : animationPhase === 'orbiting' ? 3 : 1,
-                ease: animationPhase === 'exiting' ? 'easeIn' : 'linear',
-                repeat: animationPhase === 'orbiting' ? Infinity : 0,
+                duration: 2,
+                ease: 'linear',
+                repeat: Infinity,
               }}
             >
               {/* Tagline positioned at the orbit path */}
@@ -96,11 +63,9 @@ export const AnimatedHeaderLogo = () => {
                   textShadow: '0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.5)',
                 }}
                 initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ 
-                  opacity: animationPhase === 'exiting' ? 0 : 1, 
-                  scale: animationPhase === 'exiting' ? 0.5 : 1 
-                }}
-                transition={{ duration: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.3 }}
               >
                 Next Gen Talent Partner
               </motion.span>
