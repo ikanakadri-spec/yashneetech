@@ -244,12 +244,14 @@ export const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
-          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
+          <Link to="/" className="flex flex-col items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
             <img 
               src={yashneeLogo} 
               alt="Yashnee - Next Gen Talent Partner" 
               className="h-32 md:h-40 lg:h-48 w-auto object-contain animate-logo-glow" 
             />
+            {/* White glow bar below tagline */}
+            <div className="w-3/4 h-1 -mt-3 rounded-full bg-white/80 blur-sm animate-tagline-glow" />
           </Link>
 
           {/* Desktop Navigation */}
