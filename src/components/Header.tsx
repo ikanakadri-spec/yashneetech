@@ -252,7 +252,7 @@ export const Header = () => {
               className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
               tolerance={90} 
             />
-            <span className="hidden md:block text-emerald font-bold text-sm lg:text-base [text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
+            <span className="hidden md:block text-emerald-dark font-bold text-sm lg:text-base [text-shadow:0_0_10px_rgba(255,255,255,0.8)]">
               Next Gen Talent Partner
             </span>
           </Link>
