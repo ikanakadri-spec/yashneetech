@@ -2,6 +2,8 @@ import { useState, useRef, useEffect, useMemo } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AutoTransparentImage } from "@/components/AutoTransparentImage";
+import yashneeLogo from "@/assets/yashnee-logo-new.png";
 
 // Searchable content items
 const searchableContent = [
@@ -243,20 +245,13 @@ export const Header = () => {
     <header className={`fixed top-0 left-0 right-0 z-[60] transition-all duration-300 ${scrolled ? "bg-emerald-dark/80 backdrop-blur-md border-b border-emerald/20 shadow-lg" : "bg-transparent"}`}>
       <div className="container mx-auto px-4 lg:px-8">
         <div className="items-center justify-between h-20 lg:h-24 flex flex-row">
-          <Link to="/" className="flex items-center gap-3 group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
-            <img 
-              src="/lovable-uploads/839b337c-28d8-4c67-a2e3-6bfa8ee1a106.png"
-              alt="Yashnee Tech"
-              className="h-12 md:h-14 lg:h-16 w-auto object-contain"
+          <Link to="/" className="flex items-center group transition-transform duration-300 hover:scale-105 -ml-4 lg:-ml-6">
+            <AutoTransparentImage 
+              src={yashneeLogo} 
+              alt="Yashnee - Next Gen Talent Partner" 
+              className="h-20 md:h-28 lg:h-32 w-auto object-contain [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.9))_drop-shadow(0_0_6px_rgba(255,255,255,0.8))_drop-shadow(0_0_3px_rgba(255,255,255,1))_drop-shadow(0_2px_4px_rgba(0,0,0,0.3))]" 
+              tolerance={90} 
             />
-            <div className="flex flex-col leading-tight">
-              <span className="text-white font-bold text-base md:text-lg lg:text-xl tracking-tight drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
-                YASHNEE TECH
-              </span>
-              <span className="text-orange-500 font-extrabold text-sm md:text-base lg:text-lg uppercase tracking-wide drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)]">
-                Next Gen Talent Partner
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation */}
