@@ -29,10 +29,10 @@ export const Footer = () => {
             <Link to="/" className="group inline-block">
             <h3 style={{
               fontFamily: "'Playfair Display', serif"
-            }} className="text-3xl font-bold text-white tracking-tight md:text-2xl">
+            }} className="text-3xl font-bold text-white tracking-tight md:text-2xl [filter:drop-shadow(0_0_12px_rgba(255,255,255,0.8))_drop-shadow(0_0_24px_rgba(255,255,255,0.5))_drop-shadow(0_0_36px_rgba(255,255,255,0.3))]">
                 Yashnee Tech Solutions
               </h3>
-              <p className="tracking-[0.2em] text-champagne/80 mt-1 text-xs font-bold text-center my-0">
+              <p className="tracking-[0.2em] text-champagne/80 mt-1 text-xs font-bold text-center my-0 [filter:drop-shadow(0_0_8px_rgba(255,255,255,0.6))_drop-shadow(0_0_16px_rgba(255,255,255,0.3))]">
                 Next Gen Talent Partner
               </p>
             </Link>
