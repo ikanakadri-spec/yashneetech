@@ -58,11 +58,11 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-2">
             <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">
               Quick Links
             </h4>
-            <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+            <ul className="space-y-2">
               {[{
               label: "About Us",
               to: "/who-we-are"
@@ -91,6 +91,21 @@ export const Footer = () => {
                     </a>}
                 </li>)}
             </ul>
+          </div>
+
+          {/* Join Our Team */}
+          <div className="lg:col-span-2">
+            <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-white/90 mb-4">
+              Join Our Team
+            </h4>
+            <p className="text-white/60 text-sm leading-relaxed mb-3">
+              Willing to join our dynamic team? Drop your resume at:
+            </p>
+            <a href="mailto:info@yashneetech.com" className="inline-flex items-center gap-2 text-orange-400 hover:text-orange-300 transition-colors text-sm font-medium group">
+              <Mail className="w-4 h-4" />
+              info@yashneetech.com
+              <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+            </a>
           </div>
 
           {/* Contact Info */}
