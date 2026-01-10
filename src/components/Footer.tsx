@@ -42,16 +42,16 @@ export const Footer = () => {
             
             {/* Social Links */}
             <div className="flex items-center gap-3 pt-2">
-              <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#0A66C2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
+              <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <XLogo className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-pink-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#1877F2] transition-all duration-300 hover:scale-105 border border-white/10 hover:border-transparent">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Facebook className="w-5 h-5" />
               </a>
             </div>
