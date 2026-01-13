@@ -40,21 +40,6 @@ export const Footer = () => {
               We connect top technology talent with leading organizations, leveraging AI-powered recruitment technology to deliver precise talent matching at scale.
             </p>
             
-            {/* Social Links */}
-            <div className="flex items-center gap-3 pt-2">
-              <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
-                <XLogo className="w-5 h-5" />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-pink-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
-                <Facebook className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -161,9 +146,20 @@ export const Footer = () => {
             <p className="text-white/40 text-sm">
               © {currentYear} Yashnee Tech Solutions. All rights reserved.
             </p>
-            <p className="text-white/40 text-sm">
-              Crafted with excellence in Hyderabad, India
-            </p>
+            <div className="flex items-center gap-3">
+              <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+                <XLogo className="w-4 h-4" />
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-pink-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+                <Facebook className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
