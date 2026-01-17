@@ -150,10 +150,10 @@ export const Footer = () => {
               <a href="https://www.linkedin.com/company/yashnee-tech-solutions/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+              <a href="https://x.com/Yashneetech" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black hover:bg-black hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <XLogo className="w-4 h-4" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-pink-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+              <a href="https://www.instagram.com/yashneetech_recruit/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-pink-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Instagram className="w-4 h-4" />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
