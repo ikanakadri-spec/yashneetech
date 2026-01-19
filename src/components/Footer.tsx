@@ -156,7 +156,7 @@ export const Footer = () => {
               <a href="https://www.instagram.com/yashneetech_recruit/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-pink-600 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-500 hover:to-orange-400 hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
+              <a href="https://www.facebook.com/profile.php?id=61586722800453" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-all duration-300 hover:scale-105 shadow-md">
                 <Facebook className="w-4 h-4" />
               </a>
             </div>
